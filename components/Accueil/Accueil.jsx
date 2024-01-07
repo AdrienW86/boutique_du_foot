@@ -13,6 +13,9 @@ import styles from '@/styles/Home.module.css'
 import Banner1 from '@/assets/banner1.png'
 import Banner2 from '@/assets/banner2.png'
 import Banner3 from '@/assets/banner8.png'
+import Banner4 from '@/assets/banner5.png'
+import Banner5 from '@/assets/banner6.png'
+
 
 
 export default function Accueil() {
@@ -28,9 +31,7 @@ export default function Accueil() {
   return (
     <section className={styles.home}>
       <Slider  {...settings}>
-      <div className={styles.banner}>
-      <div className={styles.centered}>
-
+      <div className={styles.banner}>   
         <Image 
           src={Banner2}
           width={1200}
@@ -39,9 +40,8 @@ export default function Accueil() {
           priority       
           alt='banner'
         />
-       </div>
         <div className={styles.btnBannerBox}>
-        <button className={styles.btnBanner}> Voir </button>
+          <button className={styles.btnBanner}> Voir </button>
         </div>
       </div>
       <div className={styles.banner}>
@@ -53,8 +53,8 @@ export default function Accueil() {
           priority       
           alt='banner'
         />
-         <div className={styles.btnBannerBox}>
-        <button className={styles.btnBanner}> Voir </button>
+        <div className={styles.btnBannerBox}>
+          <button className={styles.btnBanner}> Voir </button>
         </div>
       </div>
       <div className={styles.banner}>
@@ -86,7 +86,20 @@ export default function Accueil() {
 
       <div className={styles.banner}>
       <Image 
-          src={Banner1}
+          src={Banner5}
+          width={150}
+          height={150}
+          layout = 'responsive'
+          priority       
+          alt='banner'   
+        /> 
+        <div className={styles.btnBannerBox}>
+        <button className={styles.btnBanner}> Voir </button>
+        </div>
+      </div>
+      <div className={styles.banner}>
+      <Image 
+          src={Banner4}
           width={150}
           height={150}
           layout = 'responsive'
@@ -101,18 +114,7 @@ export default function Accueil() {
     
     
       </Slider>
-      <div className={styles.container}>
-        {data.soin.map((el, index)=> (
-          <Card 
-            key={index}
-            name={el.name}
-            recto={el.recto}
-            verso={el.verso}
-            price={el.price}
-            link={el.link}
-          /> 
-        ))}            
-        </div>
+     
         <div className={styles.hero}>
           <Image 
             src={Player2}
@@ -122,17 +124,39 @@ export default function Accueil() {
           />
           <h2 className={styles.h2}> Les populaires </h2>
         </div>
-        <div className={styles.container}>
-        {data.maillot.map((el, index)=> (
-          <Card 
-            key={index}
-            name={el.name}
-            recto={el.recto}
-            verso={el.verso}
-            price={el.price}
-          /> 
-        ))}             
+        <Slider {...settings}>
+     
+
+      <div className={styles.banner}>
+      <Image 
+          src={Banner5}
+          width={150}
+          height={150}
+          layout = 'responsive'
+          priority       
+          alt='banner'   
+        /> 
+        <div className={styles.btnBannerBox}>
+        <button className={styles.btnBanner}> Voir </button>
         </div>
+      </div>
+      <div className={styles.banner}>
+      <Image 
+          src={Banner4}
+          width={150}
+          height={150}
+          layout = 'responsive'
+          priority       
+          alt='banner'   
+        /> 
+        <div className={styles.btnBannerBox}>
+        <button className={styles.btnBanner}> Voir </button>
+        </div>
+      </div>
+
+    
+    
+      </Slider>
         <div className={styles.hero}>
           <Image 
             src={Player3}
@@ -143,17 +167,39 @@ export default function Accueil() {
           />
           <h2 className={styles.h2}> Nouveautés </h2>
         </div>
-        <div className={styles.container}>
-          {data.maillot.map((el, index)=> (
-            <Card 
-              key={index}
-              name={el.name}
-              recto={el.recto}
-              verso={el.verso}
-              price={el.price}
-            /> 
-          ))}   
-        </div>
+        <Slider {...settings}>
+     
+
+     <div className={styles.banner}>
+     <Image 
+         src={Banner5}
+         width={150}
+         height={150}
+         layout = 'responsive'
+         priority       
+         alt='banner'   
+       /> 
+       <div className={styles.btnBannerBox}>
+       <button className={styles.btnBanner}> Voir </button>
+       </div>
+     </div>
+     <div className={styles.banner}>
+     <Image 
+         src={Banner4}
+         width={150}
+         height={150}
+         layout = 'responsive'
+         priority       
+         alt='banner'   
+       /> 
+       <div className={styles.btnBannerBox}>
+       <button className={styles.btnBanner}> Voir </button>
+       </div>
+     </div>
+
+   
+   
+     </Slider>
     </section>
   )
 }
