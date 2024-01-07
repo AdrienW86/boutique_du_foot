@@ -1,0 +1,27 @@
+.footer {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: green;
+}
+
+.ul {
+    width: 50%;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.li {
+   margin: 10px;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.span {
+    text-decoration: underline;
+}

@@ -1,0 +1,168 @@
+.h2 {
+    text-align: center;
+    margin : 50px auto;
+}
+
+.basket {
+    min-height: 70vh;
+}
+
+.warning { 
+    width: 300px;
+    margin: auto;
+    min-height: 300px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    display: flex;
+    position: relative;
+    width: 300px;
+    margin: 10px auto;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.close {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    color: white;
+    text-align: center;
+    transition: .4s ease-in-out;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    color: black;
+    font-weight: bold;
+}
+
+.close:hover {
+    cursor: pointer;
+    color: red;
+    background-color: rgb(255, 255, 255);
+}
+
+.name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0px;
+    height: 60px;
+    padding: 10px 30px;
+    color: white;
+    background-color: green;
+    border: 1px solid black;
+}
+
+.infos {
+    margin: 10px auto;
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.price, .quantity {
+    display: flex;
+    font-weight: bold;
+    position: absolute; 
+    text-decoration: underline;
+}
+
+.price {
+    right: 20px;
+}
+
+.quantity {
+    left: 20px;
+}
+
+.addBtn {
+    color: green;
+    border: 1px solid green
+}
+
+.removeBtn {
+    color: red;
+    border: 1px solid red;
+}
+
+.addBtn:hover, .removeBtn:hover {
+    cursor: pointer;
+  }
+
+.total {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 6px;
+    border-top: 1px solid black
+}
+
+.spanTotal {
+    color: green
+}
+.pictureAndBtnContainer {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.picture { 
+    padding: 6px;
+}
+
+.addBtn ,.removeBtn {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2em; 
+    text-align: center;
+    justify-content: center;
+    margin: auto 0;  
+}
+
+.box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.validate {
+    width: 100px;
+    margin: 20px auto;
+    color: white;
+    background-color: green;
+    padding: 10px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    transition: .4s ease-in-out;
+}
+
+.validate:hover {
+    cursor: pointer;
+    background-color: rgb(0, 75, 0);
+}
+
+.productPriceTotal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    margin: 30px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black
+}

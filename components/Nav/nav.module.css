@@ -1,0 +1,49 @@
+.nav {
+    height: 60px;
+    color: green;
+    font-weight: bold;
+    padding-top: 20px;
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+    background-color: white;
+    position: fixed;
+    top: 100px;
+    width: 100%;
+}
+
+.ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.li {
+    font-size: 1.2em;
+    transition: .4s ease-in-out;
+}
+
+.li:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.active {
+    font-size: 1.2em;
+    color: red
+}
+
+.span {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 40px;
+    left: 52px;
+    width: 30px;
+    height: 30px;
+    font-size: 0.8em;
+    padding: 6px;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    background-color: red;
+}
