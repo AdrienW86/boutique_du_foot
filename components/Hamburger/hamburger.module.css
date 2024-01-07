@@ -1,0 +1,118 @@
+.hamburger_container {
+    width: 35%;
+  }
+  
+  .hamburger {
+    top: 20px;
+    left: 30px;
+    width: 30px;
+    height: 20px;
+    z-index: 30;
+    border: none;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    background-color: transparent;
+    justify-content: space-between;
+  }
+  
+  .open {
+    height: 19px;
+  }
+   
+  .line {
+    width: 100%;
+    height: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  
+  .line:hover{
+    background-color: #000000;
+  }
+    
+  .open .line:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+  
+  .open .line:nth-child(2) {
+    opacity: 0;
+  }
+    
+  .open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  .open .line, .close .line {
+    background-color: rgb(3, 3, 3);
+  }
+  
+  .open:hover .line, .close:hover .line {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+  }
+    
+  .menu {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    border-radius: 0 0 24px 24px;
+    left: 10%;
+    top: -20px;
+    height: 60px;
+    width: 75%;
+    padding-left: 20px;
+    margin-right: 30px
+   
+  }
+  
+  .menu_link {
+    display: flex;
+    font-weight: bolder;
+    margin-top: 36px;
+    padding: 8px;
+    width: 90px;
+    justify-content: center;
+    transition: .4s ease-in-out;
+    color: rgb(12, 12, 12)
+  }
+  
+  .menu_link:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+  } 
+
+.menu_basket {
+    position: absolute;
+    right: 20px;
+    list-style: none;
+}
+  
+.span {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 45px;
+    left: 16px;
+    width: 25px;
+    height: 25px;
+    font-size: 0.8em;
+    padding: 6px;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    background-color: red;
+   
+}
+
+.logoBasket {
+   position: relative;
+   bottom: 5px
+}
+  
+  @media (min-width: 769px) {
+    
+    .hamburger_container{
+      display: none;
+    }
+   
+  }

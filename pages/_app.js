@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
     <> 
     <Header />
     <Nav />
-    <Component {...pageProps} />
+    <Component  {...pageProps} />
     <Footer />
   </>
   )
