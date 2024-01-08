@@ -21,17 +21,17 @@ const Hamburger = ({productsLength}) => {
       {isMenuOpen && (
         <ul className={styles.menu}>
           <li className={styles.menu_link}><Link href='/'> Accueil </Link> </li>
-          <li className={styles.menu_link}><Link href='/shop'> Boutique </Link>  </li>
-         
+          <li className={styles.menu_link}><Link href='/shop'> Boutique </Link>  </li>         
         </ul>
       )}
        <li className={styles.menu_basket}>
-            <Image 
-                src={Basket}
-                height={30}
-                width={30}
-                className={styles.logoBasket}
-            />
+          <Image 
+            src={Basket}
+            height={30}
+            width={30}
+            className={styles.logoBasket}
+            alt="image du panier"
+          />
           <Link href='/card'> {productsLength === 0 ? null : <span className={styles.span}>{productsLength && `${productsLength}`}</span> }</Link></li>
     </section>
   );

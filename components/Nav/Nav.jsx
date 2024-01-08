@@ -19,7 +19,6 @@ export default function Nav() {
       console.error('localStorage is not supported in this environment.');
     }
 
-    // Écoutez l'événement cartChange pour mettre à jour la quantité de produits
     const updateProductsLength = () => {
       const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
       setProductsLength(storedProducts.length);
@@ -27,16 +26,12 @@ export default function Nav() {
 
     window.addEventListener('cartChange', updateProductsLength);
 
-    // Nettoyez l'écouteur d'événement lors du démontage du composant
     return () => {
       window.removeEventListener('cartChange', updateProductsLength);
     };
   }, [router.pathname]);
 
   useEffect(() => {
-
-   
-
     const handleResize = () => {
       if (window.innerWidth <= 768) {
         setIsResponsive(true);
@@ -45,26 +40,19 @@ export default function Nav() {
       }
     };
   window.addEventListener('resize', handleResize);
-
-  // Vérifie la taille de l'écran lors du chargement initial
   handleResize();
 
-  // Nettoie les écouteurs d'événements lorsque le composant est démonté
   return () => {
     window.removeEventListener('resize', handleResize);
   };
 }, []);
-
-
-  
 
   return (
     <nav className={styles.nav}>
       {isResponsive 
       ?
       <Hamburger productsLength={productsLength} className={styles.hamburger} />  
-      :
-      
+      :     
       <ul className={styles.ul}>
         <li className={activePath === '/' ? styles.active : styles.li}>
           <Link href='/'>Accueil</Link>
