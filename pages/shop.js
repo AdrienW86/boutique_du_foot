@@ -1,24 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import Card from '@/components/Card/Card'
 import Socket from '@/components/Socket/Socket'
 import { data } from '@/data'
 import styles from '@/styles/Home.module.css'
 import Banner2 from '@/assets/shopBanner.png'
+import Arrow from '@/assets/arrow.png'
 
 export default function boutique() {
 
   const [selectedSection, setSelectedSection] = useState('');
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
   const [showImageModal, setShowImageModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleDropdownChange = (event) => {
     setSelectedSection(event.target.value);
-    const element = document.getElementById(event.target.value);
+    scrollToSection(event.target.value);
+  };
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offset = 160; // Ajustez la valeur de décalage selon vos besoins
+      const offsetPosition = element.offsetTop - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
     }
-  }
+  };
 
   const handleShowImage = (imageSrc) => {
     setSelectedImage(imageSrc);
@@ -29,6 +42,28 @@ export default function boutique() {
     setSelectedImage(null);
     setShowImageModal(false);
   };
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const scrollThreshold = 600; // Vous pouvez ajuster cette valeur
+
+    setShowScrollButton(scrollPosition > scrollThreshold);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
+    useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []); 
 
   return (
     <section className={styles.main}>    
@@ -97,7 +132,20 @@ export default function boutique() {
               link={el.link}
             /> 
           ))}   
-        </div>       
+        </div>    
+        {showScrollButton && (
+        <button className={styles.scrollButton} onClick={scrollToTop}>
+         <Image 
+          src={Arrow}
+          width={20}
+          height={20}
+          layout = 'responsive'
+          priority       
+          alt='banner'
+          className={styles.picture}
+        />  
+        </button>
+      )}
     </section>
   )
 }

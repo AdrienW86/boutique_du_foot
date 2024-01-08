@@ -45,6 +45,27 @@
   justify-content: center;
 }
 
+.scrollButton {
+  position: fixed;
+  top: 50%;
+  right: 2px;
+  background-color: transparent;
+  border: none;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 4px;
+  transition: .4s ease-in-out;
+  transform: rotate(-90deg);
+  background-color: rgb(255, 255, 255);
+}
+
+.scrollButton:hover {
+ cursor: pointer;
+ background-color: white;
+}
+
+.picture {
+  color: white;  
+}
 
 /* Mobile */
 @media (max-width: 700px) {
