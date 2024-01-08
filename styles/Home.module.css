@@ -5,8 +5,8 @@
   /* align-items: center; */
   min-height: 100vh;
   padding-top: 160px;
+  background-color:black;
  
-  background-color: rgb(77, 77, 77);
 }
 
 .banner {
@@ -19,12 +19,7 @@
   background-color: black;
 }
 
-.centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
+
 
 .hero {
   display: flex;
@@ -40,6 +35,16 @@
   flex-direction: column;
   justify-content: center;
   margin-left: 10px;
+}
+
+.shopTitle {
+  color: white;
+  text-align: center;
+  margin: 30px auto;
+}
+
+.label {
+  color: white;
 }
 
 .container {

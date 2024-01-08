@@ -1,29 +1,22 @@
 import React from 'react'
 import Image from 'next/image'
-import Ball from '@/assets/ball.png'
+import Title from '@/assets/title.png'
 import styles from './header.module.css'
 
 export default function Header() {
   return (
     <header className={styles.header}>
         <section className={styles.title}>
-            <h1 className={styles.h1}> La boutique du foot  </h1>
+            
             <Image
-                src={Ball}
-                height={10}
-                width={10}
+                src={Title}
+                height={100}
+                width={350}
                 priority
                 className={styles.logo}
                 alt='ballon de foot'
              />
-              <Image
-                src={Ball}
-                height={10}
-                width={10}
-                priority
-                className={styles.logo2}
-                alt='ballon de foot'
-             />
+              
         </section>
     </header>
   )
