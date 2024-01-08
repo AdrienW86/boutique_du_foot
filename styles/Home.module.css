@@ -4,7 +4,7 @@
   justify-content: space-between;
   min-height: 100vh;
   padding-top: 160px;
-  background-color:black;
+  background-color: rgb(53, 53, 53);
 }
 
 .shopTitle {
@@ -15,6 +15,7 @@
   padding: 16px 26px;
   border-radius: 8px;
   border: 1px solid white;
+  background-color: rgb(0, 0, 0);
 }
 
 .label {
@@ -28,8 +29,17 @@
   margin-bottom : 40px;
 }
 
+.h2 {
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 8px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
 .container {
-  margin: 50px auto;
+  margin: 10px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

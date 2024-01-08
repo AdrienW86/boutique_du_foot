@@ -42,6 +42,7 @@
   .btnCardRecto {
     border: 1px solid black
   }
+  
   .addBtn {
     height: 42px;
     width: 308px;
@@ -49,8 +50,7 @@
     color: white;
     border: none;
     transition: .4s ease-in-out;
-  
-    background-color: rgb(44, 44, 44);
+    background-color: rgb(19, 19, 19);
   }
 
   .addBtn:hover {

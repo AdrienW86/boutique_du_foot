@@ -30,30 +30,28 @@ export default function boutique() {
     setShowImageModal(false);
   };
 
-
   return (
     <section className={styles.main}>    
       <div className={styles.banner}>
-      <Image 
-                src={Banner2}
-                width={1200}
-                height={800}
-                layout = 'responsive'
-                priority       
-                alt='banner'
-            />  
-       <div>
-       <h2 className={styles.shopTitle}> La boutique </h2>
-          <label className={styles.label} htmlFor="sectionDropdown">Choisissez une catégorie :</label>
-          <select className={styles.select} id="sectionDropdown" value={selectedSection} onChange={handleDropdownChange}>
-            <option value="">-- Sélectionnez une section --</option>
-            <option value="equipement">Les chaussettes </option>
-            <option value="pharmacie">Pharmacie</option>
-            <option value="maillots">Les maillots</option>
-          </select>  
-       </div>
+        <Image 
+          src={Banner2}
+          width={1200}
+          height={800}
+          layout = 'responsive'
+          priority       
+          alt='banner'
+        />  
+        <div>
+          <h2 className={styles.shopTitle}> La boutique </h2>
+            <label className={styles.label} htmlFor="sectionDropdown">Choisissez une catégorie :</label>
+            <select className={styles.select} id="sectionDropdown" value={selectedSection} onChange={handleDropdownChange}>
+              <option value="">-- Sélectionnez une section --</option>
+              <option value="equipement">Les chaussettes </option>
+              <option value="pharmacie">Pharmacie</option>
+              <option value="maillots">Les maillots</option>
+            </select>  
+        </div>
       </div>
-
         <div id="maillots" className={styles.hero}>         
           <h2 className={styles.h2}> Les maillots </h2>
         </div>

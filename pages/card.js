@@ -8,8 +8,7 @@ export default function Card() {
     <main className={styles.main}>
       <div className={styles.basketContainer}>
         <Basket />
-      </div>
-  
+      </div> 
     </main>
   )
 }

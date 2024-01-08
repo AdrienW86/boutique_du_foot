@@ -99,7 +99,7 @@ export default function Basket() {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <h2 className={styles.h2}>Votre panier</h2>
       <section className={styles.basket}>
         {products.length === 0 ? (
@@ -153,6 +153,6 @@ export default function Basket() {
           </div>
         )}      
       </section>
-    </>
+    </div>
   );
 }
