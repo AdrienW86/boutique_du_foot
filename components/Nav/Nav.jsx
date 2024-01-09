@@ -61,7 +61,7 @@ export default function Nav() {
           <Link href='/shop'>Boutique</Link>
         </li>
         <li className={activePath === '/card' ? styles.active : styles.li}>
-          <Link href='/card'>Panier {productsLength === 0 ? null : <span className={styles.span}>{productsLength && `${productsLength}`}</span> }</Link>
+          <Link href='/card'  >Panier {productsLength === 0 ? null : <span className={styles.span}>{productsLength && `${productsLength}`}</span> }</Link>
         </li>
       </ul>
     }
