@@ -21,6 +21,10 @@
     margin: 10px auto;
   }
 
+  .picture:hover {
+    cursor: pointer;
+  }
+
   .span {
     color: black;
   }
@@ -42,6 +46,19 @@
   .btnCardRecto {
     border: 1px solid black
   }
+
+  .btnCardRecto:hover {
+    cursor: pointer;
+  }
+
+  .selectLabel {
+    text-align: center;
+  }
+  .select {
+    height: 30px;
+    margin: 0 auto;
+    width: 150px;
+  }
   
   .addBtn {
     height: 42px;
@@ -49,6 +66,7 @@
     font-size: 1em;
     color: white;
     border: none;
+    margin-top: 10px;
     transition: .4s ease-in-out;
     background-color: rgb(19, 19, 19);
   }

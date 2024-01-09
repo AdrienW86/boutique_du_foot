@@ -11,6 +11,8 @@ export default function boutique() {
 
   const [selectedSection, setSelectedSection] = useState('');
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [selectedSize, setSelectedSize] = useState('M');
+
 
   const [showImageModal, setShowImageModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -23,7 +25,7 @@ export default function boutique() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 160; // Ajustez la valeur de décalage selon vos besoins
+      const offset = 160; 
       const offsetPosition = element.offsetTop - offset;
 
       window.scrollTo({
@@ -80,7 +82,7 @@ export default function boutique() {
           <h2 className={styles.shopTitle}> La boutique </h2>
             <label className={styles.label} htmlFor="sectionDropdown">Choisissez une catégorie :</label>
             <select className={styles.select} id="sectionDropdown" value={selectedSection} onChange={handleDropdownChange}>
-              <option value="">-- Sélectionnez une section --</option>
+              <option value="">-- Sélectionnez une catégorie --</option>
               <option value="equipement">Les chaussettes </option>
               <option value="pharmacie">Pharmacie</option>
               <option value="maillots">Les maillots</option>
@@ -91,7 +93,20 @@ export default function boutique() {
           <h2 className={styles.h2}> Les maillots </h2>
         </div>
         <div className={styles.container}>
-          {data.maillot.map((el, index)=> (
+        <h3 className={styles.h3}> Les Clubs </h3>
+        <label className={styles.label} htmlFor="sectionDropdown"> Choisissez une ligue :</label>
+        <div className={styles.team}> 
+         
+           
+              <select className={styles.select2} id="sectionDropdown" value={selectedSection} onChange={handleDropdownChange}>
+               
+                <option value="ligue1">Ligue 1 </option>
+                <option value="liga">Liga</option>
+                <option value="seriea">Série A</option>
+                <option value="premier">Premier League</option>
+              </select> 
+            </div>
+          {data.team.map((el, index)=> (
             <Card 
               key={index}
               id={el.id}
@@ -100,6 +115,36 @@ export default function boutique() {
               verso={el.verso}
               price={el.price}
               link={el.link}
+              sizes={el.sizes} 
+              selectedSize={selectedSize}
+              onSizeChange={(size) => setSelectedSize(size)}
+            /> 
+          ))}   
+        </div>
+        <div className={styles.container}>
+            <div> 
+              <h3 className={styles.h3}> Les équipes nationales </h3>
+              <label className={styles.label} htmlFor="sectionDropdown">Choisissez une catégorie :</label>
+                <select className={styles.select} id="sectionDropdown" value={selectedSection} onChange={handleDropdownChange}>
+                  <option value="">-- Sélectionnez une ligue --</option>
+                  <option value="equipement">Ligue 1 </option>
+                  <option value="pharmacie">Liga</option>
+                  <option value="maillots">Série A</option>
+                  <option value="maillots">Premier League</option>
+                </select> 
+            </div>
+          {data.country.map((el, index)=> (
+            <Card 
+              key={index}
+              id={el.id}
+              name={el.name}
+              recto={el.recto}
+              verso={el.verso}
+              price={el.price}
+              link={el.link}
+              sizes={el.sizes} 
+              selectedSize={selectedSize}
+              onSizeChange={(size) => setSelectedSize(size)}
             /> 
           ))}   
         </div>
@@ -129,7 +174,6 @@ export default function boutique() {
               recto={el.recto}
               verso={el.verso}
               price={el.price}
-              link={el.link}
             /> 
           ))}   
         </div>    

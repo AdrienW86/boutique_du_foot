@@ -1,0 +1,56 @@
+.container {
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    padding: 12px;
+}
+
+.h2 { 
+    color: rgb(172, 0, 0);
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+.warning {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.email {
+    display: block;
+    width: 300px;
+    margin: 60px auto;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.email:hover {
+    cursor: pointer;
+    color: red
+}
+
+.box {
+    display: flex;
+}
+
+.home {
+    margin: 50px auto;
+    padding: 8px 16px;
+    border: 1px solid black;
+    font-size: 1.5em;
+    transition: .4s ease-in-out;
+    border-radius: 8px;
+}
+
+.home:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}

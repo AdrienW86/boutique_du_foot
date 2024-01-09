@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+// Card.js
+import React, { useState, useEffect } from 'react';
+import ImageModal from '@/components/ImageModal/ImageModal'; 
 import Image from 'next/image';
 import styles from './card.module.css';
 import { useRouter } from 'next/router';
@@ -7,14 +9,16 @@ const cartChangeEvent = new Event('cartChange');
 
 export default function Card(props) {
   const [toggle, setToggle] = useState(false);
+  const [selectedSize, setSelectedSize] = useState('S'); // Default size is 'S'
+  const [showModal, setShowModal] = useState(false);
   const router = useRouter();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
     setProducts(storedProducts);
-    
-    // Dispatchez l'événement chaque fois que le panier change
+
+    // Dispatch the event whenever the cart changes
     window.dispatchEvent(cartChangeEvent);
   }, []);
 
@@ -22,18 +26,24 @@ export default function Card(props) {
     setToggle(!toggle);
   };
 
-  const addToCart = (el) => {
+  const addToCart = () => {
     let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-    storedProducts.push(el);
+    const productWithSize = { ...props, selectedSize };
+    storedProducts.push(productWithSize);
     localStorage.setItem('products', JSON.stringify(storedProducts));
-    console.log('Produit ajouté au panier :', el);
-
-    // Mettez à jour la quantité de produits et dispatchez l'événement
+    console.log('Product added to the cart:', productWithSize);
     setProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
-    alert('Le produit a été ajouté à votre panier')
+    alert('Le produit a bien été ajouté au panier');
   };
-  
+
+  const handleShowImage = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   const navigation = (url) => {
     router.push(url);
@@ -49,7 +59,8 @@ export default function Card(props) {
           height={150}
           priority
           className={styles.picture}
-          alt='image du produit'
+          alt='Product image'
+          onClick={handleShowImage} // Open modal on image click
         />
       ) : (
         <Image
@@ -58,7 +69,8 @@ export default function Card(props) {
           height={150}
           priority
           className={styles.picture}
-          alt='image du produit'
+          alt='Product image'
+          onClick={handleShowImage} // Open modal on image click
         />
       )}
       <div className={styles.btnContainer}>
@@ -69,7 +81,7 @@ export default function Card(props) {
           priority
           className={styles.btnCardRecto}
           onClick={Toggle}
-          alt='image miniature du produit'
+          alt='Miniature image of the product'
         />
         <Image
           src={props.verso}
@@ -78,15 +90,27 @@ export default function Card(props) {
           priority
           className={styles.btnCardRecto}
           onClick={Toggle}
-          alt='image miniature du produit'
+          alt='Miniature image of the product'
         />
       </div>
       <p className={styles.price}>
-        <span className={styles.span}> Prix: </span> {props.price}€
+        <span className={styles.span}> Price: </span> {props.price}€
       </p>
-      <button className={styles.addBtn} onClick={() => addToCart(props)}>
+      <p className={styles.selectLabel}> Sélectionnez la taille :</p>
+      <select className={styles.select} value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <button className={styles.addBtn} onClick={addToCart}>
         Ajouter au panier
       </button>
+
+      {/* Render the modal */}
+      {showModal && (
+        <ImageModal imageUrl={toggle ? props.verso : props.recto} onClose={handleCloseModal} />
+      )}
     </div>
   );
 }

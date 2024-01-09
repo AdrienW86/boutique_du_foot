@@ -11,6 +11,7 @@ const cartChangeEvent = new Event('cartChange');
 
 export default function Basket() {
   const [products, setProducts] = useState([]);
+  
 
   const handlePayment = async () => {
     try {
@@ -54,9 +55,10 @@ export default function Basket() {
 
   const deleteAllCart = (el) => {
     let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-    storedProducts = storedProducts.filter(product => product.id !== el.id); 
+    // Filtrer les produits à conserver
+    storedProducts = storedProducts.filter(product => !(product.id === el.id && product.selectedSize === el.selectedSize));
     localStorage.setItem('products', JSON.stringify(storedProducts));
-    console.log('Tous les produits avec l\'identifiant', el.id, 'ont été supprimés du panier');
+    console.log('Tous les produits avec l\'identifiant', el.id, 'et la taille', el.selectedSize, 'ont été supprimés du panier');
     setProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
   };
@@ -77,15 +79,18 @@ export default function Basket() {
   const getUniqueProducts = () => {
     const uniqueProducts = products.reduce((acc, currentProduct) => {
       const existingProduct = acc.find(
-        (item) => item.id === currentProduct.id
+        (item) => item.id === currentProduct.id && item.selectedSize === currentProduct.selectedSize
       );
+
       if (existingProduct) {
         existingProduct.quantity += 1;
       } else {
         acc.push({ ...currentProduct, quantity: 1 });
       }
+
       return acc;
     }, []);
+
     return uniqueProducts;
   };
 
@@ -139,6 +144,7 @@ export default function Basket() {
                  <p className={styles.total}> Total:
                   <span className={styles.spanTotal}>  {el.quantity*el.price}€ </span>
                 </p>
+                <p> Taille: {el.selectedSize}</p>
                 </div>
               </div>
             ))}
