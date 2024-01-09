@@ -11,7 +11,7 @@ export default function boutique() {
 
   const [selectedSection, setSelectedSection] = useState('');
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const [selectedSize, setSelectedSize] = useState('S');
+  const [selectedSize, setSelectedSize] = useState('');
 
   const handleDropdownChange = (event) => {
     setSelectedSection(event.target.value);

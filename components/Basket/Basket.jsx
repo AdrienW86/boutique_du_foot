@@ -144,7 +144,7 @@ export default function Basket() {
                  <p className={styles.total}> Total:
                   <span className={styles.spanTotal}>  {el.quantity*el.price}€ </span>
                 </p>
-                <p> Taille: {el.selectedSize}</p>
+                {el.sizes && <p> Taille: {el.selectedSize}</p>}
                 </div>
               </div>
             ))}
