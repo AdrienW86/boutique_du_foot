@@ -112,14 +112,6 @@ export const data = {
             verso: Barcelone2,
             sizes: ["S","M","L","XL"]
         },        
-        {
-            id: uuidv4(),
-            name: "Inter Milan",
-            price: 70,
-            recto: Inter,
-            verso: Inter2,
-            sizes: ["S","M","L","XL"]
-        },
     ],
     serie: [
         {
@@ -128,6 +120,14 @@ export const data = {
             price: 70,
             recto: Juventus,
             verso: Juventus2,
+            sizes: ["S","M","L","XL"]
+        },
+        {
+            id: uuidv4(),
+            name: "Inter Milan",
+            price: 70,
+            recto: Inter,
+            verso: Inter2,
             sizes: ["S","M","L","XL"]
         },
     ],
@@ -183,22 +183,6 @@ export const data = {
         verso: Espagne2,
         sizes: ["S","M","L","XL"]
     },
-    {
-        id: uuidv4(),
-        name: "Ronaldo",
-        price: 70,
-        recto: Ronaldo,
-        verso: Ronaldo2,
-        sizes: ["S","M","L","XL"]
-    },
-    {
-        id: uuidv4(),
-        name: "Messi",
-        price: 75,
-        recto: Messi,
-        verso: Messi2,
-        sizes: ["S","M","L","XL"]
-    },
    ],
    afrique: [  
     {
@@ -219,7 +203,7 @@ export const data = {
     },
     {
         id: uuidv4(),
-        name: "Caméroun",
+        name: "Cameroun",
         price: 70,
         recto: Cameroun,
         verso: Cameroun2,
@@ -241,6 +225,24 @@ export const data = {
         verso: Senegal2,
         sizes: ["S","M","L","XL"]
     },   
+   ],
+   famous: [
+    {
+        id: uuidv4(),
+        name: "Ronaldo",
+        price: 70,
+        recto: Ronaldo,
+        verso: Ronaldo2,
+        sizes: ["S","M","L","XL"]
+    },
+    {
+        id: uuidv4(),
+        name: "Messi",
+        price: 75,
+        recto: Messi,
+        verso: Messi2,
+        sizes: ["S","M","L","XL"]
+    },
    ],
    soin: [
     {
