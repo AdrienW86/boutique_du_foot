@@ -96,18 +96,21 @@ export default function Card(props) {
       <p className={styles.price}>
         <span className={styles.span}> Prix: </span> {props.price}€
       </p>
-      <p className={styles.selectLabel}> Sélectionnez la taille :</p>
-      <select className={styles.select} value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-        <option value="XL">XL</option>
-      </select>
+      {props.selectedSize && (
+        <div className={styles.div}>
+          <p className={styles.selectLabel}> Sélectionnez la taille :</p>
+            <select className={styles.select} value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select> 
+        </div>
+      )}
       <button className={styles.addBtn} onClick={addToCart}>
         Ajouter au panier
       </button>
 
-      {/* Render the modal */}
       {showModal && (
         <ImageModal imageUrl={toggle ? props.verso : props.recto} onClose={handleCloseModal} />
       )}
