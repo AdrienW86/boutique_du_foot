@@ -69,7 +69,7 @@ import Espagne2 from '@/assets/espagne2.png'
 import { v4 as uuidv4 } from 'uuid';
 
 export const data = {
-   team: [
+   ligue1: [
         {
             id: uuidv4(),
             name: "Paris Saint-Germain",
@@ -94,6 +94,8 @@ export const data = {
             verso: Lyon2,
             sizes: ["S","M","L","XL"]
         },
+   ],
+   liga: [
         {
             id: uuidv4(),
             name: "Madrid",
@@ -104,18 +106,38 @@ export const data = {
         },
         {
             id: uuidv4(),
+            name: "Barcelone",
+            price: 70,
+            recto: Barcelone,
+            verso: Barcelone2,
+            sizes: ["S","M","L","XL"]
+        },        
+        {
+            id: uuidv4(),
+            name: "Inter Milan",
+            price: 70,
+            recto: Inter,
+            verso: Inter2,
+            sizes: ["S","M","L","XL"]
+        },
+    ],
+    serie: [
+        {
+            id: uuidv4(),
             name: "Juventus",
             price: 70,
             recto: Juventus,
             verso: Juventus2,
             sizes: ["S","M","L","XL"]
         },
+    ],
+    premier: [
         {
             id: uuidv4(),
-            name: "Barcelone",
+            name: "Arsenal",
             price: 70,
-            recto: Barcelone,
-            verso: Barcelone2,
+            recto: Arsenal,
+            verso: Arsenal2,
             sizes: ["S","M","L","XL"]
         },
         {
@@ -134,67 +156,9 @@ export const data = {
             verso: Manchester4,
             sizes: ["S","M","L","XL"]
         },
-        {
-            id: uuidv4(),
-            name: "Arsenal",
-            price: 70,
-            recto: Arsenal,
-            verso: Arsenal2,
-            sizes: ["S","M","L","XL"]
-        },
-        {
-            id: uuidv4(),
-            name: "Inter Milan",
-            price: 70,
-            recto: Inter,
-            verso: Inter2,
-            sizes: ["S","M","L","XL"]
-        },
     ],
 
-    country: [
-
-    {
-        id: uuidv4(),
-        name: "Maroc",
-        price: 70,
-        recto: Maroc,
-        verso: Maroc2,
-        sizes: ["S","M","L","XL"]
-    },
-    {
-        id: uuidv4(),
-        name: "Algérie",
-        price: 70,
-        recto: Algerie,
-        verso: Algerie2,
-        sizes: ["S","M","L","XL"]
-    },
-
-    {
-        id: uuidv4(),
-        name: "Sénégal",
-        price: 70,
-        recto: Senegal,
-        verso: Senegal2,
-        sizes: ["S","M","L","XL"]
-    },
-    {
-        id: uuidv4(),
-        name: "Côte d'ivoire",
-        price: 70,
-        recto: Cote,
-        verso: Cote2,
-        sizes: ["S","M","L","XL"]
-    },
-    {
-        id: uuidv4(),
-        name: "Caméroun",
-        price: 70,
-        recto: Cameroun,
-        verso: Cameroun2,
-        sizes: ["S","M","L","XL"]
-    },
+    europe: [
     {
         id: uuidv4(),
         name: "France (domicile)",
@@ -235,6 +199,48 @@ export const data = {
         verso: Messi2,
         sizes: ["S","M","L","XL"]
     },
+   ],
+   afrique: [  
+    {
+        id: uuidv4(),
+        name: "Algérie",
+        price: 70,
+        recto: Algerie,
+        verso: Algerie2,
+        sizes: ["S","M","L","XL"]
+    }, 
+    {
+        id: uuidv4(),
+        name: "Côte d'ivoire",
+        price: 70,
+        recto: Cote,
+        verso: Cote2,
+        sizes: ["S","M","L","XL"]
+    },
+    {
+        id: uuidv4(),
+        name: "Caméroun",
+        price: 70,
+        recto: Cameroun,
+        verso: Cameroun2,
+        sizes: ["S","M","L","XL"]
+    },
+    {
+        id: uuidv4(),
+        name: "Maroc",
+        price: 70,
+        recto: Maroc,
+        verso: Maroc2,
+        sizes: ["S","M","L","XL"]
+    },
+    {
+        id: uuidv4(),
+        name: "Sénégal",
+        price: 70,
+        recto: Senegal,
+        verso: Senegal2,
+        sizes: ["S","M","L","XL"]
+    },   
    ],
    soin: [
     {

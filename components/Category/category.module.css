@@ -4,8 +4,13 @@
     justify-content: center;
     position: relative;
     width: 100%;
+    transition: .4s ease-in-out;
     overflow: hidden;
     background-color: black;
+  }
+
+  .banner:hover {
+    opacity: 0.7;
   }
 
   .btnBannerBox {

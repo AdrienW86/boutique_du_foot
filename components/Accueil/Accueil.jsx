@@ -24,7 +24,7 @@ export default function Accueil() {
             <Category picture ={Banner5} /> 
           </Link>
           <Hero picture ={Player3} title ='Nouveautés' />  
-          <Link href="/shop#equipement">         
+          <Link href="/shop#afrique">         
             <Category picture ={Banner6} />     
           </Link>
     </section>

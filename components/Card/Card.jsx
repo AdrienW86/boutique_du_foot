@@ -94,7 +94,7 @@ export default function Card(props) {
         />
       </div>
       <p className={styles.price}>
-        <span className={styles.span}> Price: </span> {props.price}€
+        <span className={styles.span}> Prix: </span> {props.price}€
       </p>
       <p className={styles.selectLabel}> Sélectionnez la taille :</p>
       <select className={styles.select} value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>

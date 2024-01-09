@@ -21,7 +21,8 @@
 
 .label {
   color: white;
-  margin-left: 30px;
+  width: 100%;
+  text-align: center;
 }
 
 .select, .select2 {
@@ -35,9 +36,11 @@
 }
 
 .team {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
+
 .h2 {
   color: white;
   text-align: center;
@@ -47,12 +50,37 @@
   border-bottom: 1px solid white;
 }
 
+.boxBtn {
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btnCategory {
+  margin: 45px 0;
+  height: 30px;
+  width: 150px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: white;
+}
+
 .h3 {
   width: 100%;
   color: black;
   background-color: white;
   text-align: center;
   margin: 30px 0;
+  padding: 8px 0
+}
+
+.h4 {
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+  color: white;
+  padding: 8px 0;
+ background-color: black;
 }
 
 .container {
