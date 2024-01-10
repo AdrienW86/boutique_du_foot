@@ -16,15 +16,15 @@ export default function Accueil() {
     <section className={styles.home}>
       <Banner />      
         <Hero picture ={Player} title ='Les bons plans' /> 
-          <Link href="/shop#pharmacie">
+          <Link href="/shop#anchor1">
             <Category picture ={Banner4}/> 
           </Link>  
           <Hero picture ={Player2} title ='Les populaires' /> 
-            <Link href="/shop#maillots">      
+            <Link href="/shop#anchor2">      
             <Category picture ={Banner5} /> 
           </Link>
           <Hero picture ={Player3} title ='Nouveautés' />  
-          <Link href="/shop#afrique">         
+          <Link href="/shop#anchor3">         
             <Category picture ={Banner6} />     
           </Link>
     </section>

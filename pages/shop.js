@@ -165,7 +165,7 @@ export default function boutique() {
                 <option value="afrique">Afrique</option>
               </select> 
             </div>
-            <h4 id="europe" className={styles.h4}> Europe </h4>
+            <h4 id="europe" className={styles.h4}> <span id = "anchor2" className={styles.anchor}></span> Europe </h4>
             {data.europe.map((el, index)=> (
               <Card 
                 key={index}
@@ -180,7 +180,7 @@ export default function boutique() {
                 onSizeChange={(size) => setSelectedSize(size)}
               /> 
             ))}   
-            <h4 id="afrique" className={styles.h4}> Afrique </h4>
+            <h4 id="afrique" className={styles.h4}> Afrique <span id="anchor3" className={styles.anchor}></span></h4>
             {data.afrique.map((el, index)=> (
               <Card 
                 key={index}
@@ -211,7 +211,7 @@ export default function boutique() {
           ))}           
         </div>
         <div id="pharmacie" className={styles.hero}>     
-          <h2 className={styles.h2}> Pharmacie </h2>
+          <h2 className={styles.h2}> Pharmacie <span id="anchor1" className={styles.anchor}></span></h2>
         </div>
         <div className={styles.container}>
           {data.soin.map((el, index)=> (
