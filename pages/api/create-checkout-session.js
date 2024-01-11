@@ -13,7 +13,7 @@ async function handler(req, res) {
           currency: 'eur',
           product_data: {
             name: product.name,
-            images: [product.recto.src], // Assurez-vous que 'src' est une chaîne de caractères
+           // images: [product.recto.src], // Assurez-vous que 'src' est une chaîne de caractères
           },
           unit_amount: product.price * 100,
         },
