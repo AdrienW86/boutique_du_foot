@@ -13,13 +13,16 @@ async function handler(req, res) {
           currency: 'eur',
           product_data: {
             name: product.name,
-           // images: [product.recto.src], // Assurez-vous que 'src' est une chaîne de caractères
+            images: [product.recto.src], // Assurez-vous que 'src' est une chaîne de caractères
           },
           unit_amount: product.price * 100,
         },
         quantity: 1, // Assurez-vous d'avoir une valeur de quantité
       })),
       mode: 'payment',
+      invoice_creation: {
+        enabled: true,
+      },
       success_url: 'http://localhost:3000/success',
       cancel_url: 'http://localhost:3000/cancel',
       customer_email: req.body.customer_email, // Ajoutez l'e-mail du client ici
