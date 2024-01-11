@@ -17,7 +17,7 @@ async function handler(req, res) {
           },
           unit_amount: product.price * 100,
         },
-        quantity: product.quantity || 1, // Assurez-vous d'avoir une valeur de quantité
+        quantity: 1, // Assurez-vous d'avoir une valeur de quantité
       })),
       mode: 'payment',
       success_url: 'http://localhost:3000/success',
@@ -35,4 +35,3 @@ async function handler(req, res) {
 }
 
 export default handler;
-

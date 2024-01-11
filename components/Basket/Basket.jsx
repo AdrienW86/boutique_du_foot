@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Delivery from '@/assets/livraison.png';
 import styles from './basket.module.css';
 import { loadStripe } from '@stripe/stripe-js';
 import dotenv from 'dotenv';
@@ -10,37 +11,58 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 const cartChangeEvent = new Event('cartChange');
 
 export default function Basket() {
-  const [products, setProducts] = useState([]);
+  const [products, setCurrentProducts] = useState([]);
+  const [deliveryCost, setDeliveryCost] = useState(5)
+  const [total, setTotal] = useState()
+ 
+// const calculateFinalBills = () => {
+//   const uniqueProducts = [];
+//   for (let i = currentProducts.length-1; i >= 0; i--) {
+//     const currentProduct = currentProducts[i];
+//     const existingIndex = uniqueProducts.findIndex((item) => item.id === currentProduct.id);
+
+//     if (existingIndex === -1) {
+//       // If the product doesn't exist in uniqueProducts, add it
+//       uniqueProducts.push(currentProduct);
+//     }
+//   }
+ 
+//   setProducts(uniqueProducts)
+//   console.log(products)
+//   console.log(currentProducts)
+// }
   
 
-  const handlePayment = async () => {
-    try {
-      const stripe = await stripePromise;
-      const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ products }),
-      });
+const handlePayment = async () => {
+  try {
+    const productsWithDelivery = [...products, { name: 'Frais de livraison', price: deliveryCost, quantity: 1 }];
 
-      const session = await response.json();
+    const stripe = await stripePromise;
+    const response = await fetch('/api/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ products: productsWithDelivery }),
+    });
 
-      const result = await stripe.redirectToCheckout({
-        sessionId: session.sessionId,
-      });
+    const session = await response.json();
 
-      if (result.error) {
-        console.error(result.error.message);
-      }
-    } catch (error) {
-      console.error('Error handling payment:', error);
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.sessionId,
+    });
+
+    if (result.error) {
+      console.error(result.error.message);
     }
-  };
-  
+  } catch (error) {
+    console.error('Error handling payment:', error);
+  }
+};
+
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-    setProducts(storedProducts);
+    setCurrentProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
   }, []);
 
@@ -49,17 +71,16 @@ export default function Basket() {
     storedProducts.push(el);
     localStorage.setItem('products', JSON.stringify(storedProducts));
     console.log('Produit ajouté au panier :', el);
-    setProducts(storedProducts);
+    setCurrentProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
   };
 
   const deleteAllCart = (el) => {
     let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-    // Filtrer les produits à conserver
     storedProducts = storedProducts.filter(product => !(product.id === el.id && product.selectedSize === el.selectedSize));
     localStorage.setItem('products', JSON.stringify(storedProducts));
     console.log('Tous les produits avec l\'identifiant', el.id, 'et la taille', el.selectedSize, 'ont été supprimés du panier');
-    setProducts(storedProducts);
+    setCurrentProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
   };
 
@@ -71,29 +92,28 @@ export default function Basket() {
       storedProducts.splice(indexToRemove, 1);
       localStorage.setItem('products', JSON.stringify(storedProducts));
       console.log('Produit supprimé du panier :', el);
-      setProducts(storedProducts);
+      setCurrentProducts(storedProducts);
       window.dispatchEvent(cartChangeEvent);
     }
   };
   
   const getUniqueProducts = () => {
     const uniqueProducts = products.reduce((acc, currentProduct) => {
-      const existingProduct = acc.find(
+      const existingIndex = acc.findIndex(
         (item) => item.id === currentProduct.id && item.selectedSize === currentProduct.selectedSize
       );
-
-      if (existingProduct) {
-        existingProduct.quantity += 1;
-      } else {
+  
+      if (existingIndex === -1) {
         acc.push({ ...currentProduct, quantity: 1 });
-      }
-
+      } else {
+        acc[existingIndex].quantity += 1;
+      }  
       return acc;
     }, []);
-
-    return uniqueProducts;
+  
+    return uniqueProducts.reverse();
   };
-
+  
   const calculateTotalAmount = () => {
     const uniqueProducts = getUniqueProducts();
     let totalAmount = 0;
@@ -103,6 +123,16 @@ export default function Basket() {
     return totalAmount;
   };
 
+  const calculateDeliveryCost = () => {
+    let totalCost = calculateTotalAmount() > 20 ? 0 : 5
+    return totalCost;
+  };
+
+  useEffect(() => {
+    setTotal(calculateTotalAmount());
+    setDeliveryCost(calculateDeliveryCost())    
+  }, [products]);
+
   return (
     <div className={styles.container}>
       <h2 className={styles.h2}>Votre panier</h2>
@@ -110,21 +140,21 @@ export default function Basket() {
         {products.length === 0 ? (
           <div className={styles.warning}>Vous n'avez aucun produit dans votre panier</div>
         ) : (
-          <div className={styles.container}>           
+          <div className={styles.container}>
+            <h3 className={styles.h3}> Livraison offerte à partir de 20 € d'achats </h3>
             {getUniqueProducts().map((el, index) => (
               <div key={index} className={styles.product}>
-                  <button onClick={()=> deleteAllCart(el)} className={styles.close}>X</button>
+                <button onClick={() => deleteAllCart(el)} className={styles.close}>
+                  X
+                </button>
                 <p className={styles.name}>{el.name}</p>
-                <div className={styles.infos}> 
+                <div className={styles.infos}>
                   <p className={styles.quantity}>Quantité: {el.quantity}</p>
-                  <p className={styles.price}>Prix: {el.price}€</p>                                
+                  <p className={styles.price}>Prix: {el.price}€</p>
                 </div>
-                <div className={styles.pictureAndBtnContainer}>                   
-                  <button
-                    onClick={() => addToCart(el)}
-                    className={styles.addBtn}
-                  >
-                  +
+                <div className={styles.pictureAndBtnContainer}>
+                  <button onClick={() => addToCart(el)} className={styles.addBtn}>
+                    +
                   </button>
                   <Image
                     className={styles.picture}
@@ -133,31 +163,39 @@ export default function Basket() {
                     width={100}
                     alt='image produit'
                   />
-                  <button
-                    onClick={() => deleteToCart(el)}
-                    className={styles.removeBtn}
-                  >
+                  <button onClick={() => deleteToCart(el)} className={styles.removeBtn}>
                     -
                   </button>
                 </div>
-                <div> 
-                 <p className={styles.total}> Total:
-                  <span className={styles.spanTotal}>  {el.quantity*el.price}€ </span>
-                </p>
-                {el.sizes && <p> Taille: {el.selectedSize}</p>}
+                <div>
+                  <p className={styles.total}>
+                    Total:
+                    <span className={styles.spanTotal}> {el.quantity * el.price}€ </span>
+                  </p>
+                  {el.sizes && <p> Taille: {el.selectedSize}</p>}
                 </div>
               </div>
             ))}
-             <div className={styles.productPriceTotal}>
-                <p> Montant total de la commande : 
-                  <span className={styles.spanTotal}> {calculateTotalAmount()}€ </span>
-                </p>
+            <div className={styles.delivery}>
+              <Image className={styles.picture} src={Delivery} height={100} width={100} alt='image produit' />
+              <p className={styles.p}>
+                Livraison :
+                <span className={styles.spanTotal2}> {deliveryCost}€ </span>
+              </p>
+            </div>
+            <div className={styles.productPriceTotal}>
+              <p>
+                Montant total de la commande :
+                <span className={styles.spanTotal}> {total + deliveryCost} € </span>
+              </p>
             </div>
             <div className={styles.box}>
-              <button className={styles.validate} onClick={() => handlePayment(products)}>Valider</button>
+              <button className={styles.validate} onClick={() => handlePayment()}>
+                Valider
+              </button>
             </div>
           </div>
-        )}      
+        )}
       </section>
     </div>
   );

@@ -24,9 +24,7 @@ export default function Banner() {
         <div className={styles.banner}>   
             <Image 
                 src={Banner2}
-                width={1200}
-                height={800}
-                layout = 'responsive'
+                fill
                 priority       
                 alt='banner'
             />    
@@ -34,9 +32,7 @@ export default function Banner() {
         <div className={styles.banner}>
             <Image 
                 src={Banner1}
-                width={1200}
-                height={800}
-                layout = 'responsive'
+                fill
                 priority       
                 alt='banner'
             />     
@@ -44,9 +40,7 @@ export default function Banner() {
         <div className={styles.banner}>
             <Image 
                 src={Banner3}
-                width={1200}
-                height={800}
-                layout = 'responsive'
+                fill
                 priority       
                 alt='banner'
             />     

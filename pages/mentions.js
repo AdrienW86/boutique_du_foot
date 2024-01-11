@@ -5,31 +5,32 @@ export default function mentions() {
   return (
     <div className={styles.container}>
         <h2 className={styles.h2}> Mentions Légales </h2>
-            <h3 className={styles.h3}> [Votre Entreprise] </h3> 
-                <p className={styles.p}> [Forme juridique de l'entreprise, ex. SARL, SAS, etc.] </p>  
-                <p className={styles.p}> [Numéro SIRET] </p>   
-                <p className={styles.p}> [Adresse du siège social] </p>   
-                <p className={styles.p}> [Adresse e-mail de contact] </p>   
-                <p className={styles.p}> [Numéro de téléphone] </p>   
+            <h3 className={styles.h3}> Dénomination commerciale : La boutique du foot </h3> 
+            <h3 className={styles.h3}> Raison sociale : Codev </h3> 
+                <p className={styles.p}>Forme juridique de l'entreprise: AE </p>  
+                <p className={styles.p}> Numéro SIRET: 91277344700020 </p>   
+                <p className={styles.p}> 42 Avenue Emile Roudayre 66000 PERPIGNAN </p>   
+                <p className={styles.p}> Adresse e-mail de contact: support@code-v.fr </p>   
+                <p className={styles.p}> 06.66.67.27.09 </p>   
                 <p className={styles.p}> Directeur de la publication : </p>   
-                <p className={styles.p}> [Nom du directeur de la publication] </p>   
+                <p className={styles.p}> Monsieur Weissenbacher Adrien </p>   
             <h3 className={styles.h3}> Hébergeur du site : </h3>  
-                <p className={styles.p}> [Nom de l'hébergeur] </p>   
-                <p className={styles.p}>[Adresse de l'hébergeur]  </p>
+                <p className={styles.p}> Hostinger </p>   
+                <p className={styles.p}>Adresse de l'hébergeur: HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chypre  </p>
             <h3 className={styles.h3}> Propriété intellectuelle : </h3>  
                 <p className={styles.p}>  
                     Le contenu de ce site web est la propriété exclusive de 
-                    [Votre Entreprise]. Toute reproduction, même partielle, est strictement interdite 
+                    Codev. Toute reproduction, même partielle, est strictement interdite 
                     sans autorisation préalable. 
                 </p>   
             <h3 className={styles.h3}> Protection des données personnelles : </h3>   
                 <p className={styles.p}> 
                     Les informations collectées sur ce site sont destinées à 
-                    [Votre Entreprise] et ne seront en aucun cas transmises à des tiers. 
-                    Conformément à la loi "Informatique et Libertés" du [date], vous disposez
+                    Codev et ne seront en aucun cas transmises à des tiers. 
+                    Conformément à la loi "Informatique et Libertés" du 1er juin 2019, vous disposez
                      d'un droit d'accès, de modification, de rectification et de suppression des 
-                     données qui vous concernent. Vous pouvez exercer ce droit en nous contactant à 
-                     [adresse e-mail]. 
+                     données qui vous concernent. Vous pouvez exercer ce droit en nous contactant à :
+                     support@code-v.fr. 
                 </p>    
             <h3 className={styles.h3}> Cookies : </h3>  
                 <p className={styles.p}> 
@@ -38,14 +39,14 @@ export default function mentions() {
                 </p>    
             <h3 className={styles.h3}> Liens externes : </h3> 
                 <p className={styles.p}> 
-                    [Votre Entreprise] décline toute responsabilité quant au contenu des sites externes 
+                    Codev décline toute responsabilité quant au contenu des sites externes 
                     liés à son site web. 
                 </p> 
             <h3 className={styles.h3}>  Droit applicable : </h3>
                 <p className={styles.p}> 
                     Les présentes mentions légales sont soumises au droit français. 
                     En cas de litige, les tribunaux compétents seront ceux du lieu du siège social de 
-                    [Votre Entreprise]. 
+                    Codev. 
                 </p> 
     </div>
   )
