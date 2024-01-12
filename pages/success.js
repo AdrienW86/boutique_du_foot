@@ -10,6 +10,7 @@ export default function Success() {
     checkAndClearLocalStorage();
   
   return (
+   <>
     <div className={styles.container}>
       <h2 className={styles.h2}>Votre commande a bien été enregistrée</h2>
       <p className={styles.warning}>Vous recevrez prochainement un email avec votre facture et la date estimée de votre livraison.</p>
@@ -19,5 +20,6 @@ export default function Success() {
         <Link className={styles.home} href="/">Retour à l'accueil</Link>
       </div>
     </div>
+   </>
   );
 }
