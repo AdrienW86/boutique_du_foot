@@ -5,10 +5,9 @@ import styles from '@/styles/success.module.css';
 
 export default function Success() {
   useEffect(() => {
-    // Effacer le localStorage lors du chargement de la page
     localStorage.clear();
     console.log('localStorage vidé sur la page Success.');
-  }, []); // Le tableau vide signifie que cette fonction s'exécutera une seule fois après le montage initial
+  }, []); 
 
   return (
     <>

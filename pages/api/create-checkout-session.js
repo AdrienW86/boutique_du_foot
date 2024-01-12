@@ -23,8 +23,8 @@ async function handler(req, res) {
       invoice_creation: {
         enabled: true,
       },
-      success_url: 'http://localhost:3000/success',
-      cancel_url: 'http://localhost:3000/cancel',
+      success_url: 'https://boutiquedufoot.fr/success',
+      cancel_url: 'https://boutiquedufoot.fr/cancel',
       customer_email: req.body.customer_email, // Ajoutez l'e-mail du client ici
       billing_address_collection: 'required', // Demander l'adresse de facturation
     });
