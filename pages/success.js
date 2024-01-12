@@ -6,13 +6,12 @@ export default function Success() {
   const [isclear, setIsclear] = useState(false);
 
   useEffect(() => {
-    // Vérifiez si le localStorage est vide
     if (!localStorage.getItem('products')) {
-      setIsclear(true); // Si le localStorage est vide, mettez à jour l'état pour afficher le contenu
+      setIsclear(true); 
     }else {
       localStorage.clear()
     }
-  }, []);
+  }, [isclear]);
 
   return (
     <>
@@ -30,4 +29,3 @@ export default function Success() {
     </>
   );
 }
-
