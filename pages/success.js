@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from '@/styles/success.module.css';
 
 export default function Success() { 
+    localStorage.clear();
   return (
     <>
       <div className={styles.container}>
