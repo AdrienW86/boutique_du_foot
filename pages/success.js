@@ -4,11 +4,6 @@ import styles from '@/styles/success.module.css';
 
 export default function Success() {
   
-    const checkAndClearLocalStorage = () => {  
-        localStorage.clear();    
-    };
-    checkAndClearLocalStorage();
-  
   return (
    <>
     <div className={styles.container}>
