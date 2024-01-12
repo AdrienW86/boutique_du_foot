@@ -3,13 +3,12 @@ import Link from 'next/link';
 import styles from '@/styles/success.module.css';
 
 export default function Success() {
-  useEffect(() => {
+  
     const checkAndClearLocalStorage = () => {  
         localStorage.clear();    
     };
     checkAndClearLocalStorage();
-  }, []); 
-
+  
   return (
     <div className={styles.container}>
       <h2 className={styles.h2}>Votre commande a bien été enregistrée</h2>
