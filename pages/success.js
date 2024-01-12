@@ -6,12 +6,15 @@ export default function Success() {
   const [isclear, setIsclear] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem('products')) {
-      setIsclear(true); 
-    }else {
-      localStorage.clear()
-    }
-  }, [isclear]);
+    const checkLocalStorage = () => {
+      if (!localStorage.getItem('products')) {
+        setIsclear(true); 
+      } else {
+        localStorage.clear();
+      }
+    };
+    checkLocalStorage();   
+  }, []); 
 
   return (
     <>
