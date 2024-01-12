@@ -4,10 +4,8 @@ import styles from '@/styles/success.module.css';
 
 export default function Success() {
   useEffect(() => {
-    const checkAndClearLocalStorage = () => {
-      if (!localStorage.getItem('products')) {
-        localStorage.clear();
-      }
+    const checkAndClearLocalStorage = () => {  
+        localStorage.clear();    
     };
     checkAndClearLocalStorage();
   }, []); 
