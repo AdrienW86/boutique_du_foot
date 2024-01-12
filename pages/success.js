@@ -2,8 +2,12 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import styles from '@/styles/success.module.css';
 
-export default function Success() { 
+export default function Success() {
+  useEffect(() => {
     localStorage.clear();
+    console.log('localStorage vidé sur la page Success.');
+  }, []); 
+
   return (
     <>
       <div className={styles.container}>
