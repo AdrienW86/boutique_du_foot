@@ -1,14 +1,8 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-import Footer from '@/components/Footer/Footer';
 import styles from '@/styles/success.module.css';
 
-export default function Success() {
-  useEffect(() => {
-    localStorage.clear();
-    console.log('localStorage vidé sur la page Success.');
-  }, []); 
-
+export default function Success() { 
   return (
     <>
       <div className={styles.container}>

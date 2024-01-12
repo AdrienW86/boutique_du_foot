@@ -14,27 +14,11 @@ export default function Basket() {
   const [products, setCurrentProducts] = useState([]);
   const [deliveryCost, setDeliveryCost] = useState(5)
   const [total, setTotal] = useState()
- 
-// const calculateFinalBills = () => {
-//   const uniqueProducts = [];
-//   for (let i = currentProducts.length-1; i >= 0; i--) {
-//     const currentProduct = currentProducts[i];
-//     const existingIndex = uniqueProducts.findIndex((item) => item.id === currentProduct.id);
-
-//     if (existingIndex === -1) {
-//       // If the product doesn't exist in uniqueProducts, add it
-//       uniqueProducts.push(currentProduct);
-//     }
-//   }
- 
-//   setProducts(uniqueProducts)
-//   console.log(products)
-//   console.log(currentProducts)
-// }
-  
+  const [isLoading, setIsLoading] = useState(false);
 
 const handlePayment = async () => {
   try {
+    setIsLoading(true); 
     const productsWithDelivery = [...products, { name: 'Frais de livraison', price: deliveryCost, quantity: 1 }];
 
     const stripe = await stripePromise;
@@ -54,9 +38,14 @@ const handlePayment = async () => {
 
     if (result.error) {
       console.error(result.error.message);
+    } else {
+      localStorage.clear();
     }
   } catch (error) {
     console.error('Error handling payment:', error);
+  }
+  finally {
+    setIsLoading(false);
   }
 };
 
@@ -191,7 +180,7 @@ const handlePayment = async () => {
             </div>
             <div className={styles.box}>
               <button className={styles.validate} onClick={() => handlePayment()}>
-                Valider
+                {isLoading ? 'Chargement...' : 'Valider'}
               </button>
             </div>
           </div>
