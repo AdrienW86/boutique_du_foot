@@ -19,10 +19,7 @@ export default function Success() {
         <div className={styles.box}>
           <Link className={styles.home} href="/">Retour à l'accueil</Link>
         </div>
-      </div>
-      <div className={styles.footer}>
-        <Footer />
-      </div>
+      </div>    
     </>
   );
 }
