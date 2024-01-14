@@ -13,11 +13,15 @@ async function handler(req, res) {
           currency: 'eur',
           product_data: {
             name: product.name,
+          //  selectedSize: null
            // images: [product.recto.src], // Assurez-vous que 'src' est une chaîne de caractères
           },
           unit_amount: product.price * 100,
+
+          
         },
         quantity: 1, 
+       
       })),
       mode: 'payment',
       invoice_creation: {

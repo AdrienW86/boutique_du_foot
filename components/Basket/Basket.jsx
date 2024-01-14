@@ -20,7 +20,7 @@ const handlePayment = async () => {
   try {
     setIsLoading(true); 
     const productsWithDelivery = [...products, { name: 'Frais de livraison', price: deliveryCost, quantity: 1 }];
-
+console.log(productsWithDelivery)
     const stripe = await stripePromise;
     const response = await fetch('/api/create-checkout-session', {
       method: 'POST',

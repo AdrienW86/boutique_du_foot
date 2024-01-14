@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import Card from '@/components/Card/Card'
+import Tiger from '@/components/Tiger/Tiger';
 import Socket from '@/components/Socket/Socket'
 import { data } from '@/data'
 import styles from '@/styles/Home.module.css'
@@ -215,7 +216,7 @@ export default function boutique() {
         </div>
         <div className={styles.container}>
           {data.soin.map((el, index)=> (
-            <Card 
+            <Tiger 
               key={index}
               id={el.id}
               name={el.name}

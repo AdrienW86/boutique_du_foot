@@ -2,13 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import ImageModal from '@/components/ImageModal/ImageModal'; 
 import Image from 'next/image';
-import styles from './card.module.css';
+import styles from '@/components/Card/card.module.css';
 
 const cartChangeEvent = new Event('cartChange');
 
-export default function Card(props) {
-  const [toggle, setToggle] = useState(false);
-  const [selectedSize, setSelectedSize] = useState('S'); 
+export default function Tiger(props) {
+  const [toggle, setToggle] = useState(false); 
   const [showModal, setShowModal] = useState(false);
   const [products, setProducts] = useState([]);
 
@@ -16,7 +15,6 @@ export default function Card(props) {
     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
     setProducts(storedProducts);
 
-    // Dispatch the event whenever the cart changes
     window.dispatchEvent(cartChangeEvent);
   }, []);
 
@@ -29,22 +27,16 @@ export default function Card(props) {
   const addToCart = () => {
     let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
   
-    let productWithSize = { ...props };
-    
-    // Ajoute la taille au nom de l'article uniquement si une taille est sélectionnée
-    if (selectedSize) {
-      productWithSize.name = `${props.name} - Taille ${selectedSize}`;
-      productWithSize.selectedSize = selectedSize;
-    }
-  
-    storedProducts.push(productWithSize);
+    storedProducts.push(props); // Ajoute directement l'objet props sans modification
     localStorage.setItem('products', JSON.stringify(storedProducts));
-    console.log('Product added to the cart:', productWithSize);
+    console.log('Product added to the cart:', props);
     setProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
     alert('Le produit a bien été ajouté au panier');
   };
   
+  
+
   const handleShowImage = () => {
     setShowModal(true);
   };
@@ -52,6 +44,8 @@ export default function Card(props) {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
+
 
   return (
     <div className={styles.card}>
@@ -64,7 +58,7 @@ export default function Card(props) {
           priority
           className={styles.picture}
           alt='Product image'
-          onClick={handleShowImage} // Open modal on image click
+          onClick={handleShowImage} 
         />
       ) : (
         <Image
@@ -100,16 +94,7 @@ export default function Card(props) {
       <p className={styles.price}>
         <span className={styles.span}> Prix: </span> {props.price}€
       </p>
-      {props.sizes && ( <div className={styles.div}> 
-        <p className={styles.selectLabel}> Sélectionnez la taille :</p>
-        <select className={styles.select} value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-        </select>
-      </div>
-       )}
+      
       <button className={styles.addBtn} onClick={addToCart}>
         Ajouter au panier
       </button>
