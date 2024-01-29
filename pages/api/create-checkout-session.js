@@ -1,6 +1,4 @@
 import connectDB from './db';
-import Order from './Order';
-import stripe from 'stripe';
 
 // Établissez la connexion à la base de données au démarrage de l'application
 connectDB();
