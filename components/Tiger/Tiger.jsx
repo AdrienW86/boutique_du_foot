@@ -1,4 +1,3 @@
-// Card.js
 import React, { useState, useEffect } from 'react';
 import ImageModal from '@/components/ImageModal/ImageModal'; 
 import Image from 'next/image';
@@ -27,7 +26,7 @@ export default function Tiger(props) {
   const addToCart = () => {
     let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
   
-    storedProducts.push(props); // Ajoute directement l'objet props sans modification
+    storedProducts.push(props); 
     localStorage.setItem('products', JSON.stringify(storedProducts));
     console.log('Product added to the cart:', props);
     setProducts(storedProducts);
@@ -35,8 +34,6 @@ export default function Tiger(props) {
     alert('Le produit a bien été ajouté au panier');
   };
   
-  
-
   const handleShowImage = () => {
     setShowModal(true);
   };
@@ -44,8 +41,6 @@ export default function Tiger(props) {
   const handleCloseModal = () => {
     setShowModal(false);
   };
-
-
 
   return (
     <div className={styles.card}>
@@ -68,7 +63,7 @@ export default function Tiger(props) {
           priority
           className={styles.picture}
           alt='Product image'
-          onClick={handleShowImage} // Open modal on image click
+          onClick={handleShowImage} 
         />
       )}
       <div className={styles.btnContainer}>
@@ -98,8 +93,6 @@ export default function Tiger(props) {
       <button className={styles.addBtn} onClick={addToCart}>
         Ajouter au panier
       </button>
-
-      {/* Render the modal */}
       {showModal && (
         <ImageModal imageUrl={toggle ? props.verso : props.recto} onClose={handleCloseModal} />
       )}

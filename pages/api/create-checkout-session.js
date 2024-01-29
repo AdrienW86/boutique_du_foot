@@ -1,11 +1,17 @@
-const { v4: uuidv4 } = require('uuid');
-import dotenv from 'dotenv';
-dotenv.config();
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+import connectDB from './db';
+import Order from './Order';
+import stripe from 'stripe';
+
+// Établissez la connexion à la base de données au démarrage de l'application
+connectDB();
+
+const stripe = stripe(process.env.STRIPE_SECRET_KEY);
 
 async function handler(req, res) {
   try {
     console.log(req.body);
+
+    // Créez une session de paiement avec Stripe
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: req.body.products.map(product => ({
@@ -13,15 +19,10 @@ async function handler(req, res) {
           currency: 'eur',
           product_data: {
             name: product.name,
-          //  selectedSize: null
-           // images: [product.recto.src], // Assurez-vous que 'src' est une chaîne de caractères
           },
           unit_amount: product.price * 100,
-
-          
         },
         quantity: 1, 
-       
       })),
       mode: 'payment',
       invoice_creation: {

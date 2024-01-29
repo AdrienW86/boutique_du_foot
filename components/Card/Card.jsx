@@ -1,4 +1,3 @@
-// Card.js
 import React, { useState, useEffect } from 'react';
 import ImageModal from '@/components/ImageModal/ImageModal'; 
 import Image from 'next/image';
@@ -15,8 +14,6 @@ export default function Card(props) {
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
     setProducts(storedProducts);
-
-    // Dispatch the event whenever the cart changes
     window.dispatchEvent(cartChangeEvent);
   }, []);
 
@@ -24,14 +21,10 @@ export default function Card(props) {
     setToggle(!toggle);
   };
 
-  console.log(props.selectedSize)
-
   const addToCart = () => {
-    let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-  
+    let storedProducts = JSON.parse(localStorage.getItem('products')) || [];  
     let productWithSize = { ...props };
     
-    // Ajoute la taille au nom de l'article uniquement si une taille est sélectionnée
     if (selectedSize) {
       productWithSize.name = `${props.name} - Taille ${selectedSize}`;
       productWithSize.selectedSize = selectedSize;
@@ -64,7 +57,7 @@ export default function Card(props) {
           priority
           className={styles.picture}
           alt='Product image'
-          onClick={handleShowImage} // Open modal on image click
+          onClick={handleShowImage} 
         />
       ) : (
         <Image
@@ -74,7 +67,7 @@ export default function Card(props) {
           priority
           className={styles.picture}
           alt='Product image'
-          onClick={handleShowImage} // Open modal on image click
+          onClick={handleShowImage} 
         />
       )}
       <div className={styles.btnContainer}>
@@ -113,8 +106,6 @@ export default function Card(props) {
       <button className={styles.addBtn} onClick={addToCart}>
         Ajouter au panier
       </button>
-
-      {/* Render the modal */}
       {showModal && (
         <ImageModal imageUrl={toggle ? props.verso : props.recto} onClose={handleCloseModal} />
       )}
