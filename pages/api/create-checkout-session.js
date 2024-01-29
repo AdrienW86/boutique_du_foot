@@ -1,9 +1,8 @@
-import connectDB from './db';
+import dotenv from 'dotenv';
+dotenv.config();
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 // Établissez la connexion à la base de données au démarrage de l'application
-connectDB();
-
-const stripe = stripe(process.env.STRIPE_SECRET_KEY);
 
 async function handler(req, res) {
   try {
