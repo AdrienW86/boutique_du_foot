@@ -4,7 +4,7 @@
   transition: .4s ease-in-out;
   overflow: hidden;
   background-color: black;
-  aspect-ratio: 78/45;
+  aspect-ratio: 48/45;
 }
 
 .banner:hover {
