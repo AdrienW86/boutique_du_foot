@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import ImageModal from '@/components/ImageModal/ImageModal'; 
+import Arrow from '@/assets/arroww.png'
 import styles from './pack.module.css';
 
 const cartChangeEvent = new Event('cartChange');
@@ -65,16 +66,25 @@ export default function Packs(props) {
           onClick={handleShowImage} 
         />  
         <p className={styles.price}> <span className={styles.span}> Prix: </span>  {props.price}€</p>
+        <div className={styles.titleDescription}>
         <h4> Description </h4>
-        <div ref={descriptionRef}>
-          <button onClick={handleToggleDescription}>Voir</button>
-          {showDescription && (
-            <div className={styles.description}>
-                <button onClick={handleToggleDescription} className={styles.close}> X </button>
-                {props.description}
-            </div>
-          )}
-        </div>
+        <Image
+          src={Arrow}
+          width={20}
+          height={20}
+          priority
+          alt='Product image'
+          className={styles.descriptionBtn} onClick={handleToggleDescription}
+        />
+      </div>
+      <div ref={descriptionRef}>
+        {showDescription && (
+          <div className={styles.description}>
+              <button onClick={handleToggleDescription} className={styles.close}> X </button>
+              {props.description}
+          </div>
+        )}
+      </div>
         <button className={styles.addBtn} onClick={() => addToCart(props)} >
           Ajouter au panier
         </button>

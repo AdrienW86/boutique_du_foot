@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ImageModal from '@/components/ImageModal/ImageModal'; 
 import Image from 'next/image';
+import Arrow from '@/assets/arroww.png'
 import styles from './tiger.module.css';
 
 const cartChangeEvent = new Event('cartChange');
@@ -8,12 +9,13 @@ const cartChangeEvent = new Event('cartChange');
 export default function Tiger(props) {
   const [toggle, setToggle] = useState(false); 
   const [showModal, setShowModal] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
+  const descriptionRef = useRef(null);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
     setProducts(storedProducts);
-
     window.dispatchEvent(cartChangeEvent);
   }, []);
 
@@ -41,6 +43,23 @@ export default function Tiger(props) {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
+  const handleToggleDescription = () => {
+    setShowDescription(!showDescription);
+  };
+
+  const handleClickOutside = (event) => {
+    if (descriptionRef.current && !descriptionRef.current.contains(event.target)) {
+      setShowDescription(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className={styles.card}>
@@ -89,8 +108,25 @@ export default function Tiger(props) {
       <p className={styles.price}>
         <span className={styles.span}> Prix: </span> {props.price}€
       </p>
-      <h4> Description </h4>
-       <p> {props.description} </p>
+      <div className={styles.titleDescription}>
+        <h4> Description </h4>
+        <Image
+          src={Arrow}
+          width={20}
+          height={20}
+          priority
+          alt='Product image'
+          className={styles.descriptionBtn} onClick={handleToggleDescription}
+        />
+      </div>
+      <div ref={descriptionRef}>
+        {showDescription && (
+          <div className={styles.description}>
+              <button onClick={handleToggleDescription} className={styles.close}> X </button>
+              {props.description}
+          </div>
+        )}
+      </div>
       <button className={styles.addBtn} onClick={addToCart}>
         Ajouter au panier
       </button>
