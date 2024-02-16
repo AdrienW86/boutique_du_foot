@@ -67,31 +67,60 @@ export default function boutique() {
         <div className={styles.team}>       
           <select className={styles.select} id="sectionDropdown" value={selectedSection} onChange={handleDropdownChange}>
             <option value="">-- Sélectionnez une catégorie --</option>
+            <option value="coffrets">Les coffrets </option>
+            <option value="packs">Les packs </option>
             <option value="equipement">Les chaussettes </option>
             <option value="pharmacie">Pharmacie</option>
             <option value="maillots">Les maillots</option>
           </select>  
         </div>
-        <div id="maillots" className={styles.hero}>         
-          <h2 className={styles.h2}> Les maillots </h2>           
+
+        <div id="coffrets" className={styles.hero}>     
+          <h2 className={styles.h2}> Les coffrets <span id="anchor1" className={styles.anchor}></span></h2>
         </div>
-        
-        <div className={styles.container}>       
-            {data.ligue1.map((el, index)=> (
-              <Card 
+          <div className={styles.container}>       
+              {data.coffrets.map((el, index)=> (
+                <Socket 
                 key={index}
                 id={el.id}
                 name={el.name}
                 recto={el.recto}
-                verso={el.verso}
                 price={el.price}
-                link={el.link}
-                sizes={el.sizes} 
-                selectedSize={selectedSize}
-                onSizeChange={(size) => setSelectedSize(size)}
-              /> 
-            ))}              
-        </div>      
+                /> 
+              ))}              
+          </div>  
+
+          <div id="packs" className={styles.hero}>     
+          <h2 className={styles.h2}> Les packs <span id="anchor2" className={styles.anchor}></span></h2>
+        </div>
+          <div className={styles.container}>       
+              {data.packs.map((el, index)=> (
+                <Socket 
+                key={index}
+                id={el.id}
+                name={el.name}
+                recto={el.recto}
+                price={el.price}
+                /> 
+              ))}              
+          </div>  
+
+          <div id="pharmacie" className={styles.hero}>     
+          <h2 className={styles.h2}> Les baumes <span id="anchor3" className={styles.anchor}></span></h2>
+        </div>
+        <div className={styles.container}>
+          {data.baumes.map((el, index)=> (
+            <Tiger 
+              key={index}
+              id={el.id}
+              name={el.name}
+              recto={el.recto}
+              verso={el.verso}
+              price={el.price}
+            /> 
+          ))}   
+        </div>    
+
         <div id="equipement" className={styles.hero}>     
           <h2 className={styles.h2}> Les chaussettes </h2>
         </div>
@@ -106,21 +135,29 @@ export default function boutique() {
             /> 
           ))}           
         </div>
-        <div id="pharmacie" className={styles.hero}>     
-          <h2 className={styles.h2}> Pharmacie <span id="anchor1" className={styles.anchor}></span></h2>
+
+        <div id="maillots" className={styles.hero}>         
+          <h2 className={styles.h2}> Les maillots </h2>           
         </div>
-        <div className={styles.container}>
-          {data.soin.map((el, index)=> (
-            <Tiger 
-              key={index}
-              id={el.id}
-              name={el.name}
-              recto={el.recto}
-              verso={el.verso}
-              price={el.price}
-            /> 
-          ))}   
-        </div>    
+        
+        <div className={styles.container}>       
+            {data.maillots.map((el, index)=> (
+              <Card 
+                key={index}
+                id={el.id}
+                name={el.name}
+                recto={el.recto}
+                verso={el.verso}
+                price={el.price}
+                link={el.link}
+                sizes={el.sizes} 
+                selectedSize={selectedSize}
+                onSizeChange={(size) => setSelectedSize(size)}
+              /> 
+            ))}              
+        </div>      
+       
+       
         {showScrollButton && (
           <button className={styles.scrollButton} onClick={scrollToTop}>
             <Image 

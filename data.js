@@ -33,10 +33,53 @@ import Maroc2 from '@/assets/maroc2.png'
 import France from '@/assets/france.png'
 import France2 from '@/assets/france2.png'
 
+import Mahiedine from '@/assets/mahedine.png'
+import Coffret from '@/assets/2.png'
+import Pack from '@/assets/3.png'
+import Pack2 from '@/assets/4.png'
 import { v4 as uuidv4 } from 'uuid';
 
 export const data = {
-   ligue1: [
+    coffrets: [
+        {
+            id: uuidv4(),
+            name: "Mahiedine",
+            price: 150,
+            recto: Mahiedine,
+            sizes: ["S","M","L","XL"]
+        },
+        {
+            id: uuidv4(),
+            name: "Real",
+            price: 130,
+            recto: Coffret,
+            
+            sizes: ["S","M","L","XL"]
+        },
+        {
+            id: uuidv4(),
+            name: "Barcelone",
+            price: 130,
+            recto: Coffret,
+            sizes: ["S","M","L","XL"]
+        },
+
+    ],
+    packs: [
+        {
+            id: uuidv4(),
+            name: "Pack Baumes",
+            price: 30,
+            recto: Pack,           
+        },
+        {
+            id: uuidv4(),
+            name: "Pack Chaussettes",
+            price: 35,
+            recto: Pack2,                  
+        },
+    ],
+    maillots: [
         {
             id: uuidv4(),
             name: "Paris Saint-Germain",
@@ -102,7 +145,7 @@ export const data = {
             sizes: ["S","M","L","XL"]
         },
    ],
-   soin: [
+   baumes: [
     {
         id: uuidv4(),
         name: "Baume du Tigre rouge (19g)",
