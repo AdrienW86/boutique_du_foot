@@ -77,13 +77,15 @@ export const data = {
             id: uuidv4(),
             name: "Pack Baumes (lot de 6)",
             price: 36,
-            recto: Pack,           
+            recto: Pack,   
+            description: "Le pack comprend 6 baumes du tigre, 3 baumes rouge et 3 baumes blanc de chacun 19,4g."
         },
         {
             id: uuidv4(),
             name: "Pack Chaussettes (lot de 5)",
             price: 35,
-            recto: Pack2,                  
+            recto: Pack2,
+            description: "Le pack comprend 5 paires de chaussettes de couleurs différentes et aléatoires."       
         },
     ],
     maillots: [
@@ -159,7 +161,7 @@ export const data = {
         price: 7,
         recto: Tiger,
         verso: Tiger2,
-       // link: 'https://buy.stripe.com/5kAcMQeVBfj8fvO3cc'
+        description: "Le Baume du Tigre rouge ou blanc est un remède traditionnel de la médecine chinoise, composé à partir de différentes plantes et utilisé pour soulager les muscles et les articulations, les piqûres et démangeaisons, ou autre."
     },
     {
         id: uuidv4(),
@@ -167,7 +169,7 @@ export const data = {
         price: 7,
         recto: Tiger3,
         verso: Tiger4,
-       // link: 'https://buy.stripe.com/5kAcMQeVBfj8fvO3cc'
+        description: "Le Baume du Tigre rouge ou blanc est un remède traditionnel de la médecine chinoise, composé à partir de différentes plantes et utilisé pour soulager les muscles et les articulations, les piqûres et démangeaisons, ou autre."
     },
    ],
    socket: [

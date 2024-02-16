@@ -89,7 +89,8 @@ export default function Tiger(props) {
       <p className={styles.price}>
         <span className={styles.span}> Prix: </span> {props.price}€
       </p>
-      
+      <h4> Description </h4>
+       <p> {props.description} </p>
       <button className={styles.addBtn} onClick={addToCart}>
         Ajouter au panier
       </button>

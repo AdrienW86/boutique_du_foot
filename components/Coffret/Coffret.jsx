@@ -62,7 +62,7 @@ export default function Coffret(props) {
       ) : (
         <Image
           src={props.recto}
-          width={400}
+          width={300}
           height={250}
           priority
           className={styles.picture2}
@@ -104,6 +104,7 @@ export default function Coffret(props) {
       </div>
        )}
        <h4> Description </h4>
+       <p> {props.description} </p>
       <button className={styles.addBtn} onClick={addToCart}>
         Ajouter au panier
       </button>

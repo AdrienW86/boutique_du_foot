@@ -4,6 +4,7 @@ import Coffret from '@/components/Coffret/Coffret';
 import Card from '@/components/Card/Card'
 import Tiger from '@/components/Tiger/Tiger';
 import Socket from '@/components/Socket/Socket'
+import Packs from '@/components/Pack/Pack';
 import { data } from '@/data'
 import styles from '@/styles/Home.module.css'
 import Banner2 from '@/assets/shopBanner.png'
@@ -82,16 +83,17 @@ export default function boutique() {
           <div className={styles.container}>       
               {data.coffrets.map((el, index)=> (
                <Coffret 
-               key={index}
-               id={el.id}
-               name={el.name}
-               recto={el.recto}
-               verso={el.verso}
-               price={el.price}
-               link={el.link}
-               sizes={el.sizes} 
-               selectedSize={selectedSize}
-               onSizeChange={(size) => setSelectedSize(size)}
+                key={index}
+                id={el.id}
+                name={el.name}
+                recto={el.recto}
+                verso={el.verso}
+                price={el.price}
+                link={el.link}
+                sizes={el.sizes} 
+                description={el.description}
+                selectedSize={selectedSize}
+                onSizeChange={(size) => setSelectedSize(size)}
              /> 
               ))}              
           </div>  
@@ -101,12 +103,13 @@ export default function boutique() {
         </div>
           <div className={styles.container}>       
               {data.packs.map((el, index)=> (
-                <Socket 
+                <Packs 
                 key={index}
                 id={el.id}
                 name={el.name}
                 recto={el.recto}
                 price={el.price}
+                description={el.description}
                 /> 
               ))}              
           </div>  
@@ -123,6 +126,7 @@ export default function boutique() {
               recto={el.recto}
               verso={el.verso}
               price={el.price}
+              description={el.description}
             /> 
           ))}   
         </div>    
