@@ -37,6 +37,8 @@ import Mahiedine from '@/assets/mahedine.png'
 import Coffret from '@/assets/2.png'
 import Pack from '@/assets/3.png'
 import Pack2 from '@/assets/4.png'
+import Pack3 from '@/assets/5.png'
+import Pack4 from '@/assets/6.png'
 import { v4 as uuidv4 } from 'uuid';
 
 export const data = {
@@ -46,22 +48,27 @@ export const data = {
             name: "Mahiedine",
             price: 150,
             recto: Mahiedine,
-            sizes: ["S","M","L","XL"]
+            verso: Pack3,
+            sizes: ["S","M","L","XL"],
+            description: "Le pack collector Mahiedine contient un maillot officiel du Real Madrid, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
         },
         {
             id: uuidv4(),
             name: "Real",
             price: 130,
             recto: Coffret,
-            
-            sizes: ["S","M","L","XL"]
+            verso: Pack3,
+            sizes: ["S","M","L","XL"],
+            description: "Le pack Real contient un maillot officiel du Real Madrid, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
         },
         {
             id: uuidv4(),
             name: "Barcelone",
             price: 130,
             recto: Coffret,
-            sizes: ["S","M","L","XL"]
+            verso: Pack4,
+            sizes: ["S","M","L","XL"],
+            description: "Le pack Barcelone contient un maillot officiel du FC Barcelone, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
         },
 
     ],
@@ -167,49 +174,49 @@ export const data = {
     {
         id: uuidv4(),
         name: "Chaussettes de Football blanches 39/45",
-        price: 9,
+        price: 8,
         recto: Socket,      
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football grises 39/45",
-        price: 9,
+        price: 8,
         recto: Socket2,     
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football noires 39/45",
-        price: 9,
+        price: 8,
         recto: Socket3,     
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football bleues claires 39/45",
-        price: 9,
+        price: 8,
         recto: Socket4,      
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football vertes claires 39/45",
-        price: 9,
+        price: 8,
         recto: Socket5,     
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football vertes 39/45",
-        price: 9,
+        price: 8,
         recto: Socket6,     
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football violettes 39/45",
-        price: 9,
+        price: 8,
         recto: Socket7,     
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football oranges 39/45",
-        price: 9,
+        price: 8,
         recto: Socket8,     
     },
    ]

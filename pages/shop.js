@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
+import Coffret from '@/components/Coffret/Coffret';
 import Card from '@/components/Card/Card'
 import Tiger from '@/components/Tiger/Tiger';
 import Socket from '@/components/Socket/Socket'
@@ -80,13 +81,18 @@ export default function boutique() {
         </div>
           <div className={styles.container}>       
               {data.coffrets.map((el, index)=> (
-                <Socket 
-                key={index}
-                id={el.id}
-                name={el.name}
-                recto={el.recto}
-                price={el.price}
-                /> 
+               <Coffret 
+               key={index}
+               id={el.id}
+               name={el.name}
+               recto={el.recto}
+               verso={el.verso}
+               price={el.price}
+               link={el.link}
+               sizes={el.sizes} 
+               selectedSize={selectedSize}
+               onSizeChange={(size) => setSelectedSize(size)}
+             /> 
               ))}              
           </div>  
 

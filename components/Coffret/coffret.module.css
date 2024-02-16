@@ -1,67 +1,75 @@
 .card {
     margin: 50px auto;
+    width: 300px;
     border: 2px solid black;
     display: flex;
-    width: 300px;
     flex-direction: column;
     justify-content: center;
     border-radius: 8px;
     background-color: white;
     overflow: hidden;
-  }
+}
   
-  .h3 {
+.h3 {
     color: rgb(0, 0, 0);
     font-weight:bold;
     text-align: center;
     margin: 10px;
-  }
+}
   
-  .picture {
-    margin: 10px auto;
-  }
+.picture {
+    margin: auto;
+    position: relative;
+}
 
-  .picture:hover {
+.picture2 {
+    margin: auto;
+    position: relative;
+    right: 50px
+}
+
+.picture:hover {
     cursor: pointer;
-  }
+}
 
-  .span {
+.span {
     color: black;
-  }
+}
   
-  .price {
+.price {
     font-size: 1.2em;
     text-align: center;
     color: green;
     font-weight: bold;
     margin: 10px;
-  }
+}
   
-  .btnContainer {
+.btnContainer {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 20px;
-  }
+}
   
-  .btnCardRecto {
+.btnCardRecto {
     border: 1px solid black
-  }
+}
 
-  .btnCardRecto:hover {
+.btnCardRecto:hover {
     cursor: pointer;
-  }
+}
 
-  .selectLabel {
+.selectLabel {
     width: 100%;
     text-align: center;
-  }
-  .select {
+}
+
+.select {
     height: 30px;
     margin: 0 auto;
     width: 150px;
-  }
+}
   
-  .addBtn {
+.addBtn {
     height: 42px;
     width: 308px;
     font-size: 1em;
@@ -70,9 +78,20 @@
     margin-top: 10px;
     transition: .4s ease-in-out;
     background-color: rgb(19, 19, 19);
-  }
+}
 
-  .addBtn:hover {
+.addBtn:hover {
     cursor: pointer;
     background-color: rgb(0, 0, 0);
-  }
+}
+
+.div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.select {
+    border: 1px solid black;
+}
