@@ -75,13 +75,13 @@ export const data = {
     packs: [
         {
             id: uuidv4(),
-            name: "Pack Baumes",
-            price: 30,
+            name: "Pack Baumes (lot de 6)",
+            price: 36,
             recto: Pack,           
         },
         {
             id: uuidv4(),
-            name: "Pack Chaussettes",
+            name: "Pack Chaussettes (lot de 5)",
             price: 35,
             recto: Pack2,                  
         },
@@ -159,7 +159,7 @@ export const data = {
         price: 7,
         recto: Tiger,
         verso: Tiger2,
-        link: 'https://buy.stripe.com/5kAcMQeVBfj8fvO3cc'
+       // link: 'https://buy.stripe.com/5kAcMQeVBfj8fvO3cc'
     },
     {
         id: uuidv4(),
@@ -167,7 +167,7 @@ export const data = {
         price: 7,
         recto: Tiger3,
         verso: Tiger4,
-        link: 'https://buy.stripe.com/5kAcMQeVBfj8fvO3cc'
+       // link: 'https://buy.stripe.com/5kAcMQeVBfj8fvO3cc'
     },
    ],
    socket: [
