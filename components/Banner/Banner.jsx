@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import Banner1 from '@/assets/banner1.png'
-import Banner2 from '@/assets/banner-can.png'
-import Banner3 from '@/assets/banner8.png'
+import Banner1 from '@/assets/1.jpg'
+import Banner2 from '@/assets/2.jpg'
+import Banner3 from '@/assets/3.jpg'
 import Slider from 'react-slick';
 import styles from './banner.module.css'
 import 'slick-carousel/slick/slick.css';
@@ -23,7 +23,7 @@ export default function Banner() {
     <Slider  {...settings}>
         <div className={styles.banner}>   
             <Image 
-                src={Banner2}
+                src={Banner1}
                 fill
                 priority       
                 alt='banner'
@@ -31,7 +31,7 @@ export default function Banner() {
         </div>
         <div className={styles.banner}>
             <Image 
-                src={Banner1}
+                src={Banner2}
                 fill
                 priority       
                 alt='banner'

@@ -6,10 +6,10 @@ export default function mentions() {
     <div className={styles.container}>
         <h2 className={styles.h2}> Mentions Légales </h2>
             <h3 className={styles.h3}> Dénomination commerciale : La boutique du foot </h3> 
-            <h3 className={styles.h3}> Raison sociale : Codev </h3> 
+            <h3 className={styles.h3}> Raison sociale : La boutique du sport </h3> 
                 <p className={styles.p}>Forme juridique de l'entreprise: AE </p>  
                 <p className={styles.p}> Numéro SIRET: 91277344700020 </p>   
-                <p className={styles.p}> 42 Avenue Emile Roudayre 66000 PERPIGNAN </p>   
+                <p className={styles.p}> 60 rue François 1er, 75008 Paris </p>   
                 <p className={styles.p}> Adresse e-mail de contact: support@code-v.fr </p>   
                 <p className={styles.p}> 06.66.67.27.09 </p>   
                 <p className={styles.p}> Directeur de la publication : </p>   

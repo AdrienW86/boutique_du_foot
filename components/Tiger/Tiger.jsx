@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ImageModal from '@/components/ImageModal/ImageModal'; 
 import Image from 'next/image';
-import styles from '@/components/Card/card.module.css';
+import styles from './tiger.module.css';
 
 const cartChangeEvent = new Event('cartChange');
 

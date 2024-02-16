@@ -7,7 +7,7 @@ export default function conditons() {
        <h2 className={styles.h2}> Conditions Générales de Vente </h2>
             <h3 className={styles.h3}> 1. Champ d'application </h3>   
                 <p className={styles.p}> Les présentes Conditions Générales de Vente (CGV) régissent 
-                    la vente de produits par Codev (ci-après dénommé le "Vendeur")
+                    la vente de produits par La boutique du sport (ci-après dénommé le "Vendeur")
                     à ses clients (ci-après dénommés le "Client").
                 </p>
             <h3 className={styles.h3} > 2. Commandes </h3> 
@@ -17,7 +17,7 @@ export default function conditons() {
                 </p> 
             <h3 className={styles.h3}> 3. Prix </h3>   
                 <p className={styles.p}> Les prix des produits sont indiqués en euros, toutes taxes comprises.
-                    La boputique du foot se réserve le droit de modifier les prix à tout moment, 
+                    La boutique du foot se réserve le droit de modifier les prix à tout moment, 
                     mais les produits seront facturés au tarif en vigueur au moment de la validation 
                     de la commande.
                 </p>   
@@ -27,7 +27,7 @@ export default function conditons() {
                 </p>
             <h3 className={styles.h3}> 5. Livraison </h3>
                 <p className={styles.p}> Les frais de livraison sont à la charge du Client et sont indiqués lors de la commande. 
-                    Codev s'efforcera de respecter les délais de livraison indiqués, mais ne peut
+                    La boutique du sport s'efforcera de respecter les délais de livraison indiqués, mais ne peut
                     être tenue responsable des retards dus à des circonstances indépendantes de sa volonté.
                 </p>   
             <h3 className={styles.h3} > 6. Droit de Rétractation </h3>
@@ -50,7 +50,7 @@ export default function conditons() {
                 </p>    
             <h3 className={styles.h3}> 10. Litiges </h3>
                 <p className={styles.p}> En cas de litige, une solution amiable sera recherchée. À défaut, les tribunaux compétents seront 
-                    ceux du lieu du siège social de Codev.
+                    ceux du lieu du siège social de la boutique du sport.
                 </p>
     </div>
   )

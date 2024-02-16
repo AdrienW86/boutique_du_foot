@@ -2,8 +2,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-// Établissez la connexion à la base de données au démarrage de l'application
-
 async function handler(req, res) {
   try {
     console.log(req.body);
@@ -16,15 +14,15 @@ async function handler(req, res) {
           currency: 'eur',
           product_data: {
             name: product.name,
+            metadata: { // Ajoutez le nom du produit dans les métadonnées
+              productName: product.name
+            }
           },
           unit_amount: product.price * 100,
         },
         quantity: 1, 
       })),
       mode: 'payment',
-      invoice_creation: {
-        enabled: true,
-      },
       success_url: 'https://boutiquedufoot.fr/success',
       cancel_url: 'https://boutiquedufoot.fr/cancel',
       customer_email: req.body.customer_email, 

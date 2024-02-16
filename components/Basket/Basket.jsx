@@ -113,7 +113,7 @@ console.log(productsWithDelivery)
   };
 
   const calculateDeliveryCost = () => {
-    let totalCost = calculateTotalAmount() > 20 ? 0 : 5
+    let totalCost = calculateTotalAmount() > 100 ? 0 : 8
     return totalCost;
   };
 
@@ -130,7 +130,7 @@ console.log(productsWithDelivery)
           <div className={styles.warning}>Vous n'avez aucun produit dans votre panier</div>
         ) : (
           <div className={styles.container}>
-            <h3 className={styles.h3}> Livraison offerte à partir de 20 € d'achats </h3>
+            <h3 className={styles.h3}> Livraison offerte à partir de 100 € d'achats </h3>
             {getUniqueProducts().map((el, index) => (
               <div key={index} className={styles.product}>
                 <button onClick={() => deleteAllCart(el)} className={styles.close}>
@@ -172,9 +172,11 @@ console.log(productsWithDelivery)
                 <span className={styles.spanTotal2}> {deliveryCost}€ </span>
               </p>
             </div>
+            <p> entre 2 à 5 jours ouvrés selon les stocks*</p>
+            
             <div className={styles.productPriceTotal}>
               <p>
-                Montant total de la commande :
+                Montant total de la commande : <br></br>
                 <span className={styles.spanTotal}> {total + deliveryCost} € </span>
               </p>
             </div>
@@ -185,6 +187,7 @@ console.log(productsWithDelivery)
             </div>
           </div>
         )}
+        <p> * en cas de rupture de stock, le délai de livraison sera compris entre 2 à 3 semaines.</p>
       </section>
     </div>
   );
