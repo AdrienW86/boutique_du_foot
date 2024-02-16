@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image'
+import React, { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 import ImageModal from '@/components/ImageModal/ImageModal'; 
-import styles from '@/components/Card/card.module.css'
+import styles from './pack.module.css';
 
 const cartChangeEvent = new Event('cartChange');
 
 export default function Packs(props) {
   const [products, setProducts] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
+  const descriptionRef = useRef(null);
 
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
@@ -22,10 +24,8 @@ export default function Packs(props) {
     console.log('Produit ajouté au panier :', el);
     setProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
-    alert('Le produit a été ajouté à votre panier')
+    alert('Le produit a été ajouté à votre panier');
   };
-
-  
 
   const handleShowImage = () => {
     setShowModal(true);
@@ -34,6 +34,23 @@ export default function Packs(props) {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
+  const handleToggleDescription = () => {
+    setShowDescription(!showDescription);
+  };
+
+  const handleClickOutside = (event) => {
+    if (descriptionRef.current && !descriptionRef.current.contains(event.target)) {
+      setShowDescription(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className={styles.card}>     
@@ -49,13 +66,21 @@ export default function Packs(props) {
         />  
         <p className={styles.price}> <span className={styles.span}> Prix: </span>  {props.price}€</p>
         <h4> Description </h4>
-       <p> {props.description} </p>
-          <button className={styles.addBtn}onClick={() => addToCart(props)} >
-            Ajouter au panier
-          </button>
-          {showModal && (
-            <ImageModal imageUrl={props.recto} onClose={handleCloseModal} />
+        <div ref={descriptionRef}>
+          <button onClick={handleToggleDescription}>Voir</button>
+          {showDescription && (
+            <div className={styles.description}>
+                <button onClick={handleToggleDescription} className={styles.close}> X </button>
+                {props.description}
+            </div>
           )}
+        </div>
+        <button className={styles.addBtn} onClick={() => addToCart(props)} >
+          Ajouter au panier
+        </button>
+        {showModal && (
+          <ImageModal imageUrl={props.recto} onClose={handleCloseModal} />
+        )}
     </div> 
-  )
+  );
 }
