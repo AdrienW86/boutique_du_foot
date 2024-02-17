@@ -40,6 +40,9 @@ export default function Coffret(props) {
       productWithSize.selectedSize = selectedSize;
     }
   
+    // Supprimer la propriété 'description' du produit
+    delete productWithSize.description;
+  
     storedProducts.push(productWithSize);
     localStorage.setItem('products', JSON.stringify(storedProducts));
     console.log('Product added to the cart:', productWithSize);
@@ -47,6 +50,8 @@ export default function Coffret(props) {
     window.dispatchEvent(cartChangeEvent);
     alert('Le produit a bien été ajouté au panier');
   };
+  
+  
   
   // Fonction pour afficher le modal d'image
   const handleShowImage = () => {

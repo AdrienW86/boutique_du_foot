@@ -14,6 +14,7 @@ async function handler(req, res) {
           currency: 'eur',
           product_data: {
             name: product.name,
+            description: product.description,
             metadata: { // Ajoutez le nom du produit dans les métadonnées
               productName: product.name
             }
