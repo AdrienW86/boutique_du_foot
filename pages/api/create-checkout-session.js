@@ -4,9 +4,6 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 async function handler(req, res) {
   try {
-    console.log(req.body);
-
-    // Créez une session de paiement avec Stripe
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: req.body.products.map(product => ({
@@ -15,7 +12,7 @@ async function handler(req, res) {
           product_data: {
             name: product.name,
             description: product.description,
-            metadata: { // Ajoutez le nom du produit dans les métadonnées
+            metadata: { 
               productName: product.name
             }
           },
@@ -31,7 +28,6 @@ async function handler(req, res) {
     });
 
     res.status(200).json({ sessionId: session.id });
-    console.log('Session ID:', session.id);
   } catch (error) {
     console.error('Error creating checkout session:', error.message);
     res.status(500).json({ error: 'Internal Server Error' });

@@ -20,21 +20,15 @@ export default function Packs(props) {
 
   const addToCart = (el) => {
     let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-
-    // Créer une copie de l'objet el sans inclure la propriété description
     let productToAdd = { ...el };
     delete productToAdd.description;
 
     storedProducts.push(productToAdd);
     localStorage.setItem('products', JSON.stringify(storedProducts));
-    console.log('Produit ajouté au panier :', el);
     setProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
     alert('Le produit a été ajouté à votre panier');
 };
-
-
-
 
   const handleShowImage = () => {
     setShowModal(true);

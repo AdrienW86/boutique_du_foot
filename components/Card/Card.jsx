@@ -32,7 +32,6 @@ export default function Card(props) {
   
     storedProducts.push(productWithSize);
     localStorage.setItem('products', JSON.stringify(storedProducts));
-    console.log('Product added to the cart:', productWithSize);
     setProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
     alert('Le produit a bien été ajouté au panier');

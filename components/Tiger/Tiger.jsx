@@ -23,14 +23,10 @@ export default function Tiger(props) {
     setToggle(!toggle);
   };
 
-  console.log(props.selectedSize)
-
   const addToCart = () => {
     let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-  
     storedProducts.push(props); 
     localStorage.setItem('products', JSON.stringify(storedProducts));
-    console.log('Product added to the cart:', props);
     setProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
     alert('Le produit a bien été ajouté au panier');

@@ -61,8 +61,7 @@ export default function boutique() {
           fill
           priority        
           alt='banner'
-        />  
-             
+        />             
       </div>
       <h2 className={styles.shopTitle}> La boutique </h2>
       <label className={styles.label} htmlFor="sectionDropdown">Choisissez une catégorie :</label>
@@ -76,7 +75,6 @@ export default function boutique() {
             <option value="maillots">Les maillots</option>
           </select>  
         </div>
-
         <div id="coffrets" className={styles.hero}>     
           <h2 className={styles.h2}> Les coffrets <span id="anchor1" className={styles.anchor}></span></h2>
         </div>
@@ -113,7 +111,6 @@ export default function boutique() {
                 /> 
               ))}              
           </div>  
-
           <div id="pharmacie" className={styles.hero}>     
           <h2 className={styles.h2}> Les baumes <span id="anchor3" className={styles.anchor}></span></h2>
         </div>
@@ -130,7 +127,6 @@ export default function boutique() {
             /> 
           ))}   
         </div>    
-
         <div id="equipement" className={styles.hero}>     
           <h2 className={styles.h2}> Les chaussettes </h2>
         </div>
@@ -145,11 +141,9 @@ export default function boutique() {
             /> 
           ))}           
         </div>
-
         <div id="maillots" className={styles.hero}>         
           <h2 className={styles.h2}> Les maillots </h2>           
-        </div>
-        
+        </div>       
         <div className={styles.container}>       
             {data.maillots.map((el, index)=> (
               <Card 
@@ -165,9 +159,7 @@ export default function boutique() {
                 onSizeChange={(size) => setSelectedSize(size)}
               /> 
             ))}              
-        </div>      
-       
-       
+        </div>                    
         {showScrollButton && (
           <button className={styles.scrollButton} onClick={scrollToTop}>
             <Image 
