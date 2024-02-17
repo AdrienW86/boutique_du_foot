@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from '@/components/Header/Header'
 import Nav from '@/components/Nav/Nav'
 import Footer from '@/components/Footer/Footer'
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
 import '@/styles/globals.css'
 
@@ -16,9 +17,10 @@ export default function App({ Component, pageProps }) {
       </Head>
     <Header />
     <Nav />
-    <Component  {...pageProps} />
-    <Analytics />
+    <Component  {...pageProps} />   
     <Footer />
+    <SpeedInsights />
+    <Analytics />
   </>
   )
 }
