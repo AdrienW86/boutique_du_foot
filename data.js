@@ -47,6 +47,15 @@ export const data = {
     coffrets: [
         {
             id: uuidv4(),
+            name: "Coffret Ajax Amsterdam",
+            price: 130,
+            recto: Coffret,
+            verso: Pack8,
+            sizes: ["S","M","L","XL"],
+            description: "Le pack Ajax Amsterdam contient un maillot officiel de l'Ajax Amsterdam, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
+        },
+        {
+            id: uuidv4(),
             name: "Coffret Mahiedine (Real Madrid)",
             price: 150,
             recto: Mahiedine,
@@ -99,16 +108,6 @@ export const data = {
             sizes: ["S","M","L","XL"],
             description: "Le pack Manchester City contient un maillot officiel de Manchester City, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
         },
-        {
-            id: uuidv4(),
-            name: "Coffret Ajax Amsterdam",
-            price: 130,
-            recto: Coffret,
-            verso: Pack8,
-            sizes: ["S","M","L","XL"],
-            description: "Le pack Ajax Amsterdam contient un maillot officiel de l'Ajax Amsterdam, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
-        },
-
     ],
     packs: [
         {

@@ -1,0 +1,29 @@
+.banner {
+    position: relative;
+    width: 100%;
+    transition: .4s ease-in-out;
+    overflow: hidden;
+    background-color: black;
+    aspect-ratio: 2/2;
+  }
+
+  .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    z-index: 3;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    border: 1px solid white;
+    padding: 8px;
+    color: white;
+    background-color: transparent;
+  }
+
+  .btn:hover {
+    color: black;
+    background-color: white;
+  }
