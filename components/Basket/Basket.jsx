@@ -185,9 +185,10 @@ console.log(productsWithDelivery)
                 {isLoading ? 'Chargement...' : 'Valider'}
               </button>
             </div>
+            <p className={styles.warningDelivery}> * en cas de rupture de stock, le délai de livraison sera compris entre 2 à 3 semaines.</p>
           </div>
         )}
-        <p className={styles.warningDelivery}> * en cas de rupture de stock, le délai de livraison sera compris entre 2 à 3 semaines.</p>
+       
       </section>
     </div>
   );
