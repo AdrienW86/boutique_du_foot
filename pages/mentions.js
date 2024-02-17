@@ -10,8 +10,7 @@ export default function mentions() {
                 <p className={styles.p}>Forme juridique de l'entreprise: AE </p>  
                 <p className={styles.p}> Numéro SIRET: 91277344700020 </p>   
                 <p className={styles.p}> 60 rue François 1er, 75008 Paris </p>   
-                <p className={styles.p}> Adresse e-mail de contact: support@code-v.fr </p>   
-                <p className={styles.p}> 06.66.67.27.09 </p>   
+                <p className={styles.p}> Adresse e-mail de contact: support@code-v.fr </p>      
                 <p className={styles.p}> Directeur de la publication : </p>   
                 <p className={styles.p}> Monsieur Weissenbacher Adrien </p>   
             <h3 className={styles.h3}> Hébergeur du site : </h3>  
