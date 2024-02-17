@@ -207,7 +207,7 @@ export const data = {
         price: 7,
         recto: Tiger,
         verso: Tiger2,
-        description: "Le Baume du Tigre rouge ou blanc est un remède traditionnel de la médecine chinoise, composé à partir de différentes plantes et utilisé pour soulager les muscles et les articulations, les piqûres et démangeaisons, ou autre."
+       // description: "Le Baume du Tigre rouge ou blanc est un remède traditionnel de la médecine chinoise, composé à partir de différentes plantes et utilisé pour soulager les muscles et les articulations, les piqûres et démangeaisons, ou autre."
     },
     {
         id: uuidv4(),
