@@ -135,8 +135,8 @@ console.log(productsWithDelivery)
               <div key={index} className={styles.product}>
                 <button onClick={() => deleteAllCart(el)} className={styles.close}>
                   X
-                </button>
-                <p className={styles.name}>{el.name}</p>
+                </button>                
+                  <h3 className={styles.name}>{el.name}</h3> 
                 <div className={styles.infos}>
                   <p className={styles.quantity}>Quantité: {el.quantity}</p>
                   <p className={styles.price}>Prix: {el.price}€</p>
@@ -156,7 +156,7 @@ console.log(productsWithDelivery)
                     -
                   </button>
                 </div>
-                <div>
+                <div className={styles.nameBackground}>
                   <p className={styles.total}>
                     Total:
                     <span className={styles.spanTotal}> {el.quantity * el.price}€ </span>

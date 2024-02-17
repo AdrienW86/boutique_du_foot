@@ -71,10 +71,14 @@
     background-color: rgb(255, 255, 255);
 }
 
+.nameBackground {
+    height: 55px;
+}
+
 .name {
     font-size: 1.2em;
     font-weight: bold;
-    margin: 0px;
+    top: 0;
     height: 60px;
     padding: 10px 30px;
     color: white;
@@ -82,7 +86,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: rgb(0, 0, 0);
-    border: 1px solid black;
+   
 }
 
 .infos {
