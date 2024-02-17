@@ -10,65 +10,103 @@ import Socket5 from '@/assets/greenyellowsocket.jpg'
 import Socket6 from '@/assets/greensocket.jpg'
 import Socket7 from '@/assets/purplesocket2.jpg'
 import Socket8 from '@/assets/orangesocket.jpg'
+
 import Paris from '@/assets/psg.png'
 import Paris2 from '@/assets/psg2.png'
-
 import Marseille from '@/assets/marseille.png'
 import Marseille2 from '@/assets/marseille2.png'
-
 import Madrid from '@/assets/madrid.png'
 import Madrid2 from '@/assets/madrid2.png'
-
 import Barcelone from '@/assets/barcelone.png'
 import Barcelone2 from '@/assets/barcelone2.png'
-
+import Manchester1 from '@/assets/manchester.png'
+import Manchester2 from '@/assets/manchester2.png'
 import Manchester3 from '@/assets/manchester3.png'
 import Manchester4 from '@/assets/manchester4.png'
-
+import Ajax from '@/assets/ajax.jpg'
+import Ajax2 from '@/assets/ajax2.jpg'
 import Algerie from '@/assets/algerie.png'
 import Algerie2 from '@/assets/algerie2.png'
-
 import Maroc from '@/assets/maroc.png'
 import Maroc2 from '@/assets/maroc2.png'
-import France from '@/assets/france.png'
-import France2 from '@/assets/france2.png'
 
 import Mahiedine from '@/assets/mahedine.png'
 import Coffret from '@/assets/2.png'
 import Pack from '@/assets/3.png'
+import Pack1 from '@/assets/11.png'
 import Pack2 from '@/assets/4.png'
 import Pack3 from '@/assets/5.png'
 import Pack4 from '@/assets/6.png'
+import Pack5 from '@/assets/7.png'
+import Pack6 from '@/assets/8.png'
+import Pack7 from '@/assets/9.png'
+import Pack8 from '@/assets/10.png'
 import { v4 as uuidv4 } from 'uuid';
 
 export const data = {
     coffrets: [
         {
             id: uuidv4(),
-            name: "Mahiedine",
+            name: "Coffret Mahiedine (Real Madrid)",
             price: 150,
             recto: Mahiedine,
-            verso: Pack3,
+            verso: Pack1,
             sizes: ["S","M","L","XL"],
             description: "Le pack collector Mahiedine contient un maillot officiel du Real Madrid, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
         },
         {
             id: uuidv4(),
-            name: "Real",
-            price: 130,
-            recto: Coffret,
-            verso: Pack3,
-            sizes: ["S","M","L","XL"],
-            description: "Le pack Real contient un maillot officiel du Real Madrid, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
-        },
-        {
-            id: uuidv4(),
-            name: "Barcelone",
+            name: "Coffret FC Barcelone",
             price: 130,
             recto: Coffret,
             verso: Pack4,
             sizes: ["S","M","L","XL"],
             description: "Le pack Barcelone contient un maillot officiel du FC Barcelone, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
+        },
+        {
+            id: uuidv4(),
+            name: "Coffret PSG",
+            price: 130,
+            recto: Coffret,
+            verso: Pack5,
+            sizes: ["S","M","L","XL"],
+            description: "Le pack PSG contient un maillot officiel du PSG, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
+        },
+        {
+            id: uuidv4(),
+            name: "Coffret Marseille",
+            price: 130,
+            recto: Coffret,
+            verso: Pack3,
+            sizes: ["S","M","L","XL"],
+            description: "Le pack Marseille contient un maillot officiel de l'Olympique de Marseille, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
+        },
+        {
+            id: uuidv4(),
+            name: "Coffret Manchester United",
+            price: 130,
+            recto: Coffret,
+            verso: Pack6,
+            sizes: ["S","M","L","XL"],
+            description: "Le pack Manchester United contient un maillot officiel de Manchester United, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
+        },
+        {
+            id: uuidv4(),
+            name: "Coffret Manchester City",
+            price: 130,
+            recto: Coffret,
+            verso: Pack7,
+            sizes: ["S","M","L","XL"],
+            description: "Le pack Manchester City contient un maillot officiel de Manchester City, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
+        },
+        {
+            id: uuidv4(),
+            name: "Coffret Ajax Amsterdam",
+            price: 130,
+            recto: Coffret,
+            verso: Pack8,
+            sizes: ["S","M","L","XL"],
+            description: "Le pack Ajax Amsterdam contient un maillot officiel de l'Ajax Amsterdam, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
         },
 
     ],
@@ -128,19 +166,27 @@ export const data = {
             recto: Manchester3,
             verso: Manchester4,
             sizes: ["S","M","L","XL"]
-        },  
+        }, 
         {
             id: uuidv4(),
-            name: "France (domicile)",
+            name: "Manchester United",
             price: 90,
-            recto: France,
-            verso: France2,
+            recto: Manchester1,
+            verso: Manchester2,
+            sizes: ["S","M","L","XL"]
+        }, 
+        {
+            id: uuidv4(),
+            name: "Ajax Amsterdam",
+            price: 90,
+            recto: Ajax,
+            verso: Ajax2,
             sizes: ["S","M","L","XL"]
         },
         {
             id: uuidv4(),
             name: "Algérie",
-            price: 70,
+            price: 90,
             recto: Algerie,
             verso: Algerie2,
             sizes: ["S","M","L","XL"]

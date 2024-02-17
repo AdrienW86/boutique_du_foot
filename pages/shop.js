@@ -72,7 +72,7 @@ export default function boutique() {
             <option value="coffrets">Les coffrets </option>
             <option value="packs">Les packs </option>
             <option value="equipement">Les chaussettes </option>
-            <option value="pharmacie">Pharmacie</option>
+            <option value="pharmacie">Les baumes</option>
             <option value="maillots">Les maillots</option>
           </select>  
         </div>

@@ -172,7 +172,7 @@ console.log(productsWithDelivery)
                 <span className={styles.spanTotal2}> {deliveryCost}€ </span>
               </p>
             </div>
-            <p> entre 2 à 5 jours ouvrés selon les stocks*</p>
+            <p className={styles.warningDelivery}> entre 2 à 5 jours ouvrés selon les stocks *</p>
             
             <div className={styles.productPriceTotal}>
               <p>
@@ -187,7 +187,7 @@ console.log(productsWithDelivery)
             </div>
           </div>
         )}
-        <p> * en cas de rupture de stock, le délai de livraison sera compris entre 2 à 3 semaines.</p>
+        <p className={styles.warningDelivery}> * en cas de rupture de stock, le délai de livraison sera compris entre 2 à 3 semaines.</p>
       </section>
     </div>
   );
