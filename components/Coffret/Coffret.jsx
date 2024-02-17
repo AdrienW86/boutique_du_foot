@@ -115,7 +115,7 @@ export default function Coffret(props) {
       </p>
       {props.sizes && (
         <div className={styles.div}> 
-          <p className={styles.selectLabel}> Sélectionnez la taille :</p>
+          <p className={styles.selectLabel}> Sélectionnez la taille du maillot:</p>
           <select className={styles.select} value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
             <option value="S">S</option>
             <option value="M">M</option>
