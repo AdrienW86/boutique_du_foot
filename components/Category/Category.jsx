@@ -12,8 +12,7 @@ export default function Category({picture}) {
         priority   
         className={styles.picture}    
         alt='banner'   
-      /> 
-      
+      />       
     </div>    
   )
 }
