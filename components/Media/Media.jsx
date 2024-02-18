@@ -11,7 +11,7 @@ function BannerVideo() {
         <source src={Nasser} type="video/mp4" />
         Votre navigateur ne supporte pas la lecture de vidéos au format MP4.
       </video>
-      <Link href="/shop/#anchor1" className={styles.btn}> Commander le coffret Ajax Amsterdam </Link>
+      <Link href="/shop/#anchor1" className={styles.btn}> Commander le même coffret </Link>
     </div>
   );
 }
