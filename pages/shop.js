@@ -6,7 +6,7 @@ import Tiger from '@/components/Tiger/Tiger';
 import Socket from '@/components/Socket/Socket'
 import Packs from '@/components/Pack/Pack';
 import Media from '@/components/Media/Media'
-import Farah from '@/assets/farah.mp4'
+
 
 import { data } from '@/data'
 import styles from '@/styles/Home.module.css'
@@ -57,10 +57,7 @@ export default function boutique() {
 
   return (
     <section className={styles.main}>    
-       <Media 
-        content= {Farah}
-        anchor= "/shop#farah"
-    />    
+       <Media />    
       <h2 className={styles.shopTitle}> La boutique </h2>
       <label className={styles.label} htmlFor="sectionDropdown">Choisissez une catégorie :</label>
         <div className={styles.team}>       
