@@ -214,7 +214,7 @@ export const data = {
    juniors: [
     {
         id: uuidv4(),
-        name: "Paris Saint-Germain (junior)",
+        name: "Paris Saint-Germain (Junior)",
         price: 70,
         recto: Paris,
         verso: Paris2,
@@ -222,7 +222,7 @@ export const data = {
     },
     {
         id: uuidv4(),
-        name: "Marseille (junior)",
+        name: "Marseille (Junior)",
         price: 70,
         recto: Marseille,
         verso: Marseille2,
@@ -238,7 +238,7 @@ export const data = {
     },
     {
         id: uuidv4(),
-        name: "Barcelone (junior) ",
+        name: "Barcelone (Junior) ",
         price: 70,
         recto: Barcelone,
         verso: Barcelone2,
@@ -246,7 +246,7 @@ export const data = {
     },   
     {
         id: uuidv4(),
-        name: "Manchester City (junior)",
+        name: "Manchester City (Junior)",
         price: 70,
         recto: Manchester3,
         verso: Manchester4,
@@ -254,7 +254,7 @@ export const data = {
     }, 
     {
         id: uuidv4(),
-        name: "Manchester United (junior)",
+        name: "Manchester United (Junior)",
         price: 70,
         recto: Manchester1,
         verso: Manchester2,
@@ -262,7 +262,7 @@ export const data = {
     }, 
     {
         id: uuidv4(),
-        name: "Ajax Amsterdam (junior)",
+        name: "Ajax Amsterdam (Junior)",
         price: 70,
         recto: Ajax,
         verso: Ajax2,
@@ -270,7 +270,7 @@ export const data = {
     },
     {
         id: uuidv4(),
-        name: "Algérie (junior)",
+        name: "Algérie (Junior)",
         price: 70,
         recto: Algerie,
         verso: Algerie2,
@@ -278,7 +278,7 @@ export const data = {
     }, 
     {
         id: uuidv4(),
-        name: "Maroc (junior)",
+        name: "Maroc (Junior)",
         price: 70,
         recto: Maroc,
         verso: Maroc2,
@@ -286,7 +286,7 @@ export const data = {
     },
     {
         id: uuidv4(),
-        name: "Tunisie (junior)",
+        name: "Tunisie (Junior)",
         price: 70,
         recto: Tunisie,
         verso: Tunisie2,
