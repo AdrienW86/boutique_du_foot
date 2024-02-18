@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './media.module.css';
 
-function BannerVideo() {
+function FarahVideo() {
   return (
     <div className={styles.banner}>
       <video poster = '/farah.png' controls className={styles.banner} preload="auto" >
@@ -14,4 +14,4 @@ function BannerVideo() {
   );
 }
 
-export default BannerVideo;
+export default FarahVideo;

@@ -1,7 +1,7 @@
 import React from 'react'
 import Category from '../Category/Category'
 import Link from 'next/link'
-import Media from '@/components/Media/Media'
+import NasserVideo from '@/components/Media/NasserVideo';
 import Banner4 from '@/assets/4.jpg'
 import Banner5 from '@/assets/5.jpg'
 import Banner6 from '@/assets/6.jpg'
@@ -11,7 +11,7 @@ import styles from '@/styles/Home.module.css'
 export default function Accueil() {
   return (
     <section className={styles.home}>
-      
+       <NasserVideo />  
         <Link href="/shop#anchor1">
           <Category picture ={Banner4}/> 
         </Link>          

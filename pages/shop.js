@@ -5,9 +5,7 @@ import Card from '@/components/Card/Card'
 import Tiger from '@/components/Tiger/Tiger';
 import Socket from '@/components/Socket/Socket'
 import Packs from '@/components/Pack/Pack';
-import Media from '@/components/Media/Media'
-
-
+import FarahVideo from '@/components/Media/FarahVideo';
 import { data } from '@/data'
 import styles from '@/styles/Home.module.css'
 import Arrow from '@/assets/arrow.png'
@@ -17,7 +15,6 @@ export default function boutique() {
   const [selectedSection, setSelectedSection] = useState('');
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [selectedSize, setSelectedSize] = useState('');
-
   const handleDropdownChange = (event) => {
     setSelectedSection(event.target.value);
     scrollToSection(event.target.value);
@@ -57,7 +54,7 @@ export default function boutique() {
 
   return (
     <section className={styles.main}>    
-       <Media />    
+       <FarahVideo />    
       <h2 className={styles.shopTitle}> La boutique </h2>
       <label className={styles.label} htmlFor="sectionDropdown">Choisissez une catégorie :</label>
         <div className={styles.team}>       
