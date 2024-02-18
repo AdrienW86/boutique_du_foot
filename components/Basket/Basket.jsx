@@ -113,7 +113,7 @@ console.log(productsWithDelivery)
   };
 
   const calculateDeliveryCost = () => {
-    let totalCost = calculateTotalAmount() > 100 ? 0 : 8
+    let totalCost = calculateTotalAmount() > 50 ? 0 : 5
     return totalCost;
   };
 
@@ -130,7 +130,7 @@ console.log(productsWithDelivery)
           <div className={styles.warning}>Vous n'avez aucun produit dans votre panier</div>
         ) : (
           <div className={styles.container}>
-            <h3 className={styles.h3}> Livraison offerte à partir de 100 € d'achats </h3>
+            <h3 className={styles.h3}> Livraison offerte à partir de 50 € d'achats </h3>
             {getUniqueProducts().map((el, index) => (
               <div key={index} className={styles.product}>
                 <button onClick={() => deleteAllCart(el)} className={styles.close}>

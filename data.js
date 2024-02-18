@@ -34,13 +34,13 @@ import Tunisie2 from '@/assets/tunisie2.jpg'
 
 import Mahiedine from '@/assets/mahedine.png'
 import Coffret from '@/assets/box.png'
-import Pack from '@/assets/3.png'
+import Pack from '@/assets/pack-baumes.png'
 import Pack1 from '@/assets/11.png'
-import Pack2 from '@/assets/4.png'
-import Pack3 from '@/assets/5.png'
-import Pack4 from '@/assets/6.png'
-import Pack5 from '@/assets/7.png'
-import Pack6 from '@/assets/8.png'
+import Pack2 from '@/assets/packChaussettes.png'
+import Pack3 from '@/assets/packMarseille.png'
+import Pack4 from '@/assets/packBarcelone.png'
+import Pack5 from '@/assets/packPsg.png'
+import Pack6 from '@/assets/packManchester.png'
 import Pack7 from '@/assets/9.png'
 import Pack8 from '@/assets/10.png'
 import { v4 as uuidv4 } from 'uuid';
@@ -117,14 +117,14 @@ export const data = {
         {
             id: uuidv4(),
             name: "Pack Baumes (lot de 6)",
-            price: 36,
+            price: 30,
             recto: Pack,   
             description: "Le pack comprend 6 baumes du tigre, 3 baumes rouge et 3 baumes blanc de chacun 19,4g."
         },
         {
             id: uuidv4(),
             name: "Pack Chaussettes (lot de 5)",
-            price: 35,
+            price: 25,
             recto: Pack2,
             description: "Le pack comprend 5 paires de chaussettes de couleurs différentes et aléatoires."       
         },
@@ -215,7 +215,7 @@ export const data = {
     {
         id: uuidv4(),
         name: "Baume du Tigre rouge (19g)",
-        price: 7,
+        price: 6,
         recto: Tiger,
         verso: Tiger2,
         description: "Le Baume du Tigre rouge ou blanc est un remède traditionnel de la médecine chinoise, composé à partir de différentes plantes et utilisé pour soulager les muscles et les articulations, les piqûres et démangeaisons, ou autre."
@@ -223,7 +223,7 @@ export const data = {
     {
         id: uuidv4(),
         name: "Baume du Tigre blanc (19g)",
-        price: 7,
+        price: 6,
         recto: Tiger3,
         verso: Tiger4,
         description: "Le Baume du Tigre rouge ou blanc est un remède traditionnel de la médecine chinoise, composé à partir de différentes plantes et utilisé pour soulager les muscles et les articulations, les piqûres et démangeaisons, ou autre."
@@ -233,49 +233,49 @@ export const data = {
     {
         id: uuidv4(),
         name: "Chaussettes de Football blanches 39/45",
-        price: 8,
+        price: 6,
         recto: Socket,      
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football grises 39/45",
-        price: 8,
+        price: 6,
         recto: Socket2,     
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football noires 39/45",
-        price: 8,
+        price: 6,
         recto: Socket3,     
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football bleues claires 39/45",
-        price: 8,
+        price: 6,
         recto: Socket4,      
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football vertes claires 39/45",
-        price: 8,
+        price: 6,
         recto: Socket5,     
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football vertes 39/45",
-        price: 8,
+        price: 6,
         recto: Socket6,     
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football violettes 39/45",
-        price: 8,
+        price: 6,
         recto: Socket7,     
     },
     {
         id: uuidv4(),
         name: "Chaussettes de Football oranges 39/45",
-        price: 8,
+        price: 6,
         recto: Socket8,     
     },
    ]
