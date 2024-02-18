@@ -29,6 +29,8 @@ import Algerie from '@/assets/algerie.png'
 import Algerie2 from '@/assets/algerie2.png'
 import Maroc from '@/assets/maroc.png'
 import Maroc2 from '@/assets/maroc2.png'
+import Tunisie from '@/assets/tunisie.jpg'
+import Tunisie2 from '@/assets/tunisie2.jpg'
 
 import Mahiedine from '@/assets/mahedine.png'
 import Coffret from '@/assets/2.png'
@@ -198,6 +200,14 @@ export const data = {
             price: 90,
             recto: Maroc,
             verso: Maroc2,
+            sizes: ["S","M","L","XL"]
+        },
+        {
+            id: uuidv4(),
+            name: "Tunisie",
+            price: 90,
+            recto: Tunisie,
+            verso: Tunisie2,
             sizes: ["S","M","L","XL"]
         },
    ],
