@@ -44,7 +44,16 @@ import Pack8 from '@/assets/10.png'
 import { v4 as uuidv4 } from 'uuid';
 
 export const data = {
-    coffrets: [
+    vip: [
+        {
+            id: uuidv4(),
+            name: "Coffret Mahiedine (Real Madrid)",
+            price: 150,
+            recto: Mahiedine,
+            verso: Pack1,
+            sizes: ["S","M","L","XL"],
+            description: "Le pack collector Mahiedine contient un maillot officiel du Real Madrid, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
+        },
         {
             id: uuidv4(),
             name: "Coffret Ajax Amsterdam",
@@ -56,13 +65,15 @@ export const data = {
         },
         {
             id: uuidv4(),
-            name: "Coffret Mahiedine (Real Madrid)",
-            price: 150,
-            recto: Mahiedine,
-            verso: Pack1,
+            name: "Coffret Manchester City",
+            price: 130,
+            recto: Coffret,
+            verso: Pack7,
             sizes: ["S","M","L","XL"],
-            description: "Le pack collector Mahiedine contient un maillot officiel du Real Madrid, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
+            description: "Le pack Manchester City contient un maillot officiel de Manchester City, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
         },
+    ],
+    coffrets: [
         {
             id: uuidv4(),
             name: "Coffret FC Barcelone",
@@ -98,15 +109,6 @@ export const data = {
             verso: Pack6,
             sizes: ["S","M","L","XL"],
             description: "Le pack Manchester United contient un maillot officiel de Manchester United, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
-        },
-        {
-            id: uuidv4(),
-            name: "Coffret Manchester City",
-            price: 130,
-            recto: Coffret,
-            verso: Pack7,
-            sizes: ["S","M","L","XL"],
-            description: "Le pack Manchester City contient un maillot officiel de Manchester City, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
         },
     ],
     packs: [

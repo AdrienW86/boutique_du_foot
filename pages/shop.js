@@ -5,9 +5,10 @@ import Card from '@/components/Card/Card'
 import Tiger from '@/components/Tiger/Tiger';
 import Socket from '@/components/Socket/Socket'
 import Packs from '@/components/Pack/Pack';
+import Media from '@/components/Media/Media'
+import Farah from '@/assets/farah.mp4'
 import { data } from '@/data'
 import styles from '@/styles/Home.module.css'
-import Banner2 from '@/assets/shopBanner.png'
 import Arrow from '@/assets/arrow.png'
 
 export default function boutique() {
@@ -55,14 +56,10 @@ export default function boutique() {
 
   return (
     <section className={styles.main}>    
-      <div className={styles.banner}>
-      <Image 
-          src={Banner2}
-          fill
-          priority        
-          alt='banner'
-        />             
-      </div>
+      <Media 
+        content= {Farah}
+        anchor= "/shop/#farah"
+    />   
       <h2 className={styles.shopTitle}> La boutique </h2>
       <label className={styles.label} htmlFor="sectionDropdown">Choisissez une catégorie :</label>
         <div className={styles.team}>       
@@ -78,9 +75,49 @@ export default function boutique() {
         <div id="coffrets" className={styles.hero}>     
           <h2 className={styles.h2}> Les coffrets <span id="anchor1" className={styles.anchor}></span></h2>
         </div>
-          <div className={styles.container}>       
-              {data.coffrets.map((el, index)=> (
-               <Coffret 
+          <div className={styles.container}>  
+          <span id="mahiedine" className={styles.anchor}></span>
+            <Coffret 
+              id={data.vip[0].id}
+              name={data.vip[0].name}
+              recto={data.vip[0].recto}
+              verso={data.vip[0].verso}
+              price={data.vip[0].price}
+              link={data.vip[0].link}
+              sizes={data.vip[0].sizes} 
+              description={data.vip[0].description}
+              selectedSize={selectedSize}
+              onSizeChange={(size) => setSelectedSize(size)}
+            /> 
+          
+            <Coffret 
+              id={data.vip[1].id}
+              name={data.vip[1].name}
+              recto={data.vip[1].recto}
+              verso={data.vip[1].verso}
+              price={data.vip[1].price}
+              link={data.vip[1].link}
+              sizes={data.vip[1].sizes} 
+              description={data.vip[1].description}
+              selectedSize={selectedSize}
+              onSizeChange={(size) => setSelectedSize(size)}
+            /> 
+         <span id="nasser" className={styles.anchor}></span>
+            <Coffret 
+              id={data.vip[2].id}
+              name={data.vip[2].name}
+              recto={data.vip[2].recto}
+              verso={data.vip[2].verso}
+              price={data.vip[2].price}
+              link={data.vip[2].link}
+              sizes={data.vip[2].sizes} 
+              description={data.vip[2].description}
+              selectedSize={selectedSize}
+              onSizeChange={(size) => setSelectedSize(size)}
+            /> 
+             <span id="farah" className={styles.anchor}></span>
+            {data.coffrets.map((el, index)=> (
+              <Coffret 
                 key={index}
                 id={el.id}
                 name={el.name}
@@ -92,10 +129,9 @@ export default function boutique() {
                 description={el.description}
                 selectedSize={selectedSize}
                 onSizeChange={(size) => setSelectedSize(size)}
-             /> 
-              ))}              
+              /> 
+            ))}              
           </div>  
-
           <div id="packs" className={styles.hero}>     
           <h2 className={styles.h2}> Les packs <span id="anchor2" className={styles.anchor}></span></h2>
         </div>
