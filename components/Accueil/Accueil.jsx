@@ -13,7 +13,7 @@ export default function Accueil() {
     <section className={styles.home}>
      <Media 
       content= {Nasser}
-      anchor= "/shop/#nasser"
+      anchor= "/shop#nasser"
     />    
         <Link href="/shop#anchor1">
           <Category picture ={Banner4}/> 
