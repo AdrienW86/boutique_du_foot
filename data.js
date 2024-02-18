@@ -33,7 +33,7 @@ import Tunisie from '@/assets/tunisie.jpg'
 import Tunisie2 from '@/assets/tunisie2.jpg'
 
 import Mahiedine from '@/assets/mahedine.png'
-import Coffret from '@/assets/2.png'
+import Coffret from '@/assets/box.png'
 import Pack from '@/assets/3.png'
 import Pack1 from '@/assets/11.png'
 import Pack2 from '@/assets/4.png'
@@ -54,7 +54,7 @@ export const data = {
             recto: Mahiedine,
             verso: Pack1,
             sizes: ["S","M","L","XL"],
-            description: "Le pack collector Mahiedine contient un maillot officiel du Real Madrid, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
+            description: "Le pack collector Mahiedine est un coffret dédicacé par Mahiedine contenant un maillot officiel du Real Madrid, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
         },
         {
             id: uuidv4(),
