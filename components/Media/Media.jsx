@@ -5,7 +5,7 @@ import styles from './media.module.css';
 function BannerVideo(props) {
   return (
     <div className={styles.banner}>
-      <video controls className={styles.banner} preload="auto">
+      <video controls className={styles.banner} preload="auto" playsInline>
         <source src={props.content} type="video/mp4" />
         Votre navigateur ne supporte pas la lecture de vidéos au format MP4.
       </video>
