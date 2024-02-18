@@ -7,6 +7,7 @@ import Socket from '@/components/Socket/Socket'
 import Packs from '@/components/Pack/Pack';
 import Media from '@/components/Media/Media'
 import Farah from '@/assets/farah.mp4'
+
 import { data } from '@/data'
 import styles from '@/styles/Home.module.css'
 import Arrow from '@/assets/arrow.png'
