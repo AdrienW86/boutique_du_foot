@@ -54,7 +54,7 @@ export const data = {
             recto: Coffret,
             verso: Pack1,
             sizes: ["S","M","L","XL"],
-            description: "Le pack collector Mahiedine est un coffret dédicacé par Mahiedine contenant un maillot officiel du Real Madrid, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
+            description: "Le pack Real contient un maillot officiel du Real Madrid, 5 paires de chaussettes de couleurs différentes et aléatoires ainsi qu'un baume du tigre blanc et rouge."
         },
         {
             id: uuidv4(),
