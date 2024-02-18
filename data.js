@@ -211,6 +211,88 @@ export const data = {
             sizes: ["S","M","L","XL"]
         },
    ],
+   juniors: [
+    {
+        id: uuidv4(),
+        name: "Paris Saint-Germain (junior)",
+        price: 70,
+        recto: Paris,
+        verso: Paris2,
+        sizes: ["7/8","9/10","11/12","13/14"]
+    },
+    {
+        id: uuidv4(),
+        name: "Marseille (junior)",
+        price: 70,
+        recto: Marseille,
+        verso: Marseille2,
+        sizes: ["7/8","9/10","11/12","13/14"]
+    },
+    {
+        id: uuidv4(),
+        name: "Madrid (Junior)",
+        price: 70,
+        recto: Madrid,
+        verso: Madrid2,
+        sizes: ["7/8","9/10","11/12","13/14"]
+    },
+    {
+        id: uuidv4(),
+        name: "Barcelone (junior) ",
+        price: 70,
+        recto: Barcelone,
+        verso: Barcelone2,
+        sizes: ["7/8","9/10","11/12","13/14"]
+    },   
+    {
+        id: uuidv4(),
+        name: "Manchester City (junior)",
+        price: 70,
+        recto: Manchester3,
+        verso: Manchester4,
+        sizes: ["7/8","9/10","11/12","13/14"]
+    }, 
+    {
+        id: uuidv4(),
+        name: "Manchester United (junior)",
+        price: 70,
+        recto: Manchester1,
+        verso: Manchester2,
+        sizes: ["7/8","9/10","11/12","13/14"]
+    }, 
+    {
+        id: uuidv4(),
+        name: "Ajax Amsterdam (junior)",
+        price: 70,
+        recto: Ajax,
+        verso: Ajax2,
+        sizes: ["7/8","9/10","11/12","13/14"]
+    },
+    {
+        id: uuidv4(),
+        name: "Algérie (junior)",
+        price: 70,
+        recto: Algerie,
+        verso: Algerie2,
+        sizes: ["7/8","9/10","11/12","13/14"]
+    }, 
+    {
+        id: uuidv4(),
+        name: "Maroc (junior)",
+        price: 70,
+        recto: Maroc,
+        verso: Maroc2,
+        sizes: ["7/8","9/10","11/12","13/14"]
+    },
+    {
+        id: uuidv4(),
+        name: "Tunisie (junior)",
+        price: 70,
+        recto: Tunisie,
+        verso: Tunisie2,
+        sizes: ["7/8","9/10","11/12","13/14"]
+    },
+],
    baumes: [
     {
         id: uuidv4(),

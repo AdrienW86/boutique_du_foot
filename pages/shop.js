@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import Coffret from '@/components/Coffret/Coffret';
 import Card from '@/components/Card/Card'
+import CardKid from '@/components/CardKid/CardKid';
 import Tiger from '@/components/Tiger/Tiger';
 import Socket from '@/components/Socket/Socket'
 import Packs from '@/components/Pack/Pack';
@@ -65,6 +66,7 @@ export default function boutique() {
             <option value="equipement">Les chaussettes </option>
             <option value="pharmacie">Les baumes</option>
             <option value="maillots">Les maillots</option>
+            <option value="juniors">Les maillots juniors</option>
           </select>  
         </div>
         <div id="coffrets" className={styles.hero}>     
@@ -190,7 +192,26 @@ export default function boutique() {
                 onSizeChange={(size) => setSelectedSize(size)}
               /> 
             ))}              
-        </div>                    
+        </div> 
+        <div id="juniors" className={styles.hero}>         
+          <h2 className={styles.h2}> Les maillots juniors </h2>           
+        </div>       
+        <div className={styles.container}>       
+            {data.juniors.map((el, index)=> (
+              <CardKid 
+                key={index}
+                id={el.id}
+                name={el.name}
+                recto={el.recto}
+                verso={el.verso}
+                price={el.price}
+                link={el.link}
+                sizes={el.sizes} 
+                selectedSize={selectedSize}
+                onSizeChange={(size) => setSelectedSize(size)}
+              /> 
+            ))}              
+        </div>             
         {showScrollButton && (
           <button className={styles.scrollButton} onClick={scrollToTop}>
             <Image 
