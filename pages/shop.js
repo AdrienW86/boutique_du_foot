@@ -58,7 +58,7 @@ export default function boutique() {
     <section className={styles.main}>    
        <Media 
         content= {Farah}
-        anchor= "/shop/#farah"
+        anchor= "/shop#farah"
     />    
       <h2 className={styles.shopTitle}> La boutique </h2>
       <label className={styles.label} htmlFor="sectionDropdown">Choisissez une catégorie :</label>
