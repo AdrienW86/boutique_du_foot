@@ -1,12 +1,28 @@
 .banner {
-    position: relative;
-    width: 100%;
-    transition: .4s ease-in-out;
-    overflow: hidden;
-    background-color: black;
-    aspect-ratio: 1/1;
-  }
+  position: relative;
+  width: 100%;
+  transition: .4s ease-in-out;
+  overflow: hidden;
+  background-color: black;
+  aspect-ratio: 1/1;
+}
 
-  .banner:hover {
-    opacity: 0.7;
-  }
+.btn {
+  position: absolute;
+  width: 20%;
+  height: 40px;
+  left: 70%;
+  border-radius: 16px;
+  bottom: 10px;
+  z-index: 5;
+  font-weight: bold;
+  opacity: 0.9;
+  color: white;
+  transition: .4s ease-in-out;
+  background-color: rgb(0, 0, 0);
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}

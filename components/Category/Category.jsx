@@ -5,6 +5,7 @@ import styles from './category.module.css'
 export default function Category({picture}) {
   return (
     <div className={styles.banner}>
+      <button className={styles.btn}> Voir </button>
       <Image 
         src={picture}
         fill
@@ -12,6 +13,7 @@ export default function Category({picture}) {
         className={styles.picture}    
         alt='banner'   
       /> 
+      
     </div>    
   )
 }
