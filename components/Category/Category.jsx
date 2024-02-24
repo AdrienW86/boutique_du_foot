@@ -47,9 +47,10 @@ export default function Category() {
             />  
           </section>
       </Link>
+      <h2 className={styles.title}> NOS COFFRETS </h2>
+      <CarouselVideo />
       <Link href="/good-deal">
-        <h2 className={styles.title}> NOS COFFRETS </h2>
-          <CarouselVideo />
+       
         <h3 className={styles.title2}> LES BONS PLANS </h3>
         <section className={styles.banner}>     
           <Image 
