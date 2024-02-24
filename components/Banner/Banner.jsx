@@ -1,50 +1,85 @@
 import React from 'react'
 import Image from 'next/image'
-import Banner1 from '@/assets/1.jpg'
-import Banner2 from '@/assets/2.jpg'
-import Banner3 from '@/assets/3.jpg'
-import Slider from 'react-slick';
+import Link from 'next/link'
+import CategoryCarousel from '@/components/CategoryCarousel/CategoryCarousel'
 import styles from './banner.module.css'
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
-export default function Banner() {
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,  
-        autoplaySpeed: 3000,  
-      };
-
+export default function Banner(props) {
   return (
-    <Slider  {...settings}>
-        <div className={styles.banner}>   
+    <div className={styles.container}>
+        
+            <section className={styles.banner}>       
+            <h1 className={styles.h1}> {props.title} </h1>
+                <p className={styles.description}>                
+                    {props.titleDescription}
+                </p>
             <Image 
-                src={Banner1}
+                src={props.background}
                 fill
                 priority       
                 alt='banner'
-            />    
+                className={styles.background}
+            />  
+            </section>           
+        
+        <CategoryCarousel 
+            sportswear = {props.url1}
+            maillots = {props.url2}
+            shorts = {props.url3}
+            accessoires = {props.url4}
+        />
+        <div className={styles.category}>
+            <section className={styles.banner}>         
+            <Image 
+                src={props.banner1}
+                fill
+                priority       
+                alt='banner'
+            />  
+            </section>
+            <h2 className={styles.h2}> LES SURVETEMENTS </h2>
+            <p className={styles.p}> {props.description1}</p>
+            <Link href={props.url1} className={styles.link}> Voir la collection </Link>
         </div>
-        <div className={styles.banner}>
+        <div className={styles.category}>
+            <section className={styles.banner}>         
             <Image 
-                src={Banner2}
+                src={props.banner2}
                 fill
                 priority       
                 alt='banner'
-            />     
+            />  
+            </section>
+            <h2 className={styles.h2}> LES MAILLOTS </h2>
+            <p className={styles.p}> {props.description2}</p>
+            <Link href={props.url2} className={styles.link}> Voir la collection </Link>
         </div>
-        <div className={styles.banner}>
+        {/* <div className={styles.category}>
+            <section className={styles.banner}>         
             <Image 
-                src={Banner3}
+                src={props.banner3}
                 fill
                 priority       
                 alt='banner'
-            />     
-        </div>        
-    </Slider>
+            />  
+            </section>
+            <h2 className={styles.h2}> LES SHORTS </h2>
+            <p className={styles.p}> {props.description3}</p>
+            <Link href={props.url3} className={styles.link}> Voir la collection </Link>
+        </div> */}
+        <div className={styles.category}>
+            <section className={styles.banner}>         
+            <Image 
+                src={props.banner4}
+                fill
+                priority       
+                alt='banner'
+            />  
+            </section>
+            <h2 className={styles.h2}> LES ACCESSOIRES </h2>
+            <p className={styles.p}> {props.description4}</p>
+            <Link href={props.url4} className={styles.link}> Voir la collection </Link>
+        </div>      
+    </div>
   )
 }

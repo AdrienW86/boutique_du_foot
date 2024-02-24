@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.card {   
+    margin: 0 5px;   
+}
+
+.h3 {
+    margin-top: 10px;
+    padding-left: 8px;
+    font-family: "Bebas Neue", sans-serif; 
+}
+
+.p  {
+    font-size: 0.8em;
+    padding-left: 8px;
+    transition: .4s ease-in-out;
+    margin-bottom: 20px;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.btn {
+    padding: 10px;
+    width: 150px;
+    color: orangered;
+    background-color: white;
+    letter-spacing: 0.1em;
+    border-radius: 22px;
+    transition: .4s ease-in-out;
+    border: 1px solid orangered;
+    font-family: "Bebas Neue", sans-serif; 
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: white;   
+    background-color: orangered
+}

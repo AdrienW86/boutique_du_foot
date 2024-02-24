@@ -1,10 +1,10 @@
+
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  padding-top: 160px;
-  background-color: rgb(53, 53, 53);
 }
 
 .banner {
@@ -141,9 +141,7 @@
 
 .anchor2 {
   position: relative;
-  
 }
-
 
 /* Mobile */
 @media (min-width: 800px) {

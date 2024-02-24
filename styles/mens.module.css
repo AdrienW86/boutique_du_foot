@@ -1,0 +1,105 @@
+.container {
+    padding-top: 110px;
+    width: 100%;
+    background-color: white;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    transition: .4s ease-in-out;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    max-height: 100vh;
+}
+
+.link {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    color: white;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    padding: 22px;
+    line-height: 1.2em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.h1 {
+    position: absolute;
+    bottom: 80px;
+    padding-left: 22px;
+    z-index: 2;
+    color: white;
+    font-size: 2.5em;
+    letter-spacing: 0.1em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.dropdownContainer {
+    padding: 22px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.team {
+    text-align: center;
+}
+.label {
+    letter-spacing: 0.1em;
+    color: orangered;
+    width: 100%;
+    margin: 5px;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.select {
+    letter-spacing: 0.1em;
+    padding: 4px;
+    font-family: "Bebas Neue", sans-serif; 
+}
+
+.categoryTitle {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.h2 {
+    font-size: 1.8em;
+    padding: 30px;
+    font-family: "Bebas Neue", sans-serif;
+    width: 100%;
+    letter-spacing: 0.1em;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 30px auto
+}
+
+.logo {
+    position: absolute;
+    right: 20px;
+    bottom: 40px
+}
+
+.logo2 {
+    position: absolute;
+    right: 20px;
+    bottom: 30px
+}
+
+.background {
+    filter: brightness(70%) grayscale(0%);
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+}

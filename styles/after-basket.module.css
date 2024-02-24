@@ -1,0 +1,68 @@
+.container {
+    padding-top: 110px;
+    width: 100%;
+    background-color: #f3f3f3;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    transition: .4s ease-in-out;
+    overflow: hidden;
+    aspect-ratio: 6/6;
+    max-height: 100vh;
+}
+
+.h2 { 
+    color: orangered;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin: 50px auto;;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.warning {
+    font-size: 1.2em;
+    margin: 20px;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.email {
+    display: block;
+    width: 300px;
+    margin: 60px auto;
+    font-size: 1.5em;
+    text-align: center;
+    color: orangered;
+    text-decoration: underline;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.email:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.box {
+    display: flex;
+}
+
+.home {
+    font-family: "Bebas Neue", sans-serif;
+    margin: 50px auto;
+    padding: 8px 16px;
+    border: 1px solid black;
+    font-size: 1.5em;
+    transition: .4s ease-in-out;
+    border-radius: 8px;
+    color: white;
+    background-color: #1b1b1b;
+}
+
+.home:hover {
+    cursor: pointer;
+    background-color: black;
+   
+}

@@ -1,0 +1,123 @@
+.container {
+    margin-top: 150px;
+}
+
+.category {
+    background-color: rgb(226, 226, 226);
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    transition: .4s ease-in-out;
+    overflow: hidden;
+    aspect-ratio: 3/3;
+    max-height: 100vh;
+    margin-bottom: 40px;
+    filter: brightness(70%) grayscale(0%);
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    transition: .4s ease-in-out;
+    overflow: hidden;
+    aspect-ratio: 3/3;
+    max-height: 100vh;
+}
+
+.banner:hover {
+    cursor: pointer;
+    filter: brightness(70%) grayscale(0%);
+}
+
+.h1 {
+    position: absolute;
+    bottom: 80px;
+    z-index: 2;
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    padding: 22px;
+    line-height: 1.2em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.h2 {
+    position: absolute;
+    bottom: 40px;
+    z-index: 2;
+    color: white;
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    padding: 22px;
+    line-height: 1.2em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.h3 {
+    font-size: 1.5em;
+    text-decoration: underline;
+    letter-spacing: 0.1em;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.2em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.description {
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    color: white;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    padding: 22px;
+    line-height: 1.2em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.btn {
+    margin: 20px;
+    padding: 10px;
+    width: 150px;
+    color: orangered;
+    background-color: white;
+    letter-spacing: 0.1em;
+    border-radius: 22px;
+    font-size: 0.7em;
+    text-align: center;
+    transition: .4s ease-in-out;
+    border: 1px solid orangered;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: white;   
+    background-color: orangered
+}
+
+.category {
+   
+}
+
+.p {
+    padding: 10px 20px;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.link {
+    padding: 0px 20px 50px 20px;
+    color: orangered;
+    font-family: "Bebas Neue", sans-serif;
+}

@@ -1,0 +1,58 @@
+.container {
+    padding-top: 150px;
+    background-color: #1b1b1b;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    transition: .4s ease-in-out;
+    overflow: hidden;
+    aspect-ratio: 3/3;
+    max-height: 100vh;
+}
+
+.description {
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    color: white;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    padding: 22px;
+    line-height: 1.2em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.h1 {
+    position: absolute;
+    bottom: 80px;
+    padding-left: 22px;
+    z-index: 2;
+    color: white;
+    font-size: 2.5em;
+    letter-spacing: 0.1em;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.background {
+    filter: brightness(70%) grayscale(0%);
+}
+
+.soldesBox {
+    margin: 20px auto;
+    display: flex;
+    
+}
+
+.soldes {
+    width: 47%;
+    margin:10px  auto;
+    border-radius: 12px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.soldes:hover {
+    background-color: rgb(238, 238, 238);
+}

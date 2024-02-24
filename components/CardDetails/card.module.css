@@ -1,0 +1,105 @@
+.card {
+  margin: 50px auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+  
+.h3 {
+  color: rgb(0, 0, 0);
+  font-weight:bold;
+  text-align: center;
+  margin: 10px;
+}
+  
+.picture {
+  margin: 10px auto;
+}
+
+.picture:hover {
+  cursor: pointer;
+}
+
+.span {
+  color: black;
+}
+  
+.price {
+  font-size: 1.2em;
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin: 10px;
+}
+  
+.btnContainer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+  
+.btnCardRecto {
+  border: 1px solid black
+}
+
+.btnCardRecto:hover {
+  cursor: pointer;
+}
+
+.selectLabel {
+  width: 100%;
+  text-align: center;
+}
+
+.select {
+  height: 30px;
+  margin: 0 auto;
+  width: 150px;
+  border: 1px solid black;
+}
+  
+.addBtn {
+  height: 52px;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1em;
+  color: white;
+  border-radius: 22px;
+  margin-top: 10px;
+  transition: .4s ease-in-out;
+  background-color: rgb(19, 19, 19);
+}
+
+.addBtn:hover {
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+}
+
+.div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bannerContainer {
+  background-color:rgb(189, 189, 189) ;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  padding: 0 5%;
+  transition: .4s ease-in-out;
+  overflow: hidden;
+  aspect-ratio: 2/3;
+  max-height: 100vh;
+  background-color:rgb(189, 189, 189) ;
+ 
+}
+
+.background {
+  width: 90%;
+}

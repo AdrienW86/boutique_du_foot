@@ -1,10 +1,20 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import Basket from '@/assets/basket.png';
+import Logo from '@/assets/logo.png';
+import Box from '@/assets/box.png';
+import Men from '@/assets/hommes2.png';
+import Women from '@/assets/femmes.png';
+import Child from '@/assets/juniors3.png';
+import Maillot from '@/assets/maillots_hommes/psg.png';
+import Socket from '@/assets/yellow.jpg';
+import Balm from '@/assets/tiger-red.webp';
 import styles from './hamburger.module.css';
 
 const Hamburger = ({productsLength}) => {
+  const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -12,33 +22,7 @@ const Hamburger = ({productsLength}) => {
   };
 
   return (
-    <section className={styles.hamburger_container}>
-      <button className={`${styles.hamburger} ${isMenuOpen ? styles.open : styles.close}`} onClick={handleMenuToggle}>
-        <span className={styles.line}> </span>
-        <span className={styles.line}></span>
-        <span className={styles.line}></span>
-      </button>
-      {isMenuOpen && (
-        <ul className={styles.menu}>
-          <li className={styles.menu_link}><Link href='/'> Accueil </Link> </li>
-          <li className={styles.menu_link}><Link href='/shop'> Boutique </Link>  </li>         
-        </ul>
-      )}
-      <Link  href='/card'> 
-        <li className={styles.menu_basket}>
-          <Image 
-            src={Basket}
-            height={30}
-            width={30}
-            className={styles.logoBasket}
-            alt="image du panier"
-          />         
-          {productsLength === 0 ? null : 
-            <span className={styles.span}>{productsLength && `${productsLength}`}</span> 
-          }
-        </li>      
-      </Link>
-    </section>
+   <></>
   );
 };
 export default Hamburger;

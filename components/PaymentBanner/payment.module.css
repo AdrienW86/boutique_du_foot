@@ -1,0 +1,32 @@
+.payment {
+    display: flex;
+    border-top: 1px solid black;
+    flex-direction: column;
+    background-color: #f3f3f3;
+}
+
+.section {
+    display: flex;
+    padding: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    justify-content: space-around;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 130px;
+    padding: 7px;
+    margin: 5px;
+}
+
+.icons {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.p {
+    text-align: center;
+}

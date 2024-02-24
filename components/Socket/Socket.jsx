@@ -15,25 +15,22 @@ export default function Socket(props) {
     window.dispatchEvent(cartChangeEvent);
   }, []);
 
-  const addToCart = (el) => {
-    let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-    storedProducts.push(el);
-    localStorage.setItem('products', JSON.stringify(storedProducts));
-    console.log('Produit ajouté au panier :', el);
+const addToCart = (el) => {
+  let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
+  storedProducts.push(el);
+  localStorage.setItem('products', JSON.stringify(storedProducts));
     setProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
     alert('Le produit a été ajouté à votre panier')
-  };
+};
 
-  
+const handleShowImage = () => {
+  setShowModal(true);
+};
 
-  const handleShowImage = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
+const handleCloseModal = () => {
+  setShowModal(false);
+};
 
   return (
     <div className={styles.card}>     

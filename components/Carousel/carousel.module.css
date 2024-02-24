@@ -1,0 +1,27 @@
+.slider {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {   
+    margin: 0 5px;   
+}
+
+.h3 {
+    margin-top: 10px;
+    padding-left: 8px;
+    font-family: "Bebas Neue", sans-serif; 
+}
+
+.p  {
+    font-size: 0.8em;
+    padding-left: 8px;
+    transition: .4s ease-in-out;
+    margin-bottom: 20px;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.p:hover {
+    cursor: pointer;
+    color: orangered
+}
