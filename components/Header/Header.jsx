@@ -10,7 +10,7 @@ import Women from '@/assets/femmes.png';
 import Child from '@/assets/juniors3.png';
 import Maillot from '@/assets/psg.png';
 import Socket from '@/assets/yellow.jpg';
-import Balm from '@/assets/tiger-red.webp';
+import Balm from '@/assets/tiger-red.png';
 import Delivery from "@/assets/livraison.png";
 import Search from "@/assets/search.png"
 import HeaderCarousel from '@/components/HeaderCarousel/HeaderCarousel';

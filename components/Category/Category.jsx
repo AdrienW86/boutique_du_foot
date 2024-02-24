@@ -5,7 +5,7 @@ import Carousel from '@/components/Carousel/Carousel'
 import CarouselVideo from '@/components/CarouselVideo/CarouselVideo'
 import Banner1 from '@/assets/maillot-categorie.jpg'
 import Banner2 from '@/assets/tapedesign.jpg'
-import Banner3 from '@/assets/tiger.webp'
+import Banner3 from '@/assets/tiger2.jpg'
 import Banner4 from '@/assets/bon-plan.jpg'
 import styles from './category.module.css'
 
