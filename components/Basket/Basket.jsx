@@ -12,42 +12,20 @@ const cartChangeEvent = new Event('cartChange');
 
 export default function Basket() {
   const [products, setCurrentProducts] = useState([]);
-  const [deliveryCost, setDeliveryCost] = useState(5)
-  const [total, setTotal] = useState()
+  const [deliveryCost, setDeliveryCost] = useState(5);
+  const [total, setTotal] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [promoCode, setPromoCode] = useState('');
 
-const handlePayment = async () => {
-  try {
-    setIsLoading(true); 
-    const productsWithDelivery = [...products, { name: 'Frais de livraison', price: deliveryCost, quantity: 1 }];
-console.log(productsWithDelivery)
-    const stripe = await stripePromise;
-    const response = await fetch('/api/create-checkout-session', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ products: productsWithDelivery }),
-    });
-
-    const session = await response.json();
-
-    const result = await stripe.redirectToCheckout({
-      sessionId: session.sessionId,
-    });
-
-    if (result.error) {
-      console.error(result.error.message);
-    } else {
-      localStorage.clear();
-    }
-  } catch (error) {
-    console.error('Error handling payment:', error);
-  }
-  finally {
-    setIsLoading(false);
-  }
-};
+  const handleInputChange = (event) => {
+    // Filtrer les caractères non autorisés
+    const inputValue = event.target.value.replace(/[^a-zA-Z0-9]/g, '');
+    // Convertir en lettres majuscules
+    const uppercaseValue = inputValue.toUpperCase();
+    // Mettre à jour l'état du code promo
+    setPromoCode(uppercaseValue);
+  };
+  
 
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
@@ -66,9 +44,17 @@ console.log(productsWithDelivery)
 
   const deleteAllCart = (el) => {
     let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-    storedProducts = storedProducts.filter(product => !(product.id === el.id && product.selectedSize === el.selectedSize));
+    storedProducts = storedProducts.filter(
+      (product) => !(product.id === el.id && product.selectedSize === el.selectedSize)
+    );
     localStorage.setItem('products', JSON.stringify(storedProducts));
-    console.log('Tous les produits avec l\'identifiant', el.id, 'et la taille', el.selectedSize, 'ont été supprimés du panier');
+    console.log(
+      'Tous les produits avec l\'identifiant',
+      el.id,
+      'et la taille',
+      el.selectedSize,
+      'ont été supprimés du panier'
+    );
     setCurrentProducts(storedProducts);
     window.dispatchEvent(cartChangeEvent);
   };
@@ -76,7 +62,7 @@ console.log(productsWithDelivery)
   const deleteToCart = (el) => {
     let storedProducts = JSON.parse(localStorage.getItem('products')) || [];
     const indexToRemove = storedProducts.findIndex((product) => product.id === el.id);
-  
+
     if (indexToRemove !== -1) {
       storedProducts.splice(indexToRemove, 1);
       localStorage.setItem('products', JSON.stringify(storedProducts));
@@ -85,10 +71,10 @@ console.log(productsWithDelivery)
       window.dispatchEvent(cartChangeEvent);
     }
   };
-  
+
   const getUniqueProducts = () => {
     const uniqueProductsMap = {};
-  
+
     products.forEach((currentProduct) => {
       const productName = currentProduct.name;
       if (!uniqueProductsMap[productName]) {
@@ -97,33 +83,114 @@ console.log(productsWithDelivery)
         uniqueProductsMap[productName].quantity += 1;
       }
     });
-  
+
     const uniqueProducts = Object.values(uniqueProductsMap);
     return uniqueProducts;
   };
-  
-  
+
   const calculateTotalAmount = () => {
-    const uniqueProducts = getUniqueProducts();
     let totalAmount = 0;
+    const uniqueProducts = getUniqueProducts();
     uniqueProducts.forEach((el) => {
       totalAmount += el.quantity * el.price;
     });
     return totalAmount;
   };
 
+  const calculateDiscountedTotal = (total) => {
+    if (promoCode === 'PROMO10') {
+      return total * 0.9; // Appliquer une réduction de 10%
+    }
+    return total;
+  };
+
   const calculateDeliveryCost = () => {
-    let totalCost = calculateTotalAmount() > 100 ? 0 : 8
+    let totalCost = calculateTotalAmount() > 100 ? 0 : 8;
     return totalCost;
   };
 
   useEffect(() => {
-    setTotal(calculateTotalAmount());
-    setDeliveryCost(calculateDeliveryCost())    
-  }, [products]);
+    const totalAmount = calculateTotalAmount();
+    const discountedTotal = calculateDiscountedTotal(totalAmount);
+    setTotal(discountedTotal + calculateDeliveryCost());
+    setDeliveryCost(calculateDeliveryCost());
+  }, [products, promoCode]);
 
-  console.log(getUniqueProducts())
-  console.log(products)
+  // Dans la fonction handlePayment
+
+const handlePayment = async () => {
+  try {
+    setIsLoading(true);
+
+    // Calculer le montant total en fonction du code promo
+    let totalAmount = calculateTotalAmount();
+    let totalWithPromo = calculateDiscountedTotal(totalAmount);
+    let deliveryCostWithPromo = calculateDeliveryCost();
+
+    // Si le code promo est appliqué, ajustez le montant total et les frais de livraison
+    if (promoCode === "PROMO10") {
+      
+    
+        // Créer un tableau de produits comprenant les frais de livraison ajustés
+        const productsWithDelivery = [...products, { name: 'Frais de livraison', promocode: true, price: deliveryCostWithPromo, quantity: 1 }];
+
+        // Créer la session de paiement avec le montant total ajusté
+        const stripe = await stripePromise;
+        const response = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ products: productsWithDelivery, promocode: true}),
+        });
+    
+        const session = await response.json();
+    
+        // Rediriger vers la page de paiement Stripe
+        const result = await stripe.redirectToCheckout({
+          sessionId: session.sessionId,
+        });
+    
+        if (result.error) {
+          console.error(result.error.message);
+        } else {
+          localStorage.clear();
+        }   
+    } 
+    else {
+    }
+    // Créer un tableau de produits comprenant les frais de livraison ajustés
+    const productsWithDelivery = [...products, { name: 'Frais de livraison', price: deliveryCostWithPromo, quantity: 1 }];
+
+    // Créer la session de paiement avec le montant total ajusté
+    const stripe = await stripePromise;
+    const response = await fetch('/api/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ products: productsWithDelivery}),
+    });
+
+    const session = await response.json();
+
+    // Rediriger vers la page de paiement Stripe
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.sessionId,
+    });
+
+    if (result.error) {
+      console.error(result.error.message);
+    } else {
+      localStorage.clear();
+    }
+  } catch (error) {
+    console.error('Error handling payment:', error);
+  } finally {
+    setIsLoading(false);
+  }
+};
+
   return (
     <div className={styles.container}>
       <h2 className={styles.h2}>Votre panier</h2>
@@ -131,13 +198,13 @@ console.log(productsWithDelivery)
         {products.length === 0 ? (
           <div className={styles.warning}>Vous n'avez aucun produit dans votre panier</div>
         ) : (
-          <div >
+          <div>
             {getUniqueProducts().map((el, index) => (
               <div key={index} className={styles.product}>
                 <button onClick={() => deleteAllCart(el)} className={styles.close}>
                   X
-                </button>                
-                  <h3 className={styles.name}>{el.name}</h3> 
+                </button>
+                <h3 className={styles.name}>{el.name}</h3>
                 <div className={styles.infos}>
                   <p className={styles.quantity}>Quantité: {el.quantity}</p>
                   <p className={styles.price}>Prix: {el.price}€</p>
@@ -147,13 +214,7 @@ console.log(productsWithDelivery)
                     +
                   </button>
                   <div className={styles.boxPicture}>
-                  <Image
-                    className={styles.picture}
-                    src={el.recto}
-                    fill
-                    priority       
-                    alt='image produit'
-                  />
+                    <Image className={styles.picture} src={el.recto} fill priority alt="image produit" />
                   </div>
                   <button onClick={() => deleteToCart(el)} className={styles.removeBtn}>
                     -
@@ -168,27 +229,37 @@ console.log(productsWithDelivery)
                 </div>
               </div>
             ))}
-            <div className={styles.delivery}>        
+            <div className={styles.delivery}>
               <p className={styles.p}>
                 Livraison :
                 <span className={styles.spanTotal2}> {deliveryCost}€ </span>
               </p>
-            </div>           
+            </div>
             <div className={styles.productPriceTotal}>
               <p className={styles.totalAmount}>
-                Montant total de la commande : <br></br>
-                <span className={styles.spanTotal}> {total + deliveryCost} € </span>
+                Montant total de la commande : <br />
+                <span className={styles.spanTotal}> {total.toFixed(2)} € </span>
               </p>
             </div>
             <div className={styles.box}>
+              <input
+                type="text"
+                value={promoCode}
+                onChange={handleInputChange}
+                placeholder="Entrez votre code promo"
+                className={styles.promoInput}
+              />
               <button className={styles.validate} onClick={() => handlePayment()}>
                 {isLoading ? 'Chargement...' : 'Valider'}
               </button>
             </div>
-            <p className={styles.warningDelivery}> * en cas de rupture de stock, le délai de livraison sera compris entre 2 à 5 semaines.</p>
+            <p className={styles.warningDelivery}>
+              {' '}
+              * en cas de rupture de stock, le délai de livraison sera compris entre 2 à 5 semaines.
+            </p>
           </div>
         )}
-       <PaymentBanner />
+        <PaymentBanner />
       </section>
     </div>
   );

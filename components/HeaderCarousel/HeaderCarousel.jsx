@@ -39,8 +39,7 @@ const HeaderCarousel = () => {
             <div >
             {item.text}
           </div>
-          </Link>
-          
+          </Link>         
         ))}
       </div>
     </div>

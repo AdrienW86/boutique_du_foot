@@ -16,7 +16,7 @@ async function handler(req, res) {
               productName: product.name
             }
           },
-          unit_amount: product.price * 100,
+          unit_amount: req.body.promocode ? (product.price * 100) * 0.9 : product.price * 100 ,
         },
         quantity: 1, 
       })),
