@@ -1,0 +1,40 @@
+.carousel {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .carouselItems {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .carouselItems div {
+    flex: 0 0 auto;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: opacity 0.5s ease;
+  }
+  
+  .carouselItems div:last-child {
+    margin-right: 0;
+  }
+  
+   .inactive {
+    position: absolute;
+    top: -15px;
+    visibility: visible;
+  }
+
+  .active {
+    position: absolute;
+    
+    visibility: hidden;
+  }
+  

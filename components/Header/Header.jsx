@@ -13,6 +13,7 @@ import Socket from '@/assets/yellow.jpg';
 import Balm from '@/assets/tiger-red.webp';
 import Delivery from "@/assets/livraison.png";
 import Search from "@/assets/search.png"
+import HeaderCarousel from '@/components/HeaderCarousel/HeaderCarousel';
 import Finder from "@/components/Finder/Finder"
 import {data} from '@/data/search'
 import styles from './header.module.css';
@@ -132,10 +133,11 @@ useEffect(() => {
             <span className={styles.line}></span>
           </button>
         </div>
-      </section>
-      
+      </section>      
       <section className={styles.title}> 
-      <p className={styles.alert}> Les meilleurs prix toute l'année </p>
+        <div className={styles.alert}>
+         <HeaderCarousel />
+        </div>
         <div className={styles.inputContainer}>
           <input 
             type='text'
