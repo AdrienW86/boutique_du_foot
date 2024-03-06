@@ -113,6 +113,7 @@ useEffect(() => {
               src={Delivery}
               height={20}
               width={20}
+              alt='delivery picture'
             />
           </div>
           <p className={styles.deliveryTxt}>
@@ -127,7 +128,7 @@ useEffect(() => {
               alt="image du logo"
             />   
           </Link>
-          <button className={`${styles.hamburger} ${isMenuOpen ? styles.open : styles.close}`} onClick={handleMenuToggle}>
+          <button className={`${styles.hamburger} ${isMenuOpen ? styles.open : styles.close}`} onClick={handleMenuToggle} aria-label="hamburger button">
             <span className={styles.line}> </span>
             <span className={styles.line}></span>
             <span className={styles.line}></span>
@@ -159,7 +160,7 @@ useEffect(() => {
         </div>
       </section>
       <Link  href='/card'> 
-        <li className={styles.menu_basket}>
+        <div className={styles.menu_basket}>
           <Image 
             src={Basket}
             height={22}
@@ -170,7 +171,7 @@ useEffect(() => {
           {productsLength === 0 ? null : 
             <span className={styles.span}>{productsLength && `${productsLength}`}</span> 
           }
-        </li>      
+        </div>      
       </Link>
     </header>
     {toggle &&

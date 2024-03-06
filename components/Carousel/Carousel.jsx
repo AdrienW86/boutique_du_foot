@@ -53,7 +53,7 @@ function CustomSlider() {
               height={300}
             /> 
           </div>
-          <h3 className={styles.h3}> COLLECTION HOMMES</h3>
+          <h2 className={styles.h3}> COLLECTION HOMMES</h2>
           <p className={styles.p}> Découvrir la collection hommes</p>
         </div>
       </Link>
@@ -68,7 +68,7 @@ function CustomSlider() {
               height={300}
             /> 
           </div>
-          <h3 className={styles.h3}> COLLECTION FEMMES</h3>
+          <h2 className={styles.h3}> COLLECTION FEMMES</h2>
           <p className={styles.p}> Découvrir la collection femmes</p> 
         </div>
       </Link>
@@ -83,7 +83,7 @@ function CustomSlider() {
               height={300}
             /> 
           </div>
-          <h3 className={styles.h3}> COLLECTION JUNIORS</h3>
+          <h2 className={styles.h3}> COLLECTION JUNIORS</h2>
           <p className={styles.p}> Découvrir la collection juniors</p>
         </div>
       </Link>

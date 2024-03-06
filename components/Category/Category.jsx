@@ -11,10 +11,13 @@ import styles from './category.module.css'
 
 export default function Category() {
   return (
-    <>
+    <section className={styles.container}>
+     <div className={styles.section}>
       <h1 id="collection" className={styles.title}> NOS COLLECTIONS </h1>
         <Carousel />
-          <Link href="/maillots">
+     </div>
+     <div className={styles.section}>
+     <Link href="/maillots">
             <h2 id="maillots" className={styles.title2}> LES MAILLOTS </h2>     
               <section className={styles.banner}>
                 <Image 
@@ -25,7 +28,9 @@ export default function Category() {
                 />  
               </section>
           </Link>
-      <Link href="/sockets"> 
+     </div>
+     <div className={styles.section}>
+     <Link href="/sockets"> 
         <h2 id="chaussettes"  className={styles.title2}> LES CHAUSSETTES </h2>     
           <section className={styles.banner}>
             <Image 
@@ -36,6 +41,8 @@ export default function Category() {
             />  
           </section>
       </Link>
+     </div>
+     <div className={styles.section}>
       <Link href="/balms">
         <h2 className={styles.title2}> LES BAUMES </h2>    
           <section className={styles.banner}>
@@ -47,23 +54,28 @@ export default function Category() {
             />  
           </section>
       </Link>
-      <h2 className={styles.title}> NOS COFFRETS </h2>
+      </div>
+      <div className={styles.section}>
+     <h2 className={styles.title}> NOS COFFRETS </h2>
       <CarouselVideo />
+     </div>
+     <div className={styles.section}>
       <Link href="/good-deal">
        
-        <h3 className={styles.title2}> LES BONS PLANS </h3>
-        <section className={styles.banner}>     
-          <Image 
-            src={Banner4}
-            fill
-            priority       
-            alt='banner'
-          />  
-          <button className={styles.btn}>
-            Découvrir les offres
-          </button>
-        </section>
-      </Link>
-    </>   
+       <h2 className={styles.title2}> LES BONS PLANS </h2>
+       <section className={styles.banner}>     
+         <Image 
+           src={Banner4}
+           fill
+           priority       
+           alt='banner'
+         />  
+         <button className={styles.btn}>
+           Découvrir les offres
+         </button>
+       </section>
+     </Link>  
+      </div>
+    </section>   
   )
 }

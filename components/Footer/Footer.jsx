@@ -9,13 +9,13 @@ export default function Footer() {
   const currentYear = currentDate.getFullYear();
   return (
    <footer className={styles.footer}>
-      <p className={styles.copyright}> © Boutique du foot - {currentYear}</p>
+      
       <div className={styles.social}>
         <Link href='https://www.snapchat.com/add/boutiquedufoot/QlNSdc84TSu6JI7Da5HkZAAAgdXlud3p5Y2tvAY290QS9AY290ECiAAAAAA?share_id=DXc0ltJnSGSlpzIqDzZL3A&locale=fr_FR'>
           <Image
             src='/snap.svg'
-            width={40}
-            height={40}
+            width={50}
+            height={50}
             priority
             className={styles.picture}
             alt='Snapchat logo'       
@@ -23,10 +23,11 @@ export default function Footer() {
         </Link>
       </div>
       <ul className={styles.ul}>
-        <li className={styles.li}> <Link href='/mentions'> Mentions Légales </Link> </li>
-        <li className={styles.li}> <Link href='/conditions'> Conditions Générales de vente </Link> </li>  
-        <li className={styles.li}> <Link href='https://code-v.fr '> Réalisé par <span className={styles.span}> Codev </span> </Link>  </li>
+        <li> <Link href='/mentions' className={styles.li}> Mentions Légales </Link> </li>
+        <li> <Link href='/conditions' className={styles.li}> Conditions Générales de vente </Link> </li>  
+        <li> <Link href='https://code-v.fr' className={styles.li} > Réalisé par <span className={styles.span}> Codev </span> </Link>  </li>
       </ul>
+      <p className={styles.copyright}> © Boutique du foot - {currentYear}</p>
    </footer>
   )
 }

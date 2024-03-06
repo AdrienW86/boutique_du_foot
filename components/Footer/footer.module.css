@@ -18,15 +18,16 @@
 }
 
 .li {
-    margin: 10px 30px;  
+    margin: 0px 30px;  
     color: white;
     display: flex;
     text-align: center;
-    flex-direction: column;
+    height: 40px;
     justify-content: center;
 }
 
 .span {
+    margin-left: 5px;
     text-decoration: underline;
 }
 
@@ -44,4 +45,5 @@
 
 .picture {
     color: white;
+    margin-bottom: 10px;
 }
