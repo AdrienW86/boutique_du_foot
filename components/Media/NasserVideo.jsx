@@ -8,7 +8,7 @@ function NasserVideo() {
     <div id="nasdas" className={styles.filter}></div>
     <div className={styles.banner2}> 
       <div className={styles.info}>  Profitez de nos offres du moment.<Link href='/good-deal'> <span className={styles.span}> J'en profite </span> </Link> </div>
-      <video controls preload="auto" className={styles.banner}>
+      <video poster="/nasser.webp" controls preload="auto" className={styles.banner}>
         <source src="/nasser1.mp4" type="video/mp4" />
         Votre navigateur ne supporte pas la lecture de vidéos au format MP4.
       </video>

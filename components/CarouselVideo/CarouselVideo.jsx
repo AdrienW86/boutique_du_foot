@@ -42,7 +42,7 @@ function CustomSlider() {
           <div className={styles.info}> 
            AJAX AMSTERDAM
           </div>
-        <video controls className={styles.banner} preload="auto">
+        <video poster="/nasser2.webp" controls className={styles.banner} preload="auto">
         <source src="/nasser2.mp4" type="video/mp4" />
         Votre navigateur ne supporte pas la lecture de vidéos au format MP4.
       </video>
@@ -55,7 +55,7 @@ function CustomSlider() {
           <div className={styles.info}> 
             MANCHESTER CITY
           </div>
-        <video controls className={styles.banner} preload="auto">
+        <video poster="/farah.webp" controls className={styles.banner} preload="auto">
         <source src="/farah2.mp4" type="video/mp4" />
         Votre navigateur ne supporte pas la lecture de vidéos au format MP4.
       </video>
@@ -68,7 +68,7 @@ function CustomSlider() {
         <div className={styles.info}> 
             TUNISIE
           </div>
-        <video controls className={styles.banner} preload="auto">
+        <video poster="/tounsi.webp" controls className={styles.banner} preload="auto">
         <source src="/tounsi2.mp4" type="video/mp4" />
         Votre navigateur ne supporte pas la lecture de vidéos au format MP4.
       </video>
