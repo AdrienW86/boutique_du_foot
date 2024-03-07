@@ -4,9 +4,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
 import Link from 'next/link'
-import Men from '@/assets/collection-homme.jpg';
-import Women from '@/assets/collection-femme.jpg';
-import Child from '@/assets/collection-junior.jpg';
+import Men from '@/assets/collection-homme.webp';
+import Women from '@/assets/collection-femme.webp';
+import Child from '@/assets/collection-junior.webp';
 import styles from './carousel.module.css';
 
 function CustomSlider() {
