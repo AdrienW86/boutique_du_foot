@@ -6,15 +6,14 @@ export default function Finder({results, toggle}) {
   const navigation = (toggle) => {
     setTimeout(() => {
       console.log("salut")
-      toggle(); // Appeler la fonction toggle après le délai
-    }, 500); // 1000 millisecondes équivalent à une seconde
+      toggle(); 
+    }, 500); 
   };
 
   return (
     <div className={styles.search}>
       <h2 className={styles.h2}>Résultats de la recherche :</h2>
       <button className={styles.close} onClick={toggle}> X</button>
-      {/* Affichage des résultats de la recherche */}
       {results.length  
         ?
         <ul>

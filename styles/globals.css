@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('/BebasNeue-Regular.ttf') format('truetype');
+  font-display: swap
+  /* Ajoutez les autres styles de la police ici si nécessaire */
+}
 
 * {
   box-sizing: border-box;

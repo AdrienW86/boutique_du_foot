@@ -4,10 +4,11 @@ export default function Document() {
   return (
     <Html lang="fr">
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin ="true"/>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
-      </Head>       
+          <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" href="/logo.png" />
+          <meta name="theme-color" content="#0071BD" />
+      </Head>        
       <body>
         <Main />
         <NextScript />

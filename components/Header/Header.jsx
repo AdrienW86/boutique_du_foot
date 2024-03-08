@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
-import Basket from '@/assets/basket.png';
-import Logo from '@/assets/logo.png';
+
+import Logo from '@/assets/logo2.png';
 import Box from '@/assets/box.png';
 import Men from '@/assets/hommes2.png';
 import Women from '@/assets/femmes.png';
@@ -17,6 +17,7 @@ import HeaderCarousel from '@/components/HeaderCarousel/HeaderCarousel';
 import Finder from "@/components/Finder/Finder"
 import {data} from '@/data/search'
 import styles from './header.module.css';
+import ButtonBox from './ButtonBox/ButtonBox';
 
 export default function Header() {
 
@@ -119,27 +120,29 @@ useEffect(() => {
           <p className={styles.deliveryTxt}>
             LIVRAISON OFFERTE À PARTIR DE 100€ D'ACHAT 
           </p>
-          <Link href='/'> 
-            <Image 
-              src={Logo}
-              height={42}
-              width={82}
-              className={styles.logo}
-              alt="image du logo"
-            />   
-          </Link>
-          <button className={`${styles.hamburger} ${isMenuOpen ? styles.open : styles.close}`} onClick={handleMenuToggle} aria-label="hamburger button">
-            <span className={styles.line}> </span>
-            <span className={styles.line}></span>
-            <span className={styles.line}></span>
-          </button>
         </div>
       </section>      
-      <section className={styles.title}> 
+      <section className={styles.title}>
+      <Link href='/'> 
+          <Image 
+            src={Logo}
+            height={40}
+            width={40}
+            className={styles.logo}
+            alt="image du logo"
+          />   
+        </Link>
         <div className={styles.alert}>
-         <HeaderCarousel />
+        <HeaderCarousel />
         </div>
-        <div className={styles.inputContainer}>
+        <ButtonBox 
+          isMenuOpen={isMenuOpen}
+          handleMenuToggle={handleMenuToggle}
+          productsLength={productsLength}
+          />     
+      </section>
+      <section className={styles.searchContainer}>
+      <div className={styles.inputContainer}>
           <input 
             type='text'
             value={searchQuery}
@@ -159,20 +162,6 @@ useEffect(() => {
           </div>         
         </div>
       </section>
-      <Link  href='/card'> 
-        <div className={styles.menu_basket}>
-          <Image 
-            src={Basket}
-            height={22}
-            width={22}
-            className={styles.logoBasket}
-            alt="image du panier"
-          />         
-          {productsLength === 0 ? null : 
-            <span className={styles.span}>{productsLength && `${productsLength}`}</span> 
-          }
-        </div>      
-      </Link>
     </header>
     {toggle &&
     <Finder 

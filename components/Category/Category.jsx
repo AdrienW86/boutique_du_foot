@@ -3,21 +3,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Carousel from '@/components/Carousel/Carousel'
 import CarouselVideo from '@/components/CarouselVideo/CarouselVideo'
-import Banner1 from '@/assets/maillot-categorie.webp'
+import Banner1 from '@/assets/maillot-categorie2.jpg'
 import Banner2 from '@/assets/tapedesign.webp'
 import Banner3 from '@/assets/tiger2.webp'
-import Banner4 from '@/assets/bon-plan.webp'
+import Banner4 from '@/assets/bon-plan.jpg'
 import styles from './category.module.css'
 
 export default function Category() {
   return (
     <section className={styles.container}>
-     <div className={styles.section}>
-      <h1 id="collection" className={styles.title}> NOS COLLECTIONS </h1>
-        <Carousel />
-     </div>
-     <div className={styles.section}>
-     <Link href="/maillots">
+       <div className={styles.section}>
+        <h1 id="collection" className={styles.title}> NOS COLLECTIONS </h1>
+         <Carousel />
+      </div> 
+      <div className={styles.section}>
+        <Link href="/maillots">
             <h2 id="maillots" className={styles.title2}> LES MAILLOTS </h2>     
               <section className={styles.banner}>
                 <Image 
@@ -48,7 +48,7 @@ export default function Category() {
           <section className={styles.banner}>
             <Image 
               src={Banner3}
-              fill
+              objectFit='fill'
               priority       
               alt='banner'
             />  
@@ -57,7 +57,7 @@ export default function Category() {
       </div>
       <div className={styles.section}>
      <h2 className={styles.title}> NOS COFFRETS </h2>
-      <CarouselVideo />
+      <CarouselVideo /> 
      </div>
      <div className={styles.section}>
       <Link href="/good-deal">

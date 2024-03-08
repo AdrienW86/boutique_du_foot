@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Banner1 from '@/assets/banner-socket.jpg'
-import Banner2 from '@/assets/tapedesign.jpg'
+import Banner1 from '@/assets/banner-socket.webp'
+import Banner2 from '@/assets/tapedesign.webp'
 import Banner3 from '@/assets/bf-sockets.png'
 
 import PaymentBanner from '../PaymentBanner/PaymentBanner'

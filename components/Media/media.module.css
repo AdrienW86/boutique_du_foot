@@ -1,12 +1,3 @@
-/* .filter {
-  position: absolute;
-  height: 148px;
-  width: 100%;
-  top: 0;
-  z-index: 1;
-  background-color: white;
-} */
-
 .banner {
   position: relative;
   width: 100%;
@@ -26,7 +17,7 @@
   font-size: 0.8em;
   font-weight: 600;
   font-family: Roboto,Helvetica,Arial,sans-serif;
-  top: 145px;
+  top: 140px;
   padding-top: 13px;
   display: flex;
   justify-content: center;

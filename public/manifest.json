@@ -1,0 +1,39 @@
+{
+    "name": "boutique du foot",
+    "short_name": "bf",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#0071BD",
+    "theme_color": "#0071BD",
+    "orientation": "portrait-primary",
+    "icons": [ 
+      {
+        "src": "/logo-500.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any"
+      }
+      ,
+      {
+        "src": "/logo-500.png",
+        "type": "image/png",
+        "sizes": "144x144",
+        "purpose": "any"        
+      }  ,  
+     
+      {
+        "src": "/logo-128.png",
+        "type": "image/png",
+        "sizes": "128x128",
+        "purpose": "maskable"
+      }
+      ,
+      {
+        "src": "/logo-64.png",
+        "type": "image/png",
+        "sizes": "64x64",
+        "purpose": "any"        
+      }     
+    ]
+  }

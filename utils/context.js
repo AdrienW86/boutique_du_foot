@@ -1,4 +1,3 @@
-// context.js
 import React, { createContext, useContext, useState } from 'react';
 
 const MyContext = createContext();
@@ -14,4 +13,3 @@ export const MyContextProvider = ({ children }) => {
 };
 
 export const useMyContext = () => useContext(MyContext);
-

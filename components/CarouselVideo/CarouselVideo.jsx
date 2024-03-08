@@ -44,6 +44,7 @@ function CustomSlider() {
           </div>
         <video poster="/nasser2.webp" controls preload="none" className={styles.banner}>
         <source src="/nasser2.mp4" type="video/mp4" />
+        <track src="video nasdas" kind="captions" srclang="fr" label="french_captions"></track>
         Votre navigateur ne supporte pas la lecture de vidéos au format MP4.
       </video>
         </div>
@@ -57,6 +58,7 @@ function CustomSlider() {
           </div>
         <video poster="/farah.webp" controls preload="none" className={styles.banner}>
         <source src="/farah2.mp4" type="video/mp4" />
+        <track src="video farah" kind="captions" srclang="fr" label="french_captions"></track>
         Votre navigateur ne supporte pas la lecture de vidéos au format MP4.
       </video>
         </div>
@@ -70,6 +72,7 @@ function CustomSlider() {
           </div>
         <video poster="/tounsi.webp" controls preload="none" className={styles.banner} >
         <source src="/tounsi2.mp4" type="video/mp4" />
+        <track src="video tounsi" kind="captions" srclang="fr" label="french_captions"></track>
         Votre navigateur ne supporte pas la lecture de vidéos au format MP4.
       </video>
         </div>

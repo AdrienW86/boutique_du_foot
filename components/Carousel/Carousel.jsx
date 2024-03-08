@@ -92,5 +92,3 @@ function CustomSlider() {
 }
 
 export default CustomSlider;
-
-
