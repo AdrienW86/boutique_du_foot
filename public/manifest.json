@@ -1,42 +1,42 @@
 {
-    "name": "boutique du foot",
-    "short_name": "BF",
-    "start_url": "/",
-    "scope": "/",
-    "display": "standalone",
-    "background_color": "#cc3903",
-    "theme_color": "#cc3903",
-    "orientation": "portrait-primary",
-    "icons": [ 
-      {
-        "src": "/bf-noir512.png",
-        "type": "image/png",
-        "sizes": "512x512",
-        "purpose": "any"
-      },
-      {
-        "src": "/bf-noir192.png",
-        "type": "image/png",
-        "sizes": "192x192",
-        "purpose": "any"
-      },
-      {
-        "src": "/bf-noir144.png",
-        "type": "image/png",
-        "sizes": "144x144",
-        "purpose": "any"        
-      },       
-      {
-        "src": "/bf-noir128.png",
-        "type": "image/png",
-        "sizes": "128x128",
-        "purpose": "maskable"
-      },
-      {
-        "src": "/bf-noir64.png",
-        "type": "image/png",
-        "sizes": "64x64",
-        "purpose": "any"        
-      }     
-    ]
-  }
+  "name": "boutique du foot",
+  "short_name": "BF",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#cc3903",
+  "theme_color": "#cc3903",
+  "orientation": "portrait-primary",
+  "icons": [ 
+    {
+      "src": "/bf-noir512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/bf-noir192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/bf-noir144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"        
+    },       
+    {
+      "src": "/bf-noir128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/bf-noir64.png",
+      "type": "image/png",
+      "sizes": "64x64",
+      "purpose": "any"        
+    }     
+  ]
+}

@@ -3,15 +3,11 @@ import React, { useEffect } from 'react';
 const BannerInstallation = () => {
     useEffect(() => {
         const handleBeforeInstallPrompt = (e) => {
-            // Empêche l'événement par défaut
             e.preventDefault();
-            // Affiche la bannière d'installation
             showInstallPrompt(e);
         };
 
         const showInstallPrompt = (e) => {
-            // Affiche une bannière ou un bouton pour permettre à l'utilisateur d'installer l'application
-            // Vous pouvez personnaliser cette partie en fonction de vos besoins
             const banner = document.createElement('div');
             banner.innerHTML = `
                 <div style="position: fixed; bottom: 20px; left: 20px; background-color: #0071BD; color: white; padding: 10px;">
@@ -23,7 +19,7 @@ const BannerInstallation = () => {
             `;
 
             banner.querySelector('button').addEventListener('click', () => {
-                e.prompt(); // Affiche la fenêtre d'installation
+                e.prompt(); 
             });
 
             document.body.appendChild(banner);
@@ -40,4 +36,3 @@ const BannerInstallation = () => {
 };
 
 export default BannerInstallation;
-
