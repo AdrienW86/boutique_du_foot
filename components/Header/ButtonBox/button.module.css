@@ -4,7 +4,7 @@
 }
 
 .menu_basket {
-    margin: 10px 5px;
+    margin: 11px 5px 10px 5px;
     list-style: none;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .hamburger {
-    margin: 10px;
+    margin: 13px 10px 10px 10px; 
     width: 20px;
     height: 20px;
     z-index: 30;

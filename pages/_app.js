@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from '@/components/Header/Header'
 import { MyContextProvider } from '@/utils/context';
 import Footer from '@/components/Footer/Footer'
+import BannerInstallation from '@/components/BannerInstallation/BannerInstallation'; // Import du composant de la bannière d'installation
 import { useEffect } from 'react'
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
@@ -34,6 +35,7 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />     
       </Head>
     <Header />
+    <BannerInstallation /> {/* Ajout de la bannière d'installation */}
     <Component  {...pageProps} />   
     <Footer />
     <SpeedInsights />

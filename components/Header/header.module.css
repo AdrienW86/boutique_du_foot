@@ -21,9 +21,13 @@
 .logo {
   z-index: 2;
   margin-left: 10px;
+  margin-right: 20px;
+  padding-top: 3px;
+  margin-top: 3px;
 }
 
 .searchContainer {
+  padding-top: 8px;
   height: 65px;
   background-color: white;
 }
@@ -128,8 +132,6 @@
   pointer-events: none; 
 }
 
-
-
 .menuBox {
   position: fixed;
   top: 0;
@@ -212,6 +214,7 @@
 
 .alert {
   width: 100%;
+  padding-top: 2px;
   text-align: center;
   color: rgb(204, 57, 3);
   font-family: "Bebas Neue", sans-serif;

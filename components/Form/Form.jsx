@@ -20,7 +20,6 @@ function ContactForm() {
                     src={Email}
                     width={30}
                     height={30}
-                    priority
                     className={styles.picture}
                     alt='email'       
                 />
@@ -28,7 +27,7 @@ function ContactForm() {
             </div>
         </div>
        <div className={styles.txt}>
-            <p> Besoin d'un conseil sur nos produits ou d'une information <br></br>sur votre commande ? </p>
+            <p> Besoin d'un conseil sur nos produits ou d'une information sur votre commande ? </p>
        </div>  
        <h3 className={styles.h4}> POSEZ-NOUS VOTRE QUESTION </h3>    
       <div className={styles.formContent}>
@@ -45,7 +44,9 @@ function ContactForm() {
         {errors.message && <span className={styles.error}> Ce champ est requis.</span>}
       
       </div>
-      <button className={styles.submit} type="submit">Envoyer</button>
+      <div>
+        <button className={styles.submit} type="submit">Envoyer</button>
+      </div>     
     </form>
   );
 }

@@ -14,7 +14,7 @@ export default function Category() {
     <section className={styles.container}>
        <div className={styles.section}>
         <h1 id="collection" className={styles.title}> NOS COLLECTIONS </h1>
-         <Carousel />
+          <Carousel /> 
       </div> 
       <div className={styles.section}>
         <Link href="/maillots">
@@ -22,8 +22,7 @@ export default function Category() {
               <section className={styles.banner}>
                 <Image 
                   src={Banner1}
-                  fill
-                  priority       
+                  fill     
                   alt='banner'
                 />  
               </section>
@@ -35,8 +34,7 @@ export default function Category() {
           <section className={styles.banner}>
             <Image 
               src={Banner2}
-              fill
-              priority       
+              fill    
               alt='banner'
             />  
           </section>
@@ -48,8 +46,7 @@ export default function Category() {
           <section className={styles.banner}>
             <Image 
               src={Banner3}
-              objectFit='fill'
-              priority       
+              fill      
               alt='banner'
             />  
           </section>
@@ -66,8 +63,7 @@ export default function Category() {
        <section className={styles.banner}>     
          <Image 
            src={Banner4}
-           fill
-           priority       
+           fill      
            alt='banner'
          />  
          <button className={styles.btn}>

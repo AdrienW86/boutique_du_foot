@@ -19,7 +19,8 @@
     text-align: center;
     color: white; 
     font-size: 1em;
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing: 0.1em;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .picture {
@@ -32,15 +33,18 @@
     text-align: center;
     line-height: 1.5em;
     background-color: #f3f3f3;
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .h4 {
     padding: 18px;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 1.2em;
     font-weight: bold;
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing: 0.1em;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .formContent {
@@ -59,12 +63,14 @@
     padding-left: 20px;
 }
 
-.textarea {
-    height: 200px;
+.input::placeholder, .textarea::placeholder {
+    letter-spacing: 0.1em;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .textarea {
     padding-top: 20px;
+    height: 200px;
 }
 
 .error {
@@ -88,5 +94,7 @@
     justify-content: center;
     text-align: center;
     padding: 0 80px;
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 1.2em;
+    font-family: "Bebas Neue", sans-serif;
 }

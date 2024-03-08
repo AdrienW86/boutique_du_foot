@@ -1,11 +1,11 @@
 {
     "name": "boutique du foot",
-    "short_name": "bf",
+    "short_name": "BF",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
-    "background_color": "#0071BD",
-    "theme_color": "#0071BD",
+    "background_color": "#cc3903",
+    "theme_color": "#cc3903",
     "orientation": "portrait-primary",
     "icons": [ 
       {
