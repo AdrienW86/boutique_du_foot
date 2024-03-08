@@ -9,7 +9,7 @@ export default function Card(props) {
         <Image 
           src={props.recto}
           fill
-         // sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 1000px"     
+          sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 1000px"     
           alt='Product image'
           className={styles.background}
         />  

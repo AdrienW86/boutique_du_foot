@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './carousel.module.css';
 
-const HeaderCarousel = () => {
+const HeaderCarousel = ({handleMenuToggle}) => {
   const items = [
     {
       text: 'Les meilleurs Prix',
@@ -35,7 +35,7 @@ const HeaderCarousel = () => {
     <div className={styles.carousel}>
       <div className={styles.carouselItems}>
         {items.map((item, index) => (
-          <Link href={item.url}  key={index} className={index === currentIndex ? styles.active : styles.inactive}    >
+          <Link  onClick={handleMenuToggle} href={item.url}  key={index} className={index === currentIndex ? styles.active : styles.inactive}    >
             <div >
             {item.text}
           </div>

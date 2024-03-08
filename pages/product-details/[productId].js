@@ -11,7 +11,7 @@ export default function ProductDetails() {
 
   // Vérifiez si les données nécessaires sont disponibles
   if (!productId || !name || !recto || !verso || !price || !link || !sizes || !description){
-    return <div>Chargement...</div>;
+    return <div> Chargement... </div>;
   }
 
   const product = {
@@ -140,8 +140,7 @@ export default function ProductDetails() {
       <p className={styles.price}>Prix: {price}€</p>
       <button className={styles.addBtn} onClick={addToCart}>
         Ajouter au panier
-      </button>
-     
+      </button>     
     </div>
   );
 }

@@ -25,10 +25,9 @@ export default function accessoires() {
       </section>           
       <section className={styles.cardContainer}>
       {data.accessoires.map((el, index) => (
-        <div className={styles.link}>
-          <Link key={el.id} href={`/product-details/${el.id}?name=${el.name}&recto=${el.recto}&verso=${el.verso}&price=${el.price}&link=${el.link}&sizes=${null}&description=${el.description}`}>    
+        <div key={index} className={styles.link}>
+          <Link  href={`/product-details/${el.id}?name=${el.name}&recto=${el.recto}&verso=${el.verso}&price=${el.price}&link=${el.link}&sizes=${null}&description=${el.description}`}>    
             <Card
-              key={el.id}
               id={el.id}
               name={el.name}
               recto={el.recto}

@@ -12,8 +12,7 @@ export default function Card(props) {
     <section className={styles.banner}>       
       <Image 
         src={props.recto}
-        fill
-        sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 1000px"     
+        fill   
         alt='Product image'
         onClick={navigation}
         className={styles.background}

@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
-
-import Logo from '@/assets/logo2.png';
+import Logo from '@/assets/logo3.png';
 import Box from '@/assets/box.png';
 import Men from '@/assets/hommes2.png';
 import Women from '@/assets/femmes.png';
@@ -26,10 +25,8 @@ const [prevScrollPos, setPrevScrollPos] = useState(0);
 const [visible, setVisible] = useState(true);
 const [productsLength, setProductsLength] = useState(0);
 const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 const [searchQuery, setSearchQuery] = useState('');
 const [searchResults, setSearchResults] = useState([]);
-
 const [toggle, setToggle] = useState(false)
 
 const isToggle = () => {
@@ -55,6 +52,10 @@ const handleMenuToggle = () => {
   setIsMenuOpen(!isMenuOpen);
 };
 
+const handleMenuToggle2 = () => {
+  setIsMenuOpen(false);
+};
+
 useEffect(() => {
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
@@ -71,10 +72,9 @@ useEffect(() => {
 useEffect(() => {
   const handleScroll2 = () => {
     if (isMenuOpen) {
-      console.log('empeche')
       document.body.style.overflow = 'hidden';
+      document.body.style.height = '100vh';
     } else {
-      console.log('empeche pas')
       document.body.style.overflow = 'visible';
     }
   };
@@ -133,7 +133,7 @@ useEffect(() => {
           />   
         </Link>
         <div className={styles.alert}>
-        <HeaderCarousel />
+        <HeaderCarousel handleMenuToggle={handleMenuToggle2}/>
         </div>
         <ButtonBox 
           isMenuOpen={isMenuOpen}

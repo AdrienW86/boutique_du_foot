@@ -5,6 +5,11 @@
   z-index: 1000
 }
 
+.noscroll {
+  height: 100vh;
+ overflow: hidden !important;
+}
+
 .visible {
   top: 0; 
 }
@@ -20,10 +25,7 @@
 
 .logo {
   z-index: 2;
-  margin-left: 10px;
-  margin-right: 20px;
-  padding-top: 3px;
-  margin-top: 3px;
+  margin: 4px 20px 0 10px;
 }
 
 .searchContainer {
@@ -153,14 +155,13 @@
     
 .menu {  
   display: flex;
-  position: fixed;
+  position: absolute;
   flex-direction: column;
   list-style: none;
-  padding-top: 158px;
+  top: 0px;
+  padding-top: 160px;
   width: 100%;
   z-index: 20;
-  height: 100vh;
-  overflow-y: auto;
   transition: .4s ease-in-out;
   background-color: #f3f3f3; 
 }
