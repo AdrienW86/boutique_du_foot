@@ -9,32 +9,29 @@
     "orientation": "portrait-primary",
     "icons": [ 
       {
-        "src": "/logo-500.png",
+        "src": "/logo-bf512.png",
         "type": "image/png",
         "sizes": "512x512",
         "purpose": "any"
       },
       {
-        "src": "/logo-128.png",
+        "src": "/logo-bf192.png",
         "type": "image/png",
         "sizes": "192x192",
         "purpose": "any"
-      }
-      ,
+      },
       {
-        "src": "/logo-128.png",
+        "src": "/logo-bf144.png",
         "type": "image/png",
         "sizes": "144x144",
         "purpose": "any"        
-      }  ,  
-     
+      }  ,       
       {
         "src": "/logo-128.png",
         "type": "image/png",
         "sizes": "128x128",
         "purpose": "maskable"
-      }
-      ,
+      },
       {
         "src": "/logo-64.png",
         "type": "image/png",
