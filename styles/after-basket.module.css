@@ -14,7 +14,7 @@
 }
 
 .h2 { 
-    color: orangered;
+    color: rgb(204, 57, 3);
     width: 100%;
     text-align: center;
     font-size: 2em;
@@ -35,7 +35,7 @@
     margin: 60px auto;
     font-size: 1.5em;
     text-align: center;
-    color: orangered;
+    color: rgb(204, 57, 3);
     text-decoration: underline;
     font-family: "Bebas Neue", sans-serif;
 }

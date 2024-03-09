@@ -98,3 +98,19 @@
     font-size: 1.2em;
     font-family: "Bebas Neue", sans-serif;
 }
+
+.confirm {
+    padding: 30px 16px 
+}
+
+.pConfirm {
+    text-align: center;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    line-height: 2.2;
+    background: rgb(204, 57, 3);
+    border: 2px solid white;
+    font-family: "Bebas Neue", sans-serif;
+}

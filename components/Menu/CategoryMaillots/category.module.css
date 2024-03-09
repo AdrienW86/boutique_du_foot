@@ -90,21 +90,21 @@
     margin: 20px;
     padding: 10px;
     width: 150px;
-    color: orangered;
+    color: rgb(204, 57, 3);
     background-color: white;
     letter-spacing: 0.1em;
     border-radius: 22px;
     font-size: 0.7em;
     text-align: center;
     transition: .4s ease-in-out;
-    border: 1px solid orangered;
+    border: 1px solid rgb(204, 57, 3);
     font-family: "Bebas Neue", sans-serif;
 }
 
 .btn:hover {
     cursor: pointer;
     color: white;   
-    background-color: orangered
+    background-color: rgb(204, 57, 3);
 }
 
 .category {
@@ -118,6 +118,6 @@
 
 .link {
     padding: 0px 20px 20px 20px;
-    color: orangered;
+    color: rgb(204, 57, 3);
     font-family: "Bebas Neue", sans-serif;
 }

@@ -19,7 +19,6 @@
     transition: .4s ease-in-out;
     overflow: hidden;
     aspect-ratio: 16/16;
-    /* max-height: 100vh; */
   }
   
   .background {
@@ -29,7 +28,7 @@
   .h3 {
     letter-spacing: 0.1em;
     font-family: "Bebas Neue", sans-serif;
-    color: orangered;
+    color: rgb(204, 57, 3);
     font-size: 0.8em;
     text-align: left;
     margin: 10px 3%;

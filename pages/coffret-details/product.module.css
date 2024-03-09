@@ -16,7 +16,7 @@
 .selectSize {
     width: 100%;
     text-align: center;
-    color: orangered;
+    color: rgb(204, 57, 3);
     padding: 12px;
     font-size: 2em;
     margin-bottom: 30px;
@@ -59,7 +59,7 @@
 .h1 {
     font-family: "Bebas Neue", sans-serif;
     margin: 40px auto 20px 20px;
-    color: orangered;
+    color: rgb(204, 57, 3);
     width: 100%;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .activeButton {
-    background-color: orangered;
+    background-color: rgb(204, 57, 3);
 }
 
 .button, .activeButton {
@@ -120,7 +120,7 @@
     transition: .4s ease-in-out;
     color: white;
     font-family: "Bebas Neue", sans-serif;
-    background-color: orangered
+    background-color: rgb(204, 57, 3);
 }
 
 .addBtn {
