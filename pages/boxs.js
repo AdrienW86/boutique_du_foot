@@ -14,7 +14,7 @@ export default function boxs() {
       <section className={styles.banner}>       
         <h1 className={styles.h1}> Les Coffrets </h1>
           <p className={styles.description}>                
-            Choississez par un de nos coffrets ou composez-vous même le vôtre.
+            Choississez un de nos coffrets ou composez-vous même le vôtre.
             </p>
           <Image 
             src={Banner}
