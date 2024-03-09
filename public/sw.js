@@ -9,7 +9,6 @@ self.addEventListener('install', (event) => {
     await cache.addAll([
       '/styles',
       '/public',
-      '/images/logo.png',
       // Ajoutez d'autres ressources ici...
     ]);
     await cache.add(new Request(OFFLINE_URL, {cache: 'reload'}));

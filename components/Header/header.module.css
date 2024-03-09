@@ -182,6 +182,7 @@
 }
   
 .menu_link:hover {
+  filter: brightness(95%) grayscale(0%);
   color: rgb(204, 57, 3);
   cursor: pointer;
 } 
