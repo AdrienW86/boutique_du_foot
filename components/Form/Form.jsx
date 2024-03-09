@@ -51,7 +51,7 @@ function ContactForm() {
             <div className={styles.confirm} > 
               <p className={styles.pConfirm} >
                 Votre message a bien été envoyé. <br/>
-                Nous vous répondrons dans les plus bref délais.
+                Nous vous répondrons dans les plus brefs délais.
               </p>
             </div>
           )}
